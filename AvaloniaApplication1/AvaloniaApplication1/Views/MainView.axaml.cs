@@ -11,7 +11,6 @@ namespace AvaloniaApplication1.Views
         public MainView()
         {
             InitializeComponent();
-            ShowLevely(); // zobrazí “Levely” po štarte
         }
 
         private void Levely_Click(object? sender, PointerPressedEventArgs e)
