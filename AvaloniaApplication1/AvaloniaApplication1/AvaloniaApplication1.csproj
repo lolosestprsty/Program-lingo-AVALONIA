@@ -21,4 +21,21 @@
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\NastaveniaOverviewView.axaml.cs">
+      <DependentUpon>NastaveniaOverviewView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\VysvetlivkyOverviewView.axaml.cs">
+      <DependentUpon>VysvetlivkyOverviewView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="VysvetlivkyManager\Vysvetlivka1View.axaml.cs">
+      <DependentUpon>Vysvetlivka1View.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="LevelManager\LevelModels\" />
+    <Folder Include="LevelManager\LevelViews\" />
+  </ItemGroup>
 </Project>

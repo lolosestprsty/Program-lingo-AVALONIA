@@ -3,6 +3,8 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
+using AvaloniaApplication1.ViewModels;
+using System;
 
 namespace AvaloniaApplication1.Views
 {
@@ -13,101 +15,28 @@ namespace AvaloniaApplication1.Views
             InitializeComponent();
         }
 
+        private MainViewModel? VM => DataContext as MainViewModel;
+        // Matches PointerPressed="Levely_Click" in XAML
         private void Levely_Click(object? sender, PointerPressedEventArgs e)
         {
-            ShowLevely();
+            VM?.ShowLevelyOverviewCommand.Execute(null);
+
         }
 
+        // Matches PointerPressed="Vysvetlivky_Click" in XAML
         private void Vysvetlivky_Click(object? sender, PointerPressedEventArgs e)
         {
-            ContentArea.Children.Clear();
-            ContentArea.Children.Add(new TextBlock
-            {
-                Text = "Vysvetlivky",
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center,
-                FontSize = 32,
-                Foreground=Brushes.Black
-            });
-
-            LevelyText.Opacity = 0.7;
-            VysvetlivkyText.Opacity = 1;
-            NastaveniaText.Opacity = 0.7;
+            VM?.ShowVysvetlivkyOverviewCommand.Execute(null);
         }
 
+        // Matches PointerPressed="Nastavenia_Click" in XAML
         private void Nastavenia_Click(object? sender, PointerPressedEventArgs e)
         {
-            ContentArea.Children.Clear();
-            ContentArea.Children.Add(new TextBlock
-            {
-                Text = "Nastavenia",
-                //Foreground=new SolidColorBrush(Colors.Black),
-                Foreground=Brushes.Black,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center,
-                FontSize = 32
-            });
-
-            LevelyText.Opacity = 0.7;
-            VysvetlivkyText.Opacity = 0.7;
-            NastaveniaText.Opacity = 1;
+            VM?.ShowNastaveniaOverviewCommand.Execute(null);
         }
 
-        private void ShowLevely()
+        private void TextBlock_ActualThemeVariantChanged(object? sender, EventArgs e)
         {
-            ContentArea.Children.Clear();
-
-            var stack = new StackPanel
-            {
-                VerticalAlignment = VerticalAlignment.Center,
-                HorizontalAlignment = HorizontalAlignment.Center
-            };
-
-            stack.Children.Add(new TextBlock
-            {
-                Text = "Levely",
-                HorizontalAlignment = HorizontalAlignment.Center,
-                FontSize = 24,
-                Foreground = Brushes.Black,
-                Margin = new Thickness(0, 0, 0, 20)
-            });
-
-            var openLevel1Button = new Button
-            {
-                Content = "Otvoriť Level 1",
-                Width = 200,
-                Height = 50,
-                FontSize = 16,
-                Background = new SolidColorBrush(Color.FromRgb(98, 189, 103)),
-                Cursor = new Cursor(StandardCursorType.Hand),
-                
-                HorizontalAlignment = HorizontalAlignment.Center, 
-                VerticalAlignment = VerticalAlignment.Center,
-                HorizontalContentAlignment = HorizontalAlignment.Center,
-                Foreground= Brushes.Black
-            };
-
-            //openLevel1Button.Click += OpenLevel1_Click;
-            stack.Children.Add(openLevel1Button);
-            Foreground=Brushes.Black;
-            ContentArea.Children.Add(stack);
-
-            LevelyText.Opacity = 1;
-            VysvetlivkyText.Opacity = 0.7;
-            NastaveniaText.Opacity = 0.7;
         }
-
-        /*private void OpenLevel1_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var level1 = new Level1();
-            level1.Show();
-
-            // Zatvorí MainWindow
-            foreach (var window in Avalonia.Application.Current?.Windows ?? [])
-            {
-                if (window is MainWindow mainWindow)
-                    mainWindow.Close();
-            }
-        }*/
     }
 }

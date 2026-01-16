@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication1.Views.VysvetlivkyOverviewView"
+             x:DataType="vm:VysvetlivkyOverviewModel"
+             xmlns:local="using:AvaloniaApplication1"
+             xmlns:vys="clr-namespace:AvaloniaApplication1.VysvetlivkyManager">
+
+   <Grid RowDefinitions="*">
+        <ScrollViewer Grid.Column="1"
+                  VerticalScrollBarVisibility="Auto"
+                  MaxWidth="250"
+                  HorizontalAlignment="Left">
+
+        <StackPanel Background="#62BD67">
+            <TextBlock Text="01 Uvod k jazyku C#" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"
+                       PointerPressed="Vysvetlivka1_Click"/>
+            <TextBlock Text="02 instalacia MVS" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"
+                       PointerPressed="Vysvetlivka2_Click"/>
+            <TextBlock Text="03 Zaklady syntaxe" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="04 Pretypovanie a konverzia" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="placeholder1" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="placeholder2" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="placeholder3" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="placeholder4" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="placeholder5" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="placeholder6" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="placeholder7" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="placeholder8" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+        </StackPanel>
+
+    </ScrollViewer>
+    <ContentControl Content="{Binding SelectedVysvetlivka}" Grid.Column="2">
+        <ContentControl.DataTemplates>
+            <DataTemplate DataType="{x:Type vys:Vysvetlivka1Model}">
+                <vys:Vysvetlivka1View />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vys:Vysvetlivka2Model}">
+                <vys:Vysvetlivka2View />
+            </DataTemplate>
+        </ContentControl.DataTemplates>
+    </ContentControl>
+</Grid>
+ 
+</UserControl>

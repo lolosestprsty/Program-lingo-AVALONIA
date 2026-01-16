@@ -1,0 +1,20 @@
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace AvaloniaApplication1.ViewModels
+{
+    public class LevelyItemModel : ObservableObject
+    {
+        string _levelName;
+        public string LevelName
+        {
+            get => _levelName;
+            set => SetProperty(ref _levelName, value);
+        }
+        string _levelDescription;
+        public string LevelDescription
+        {
+            get => _levelDescription;
+            set => SetProperty(ref _levelDescription, value);
+        }
+    }
+}

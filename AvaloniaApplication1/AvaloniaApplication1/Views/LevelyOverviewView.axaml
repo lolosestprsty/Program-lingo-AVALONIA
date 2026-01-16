@@ -1,0 +1,63 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:AvaloniaApplication1.Views"
+             xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication1.Views.LevelyOverviewView"
+             x:DataType="vm:LevelyOverviewModel"
+             xmlns:local="using:AvaloniaApplication1">
+
+  <Grid>
+      <Label>Levely</Label>
+	 <Border>
+		 <ScrollViewer HorizontalScrollBarVisibility="Visible">
+             <ItemsControl ItemsSource="{Binding LevelCollection}">
+                 <ItemsControl.ItemsPanel>
+                     <ItemsPanelTemplate>
+                         <StackPanel Orientation="Horizontal"/>
+                     </ItemsPanelTemplate>
+                 </ItemsControl.ItemsPanel>
+                 <ItemsControl.ItemTemplate>
+                     <DataTemplate>
+                         <Button Background="#62BD67" Height="100" Width="100" CornerRadius="35" Margin="80" BorderBrush="#ABEDAD" BorderThickness="8"
+                                Command="{Binding $parent[views:LevelyOverviewView]((vm:LevelyOverviewModel)DataContext).LevelSelectedCommand }" 
+                                CommandParameter="{Binding }">
+<!--                             <Image Source="{Binding ButtonImage}" Height="90" Width="90"/>
+-->                         
+                            <TextBlock Text="{Binding LevelName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20"/>
+                        </Button>
+                     </DataTemplate>
+                 </ItemsControl.ItemTemplate>
+                 </ItemsControl>
+			 <!--<StackPanel Orientation="Horizontal">
+                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
+                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
+                 </Button>
+                <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
+                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
+                 </Button>
+                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
+                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
+                 </Button>
+                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
+                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
+                 </Button>
+                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
+                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
+                 </Button>
+                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
+                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
+                 </Button>
+                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
+                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
+                 </Button>
+                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
+                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
+                 </Button>
+             </StackPanel>-->
+         </ScrollViewer>
+     </Border>
+  </Grid>
+</UserControl>
