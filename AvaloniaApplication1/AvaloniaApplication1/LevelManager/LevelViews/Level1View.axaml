@@ -3,8 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:lm="clr-namespace:AvaloniaApplication1.LevelManager.LevelModels"
-             xmlns:views="clr-namespace:AvaloniaApplication1.Views;assembly=AvaloniaApplication1"
+             xmlns:o="clr-namespace:AvaloniaApplication1.LevelManager.Otazky"
+             
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:views="clr-namespace:AvaloniaApplication1.Views.Questions;assembly=AvaloniaApplication1"
              x:Class="AvaloniaApplication1.Views.Level1View"
              x:DataType="lm:Level1Model">
 
@@ -28,44 +30,21 @@
                    Margin="16,0,0,0"
                    Minimum="0"
                    Maximum="100"
-                   Value="10"
+                   Value="{Binding Progres}"
                    CornerRadius="5"
                    Foreground="#62BD67"/>
     </Grid>
-
-    <!-- Otazka -->
-    <TextBlock Grid.Row="1"
-               Margin="0,40,0,40"
-               Text="Otazka alebo zadanie bla bla bla"
-               FontSize="26"
-               FontWeight="SemiBold"
-               HorizontalAlignment="Center"
-               TextAlignment="Center"/>
-
-    <!-- Odpovede -->
-    <Grid Grid.Row="2"
-          RowDefinitions="Auto,Auto"
-          ColumnDefinitions="Auto,Auto"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Top"
-          ColumnSpacing="30"
-          RowSpacing="30">
-
-      <Button Content="možnosť a)"
-              Classes="answer"/>
-
-      <Button Grid.Column="1"
-              Content="možnosť b)"
-              Classes="answer"/>
-
-      <Button Grid.Row="1"
-              Content="možnosť c)"
-              Classes="answer"/>
-
-      <Button Grid.Row="1"
-              Grid.Column="1"
-              Content="možnosť d)"
-              Classes="answer"/>
-    </Grid>
+    <ContentControl Grid.Row="1"
+                Grid.RowSpan="2"
+                Content="{Binding AktualnaOtazka}">
+        <ContentControl.DataTemplates>
+            <DataTemplate DataType="o:ABCDOtazka">
+                <views:ABCDOtazkaView />
+            </DataTemplate>
+            <DataTemplate DataType="o:VstupnaOtazka">
+                <views:VstupnaOtazkaView />
+            </DataTemplate>
+        </ContentControl.DataTemplates>
+    </ContentControl>
   </Grid>
 </UserControl>
