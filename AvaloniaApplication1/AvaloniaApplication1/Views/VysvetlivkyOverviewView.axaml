@@ -10,6 +10,7 @@
              xmlns:vys="clr-namespace:AvaloniaApplication1.VysvetlivkyManager">
 
    <Grid RowDefinitions="*">
+       
         <ScrollViewer Grid.Column="1"
                   VerticalScrollBarVisibility="Auto"
                   MaxWidth="250"
@@ -33,7 +34,7 @@
         </StackPanel>
 
     </ScrollViewer>
-    <ContentControl Content="{Binding SelectedVysvetlivka}" Grid.Column="2">
+    <ContentControl Content="{Binding SelectedVysvetlivka}" Grid.Column="2" HorizontalAlignment="Right">
         <ContentControl.DataTemplates>
             <DataTemplate DataType="{x:Type vys:Vysvetlivka1Model}">
                 <vys:Vysvetlivka1View />

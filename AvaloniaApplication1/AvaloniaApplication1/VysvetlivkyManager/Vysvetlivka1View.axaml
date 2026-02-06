@@ -1,11 +1,102 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.Vysvetlivka1View">
-  <Grid>
-    <TextBlock Text="Vysvetlivka1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
-  </Grid>
-</UserControl>
 
+    <ScrollViewer>
+        <StackPanel Margin="40"
+                    Spacing="16"
+                    MaxWidth="700">
+
+            <TextBlock Text="Úvod k jazyku C#"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock Text="Jazyk C# (C-sharp) vyvinula spoločnosť Microsoft, bol predstavený spolu s vývojovým prostredím .NET Framework v roku 2002."
+                       FontSize="18"
+                       TextWrapping="Wrap"/>
+
+            <TextBlock Text="Prečo sa učiť jazyk C#?"
+                       FontSize="25"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="1. Je široko použiteľný na rôzne typy aplikácií:" />
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap" Padding="50,0,0,0"
+                       Text="a) desktopové aplikácie"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap" Padding="50,0,0,0"
+                       Text="b) mobilné aplikácie"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap" Padding="50,0,0,0"
+                       Text="c) webové aplikácie a web services"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap" Padding="50,0,0,0"
+                       Text="d) počítačové hry"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap" Padding="50,0,0,0"
+                       Text="e) VR a ďalšie technológie"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap" Padding="50,0,0,0"
+                       Text="f) poskytuje knižnice na prácu so súbormi, databázami, vláknami a sieťou"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="2. Ľahko sa učí – vychádza z C/C++, ale je bližší jazyku Java."/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="3. Patrí medzi najpopulárnejšie programovacie jazyky."/>
+            
+            <TextBlock Text="Základná charakteristika jazyka C#"
+                       FontSize="25"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Case sensitive – rozlišuje veľké a malé písmená" />
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Zdrojové súbory majú príponu .cs"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Automatická správa pamäte (garbage collector)"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Podpora výnimiek"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Silná typová kontrola"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Objektovo orientovaný jazyk"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Jednoduchá dedičnosť"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Podpora komponentového programovania"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Vlastnosti a udalosti"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Multithreading"/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="• Všestranné použitie"/>
+
+            <TextBlock Text="Vývojové prostredie"
+                       FontSize="25"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Najjednoduchší spôsob ako začať s jazykom C# je používať Microsoft Visual Studio (Community verzia je zdarma). Alternatívou sú aj online kompilátory." />
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

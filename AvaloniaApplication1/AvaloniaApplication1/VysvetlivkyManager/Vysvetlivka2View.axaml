@@ -1,10 +1,56 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.Vysvetlivka2View">
-  <Grid>
-    <TextBlock Text="Vysvetlivka2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>  
-  </Grid>
+
+    <ScrollViewer>
+        <StackPanel Margin="40"
+                    Spacing="16"
+                    MaxWidth="700">
+
+            <TextBlock Text="Inštalácia Microsoft Visual Studio 2022"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock Text="Microsoft Visual Studio 2022"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Microsoft Visual Studio je bohaté vývojové prostredie (IDE – Integrated Development Environment) od spoločnosti Microsoft. Obsahuje nástroje na tvorbu malých aj veľkých projektov v rôznych programovacích jazykoch. Môže byť použité na vývoj konzolových aplikácií aj aplikácií s grafickým rozhraním vrátane webových stránok." />
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Visual Studio podporuje programovacie jazyky prostredníctvom jazykových služieb, ktoré umožňujú editoru kódu a debuggeru pracovať s rôznymi jazykmi. Medzi vstavané jazyky patria C/C++, VB.NET a C#. Podporuje tiež XML/XSLT, HTML/XHTML, JavaScript a CSS. Je možné doplniť podporu aj pre ďalšie jazyky, ako sú Oxygene, F#, Python alebo Ruby." />
+
+            <TextBlock Text="Postup inštalácie"
+                       FontSize="25"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="1. Zo stránky https://visualstudio.microsoft.com/cs/downloads/ si stiahnite verziu Visual Studio Community, ktorá je zdarma pre študentov." />
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="2. Spustite stiahnutý súbor VisualStudioSetup.exe a začne proces inštalácie." />
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="3. Z ponúkaných súčastí inštalácie zvoľte iba možnosť .NET desktop development. Ostatné komponenty nie je nutné inštalovať, aby inštalácia nezaberala zbytočne veľa miesta. Následne kliknite na tlačidlo Install." />
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="4. Prebieha inštalácia vývojového prostredia." />
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="5. Po dokončení inštalácie je potrebné reštartovať počítač." />
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="6. Po reštarte je vývojové prostredie Visual Studio 2022 pripravené na používanie." />
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

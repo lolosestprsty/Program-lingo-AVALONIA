@@ -38,24 +38,6 @@
                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
                      <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
                  </Button>
-                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
-                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
-                 </Button>
-                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
-                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
-                 </Button>
-                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
-                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
-                 </Button>
-                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
-                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
-                 </Button>
-                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
-                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
-                 </Button>
-                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
-                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
-                 </Button>
              </StackPanel>-->
          </ScrollViewer>
      </Border>

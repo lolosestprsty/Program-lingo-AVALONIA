@@ -7,4 +7,8 @@ namespace AvaloniaApplication1.VysvetlivkyManager;
 public partial class Vysvetlivka2View : UserControl
 {
     public Vysvetlivka2View() => InitializeComponent();
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
 }

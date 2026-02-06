@@ -1,6 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using AvaloniaApplication1.LevelManager.LevelModels;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System;
 
 namespace AvaloniaApplication1.ViewModels
 {
@@ -8,7 +8,7 @@ namespace AvaloniaApplication1.ViewModels
     {
         public MainViewModel()
         {
-            currentViewModel = new LevelyOverviewModel();
+            currentViewModel = new LevelyOverviewModel(this);
         }
 
         [ObservableProperty]
@@ -17,7 +17,13 @@ namespace AvaloniaApplication1.ViewModels
         [RelayCommand]
         private void ShowLevelyOverview()
         {
-            CurrentViewModel = new LevelyOverviewModel();
+            CurrentViewModel = new LevelyOverviewModel(this);
+        }
+
+        [RelayCommand]
+        private void ShowLevel1()
+        {
+            CurrentViewModel = new Level1Model(this);
         }
 
         [RelayCommand]
@@ -25,14 +31,11 @@ namespace AvaloniaApplication1.ViewModels
         {
             CurrentViewModel = new VysvetlivkyOverviewModel();
         }
+
         [RelayCommand]
         private void ShowNastaveniaOverview()
         {
             CurrentViewModel = new NastaveniaOverviewModel();
         }
-
-        //[RelayCommand(CanExecute =nameof (CanActivatePage))]
-
-
     }
 }

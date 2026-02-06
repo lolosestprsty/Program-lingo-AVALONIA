@@ -12,46 +12,41 @@ namespace AvaloniaApplication1.ViewModels
 {
     public partial class LevelyOverviewModel : ViewModelBase
     {
-        public LevelyOverviewModel() 
+        private readonly MainViewModel _main;
+
+        public LevelyOverviewModel(MainViewModel main)
         {
+            _main = main;
             LoadLevels();
         }
 
         #region Properties
-        ObservableCollection<LevelyItemModel> _levelCollection;
-        public ObservableCollection<LevelyItemModel> LevelCollection
-        {
-            get => _levelCollection;
-            set => SetProperty(ref _levelCollection, value);
-        }
+        public ObservableCollection<LevelyItemModel> LevelCollection { get; set; }
         #endregion
         #region commands
-        IRelayCommand<LevelyItemModel> _levelSelectedCommand;
-        public IRelayCommand<LevelyItemModel> LevelSelectedCommand
-            => _levelSelectedCommand ??= new RelayCommand<LevelyItemModel>(level =>
+        public IRelayCommand<LevelyItemModel> LevelSelectedCommand =>
+            new RelayCommand<LevelyItemModel>(level =>
             {
-                // Handle level selection logic here
-                Debug.WriteLine($"Level selected: {level.LevelName}");
+                Debug.WriteLine($"Level selected: {level?.LevelName}");
+                if (level?.LevelName == "1")
+                {
+                    _main.ShowLevel1Command.Execute(null);
+                }
             });
 
         #endregion
         #region Methods
-        public void LoadLevels()
+        private void LoadLevels()
         {
-            var collection = new ObservableCollection<LevelyItemModel>();
+            LevelCollection = new ObservableCollection<LevelyItemModel>();
 
-            int startIndex = collection.Count + 1;
-            for (int i = 0; i < 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
-                int index = startIndex + i;
-                collection.Add(new LevelyItemModel
+                LevelCollection.Add(new LevelyItemModel
                 {
-                    LevelName = index.ToString(),
-                    LevelDescription = $"Additional level {index}"
+                    LevelName = i.ToString()
                 });
             }
-
-            LevelCollection = collection;
         }
         #endregion
 

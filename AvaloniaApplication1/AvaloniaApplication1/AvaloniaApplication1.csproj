@@ -33,9 +33,4 @@
       <DependentUpon>Vysvetlivka1View.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="LevelManager\LevelModels\" />
-    <Folder Include="LevelManager\LevelViews\" />
-  </ItemGroup>
 </Project>

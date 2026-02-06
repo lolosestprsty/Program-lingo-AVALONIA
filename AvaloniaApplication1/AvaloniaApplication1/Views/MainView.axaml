@@ -6,68 +6,77 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:system="using:System"
              xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels;assembly=AvaloniaApplication1"
+             xmlns:lm="clr-namespace:AvaloniaApplication1.LevelManager.LevelModels"
+             xmlns:conv="clr-namespace:AvaloniaApplication1.Converters;assembly=AvaloniaApplication1"
              mc:Ignorable="d"
              d:DesignWidth="800"
              d:DesignHeight="450"
              x:Class="AvaloniaApplication1.Views.MainView"
              x:DataType="vm:MainViewModel">
 
-    <Design.DataContext>
-        <vm:MainViewModel />
-    </Design.DataContext>
+  <UserControl.Resources>
+    <conv:HideNavForLevelsConverter x:Key="HideNavForLevelsConverter"/>
+  </UserControl.Resources>
 
-    <DockPanel>
+  <DockPanel>
 
-        <!-- Top navigation bar -->
-        <Border DockPanel.Dock="Top" Background="#ABEDAD" Height="50">
-            <StackPanel Orientation="Horizontal"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Margin="0,0,20,0">
-                <TextBlock Text="Vysvetlivky" 
-                           Cursor="Hand" PointerPressed="Vysvetlivky_Click" 
-                           FontSize="24" Margin="30,0,70,0" 
-                           FontWeight="SemiBold" 
-                           Opacity="{Binding CurrentViewModel, 
-                             Converter={StaticResource TypeEqualsConverter},
-                             ConverterParameter={x:Type vm:VysvetlivkyOverviewModel}}"
-                           />
-                           
-                <TextBlock Text="Levely" 
-                           Cursor="Hand" PointerPressed="Levely_Click" 
-                           FontSize="24" Margin="30,0,70,0" 
-                           FontWeight="SemiBold"
-                           Opacity="{Binding CurrentViewModel, 
-                             Converter={StaticResource TypeEqualsConverter},
-                             ConverterParameter={x:Type vm:LevelyOverviewModel}}"
-                           /> 
-                <TextBlock Text="Nastavenia" 
-                           Cursor="Hand" PointerPressed="Nastavenia_Click" 
-                           FontSize="24" Margin="30,0,0,0" 
-                           FontWeight="SemiBold"
-                           Opacity="{Binding CurrentViewModel, 
-                             Converter={StaticResource TypeEqualsConverter},
-                             ConverterParameter={x:Type vm:NastaveniaOverviewModel}}"
-                           />
-            </StackPanel>
-        </Border>
+    <!-- Top navigation bar -->
+    <Border DockPanel.Dock="Top"
+            Background="#ABEDAD"
+            Height="50"
+            IsVisible="{Binding CurrentViewModel, Converter={StaticResource HideNavForLevelsConverter}}">
+      <StackPanel Orientation="Horizontal"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  Margin="0,0,20,0">
+        <TextBlock Text="Vysvetlivky" 
+                   Cursor="Hand" PointerPressed="Vysvetlivky_Click" 
+                   FontSize="24" Margin="30,0,70,0" 
+                   FontWeight="SemiBold" 
+                   Opacity="{Binding CurrentViewModel, 
+                     Converter={StaticResource TypeEqualsConverter},
+                     ConverterParameter={x:Type vm:VysvetlivkyOverviewModel}}"
+                   />
+                   
+        <TextBlock Text="Levely" 
+                   Cursor="Hand" PointerPressed="Levely_Click" 
+                   FontSize="24" Margin="30,0,70,0" 
+                   FontWeight="SemiBold"
+                   Opacity="{Binding CurrentViewModel, 
+                     Converter={StaticResource TypeEqualsConverter},
+                     ConverterParameter={x:Type vm:LevelyOverviewModel}}"
+                   /> 
+        <TextBlock Text="Nastavenia" 
+                   Cursor="Hand" PointerPressed="Nastavenia_Click" 
+                   FontSize="24" Margin="30,0,0,0" 
+                   FontWeight="SemiBold"
+                   Opacity="{Binding CurrentViewModel, 
+                     Converter={StaticResource TypeEqualsConverter},
+                     ConverterParameter={x:Type vm:NastaveniaOverviewModel}}"
+                   />
+      </StackPanel>
+    </Border>
 
-        <!-- Content area -->
-        <ContentControl Content="{Binding CurrentViewModel}">
-            <ContentControl.DataTemplates>
-                <!-- Use CLR type markup to avoid MC3074 designer errors -->
-                <DataTemplate DataType="{x:Type vm:LevelyOverviewModel}">
-                    <views:LevelyOverviewView />
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type vm:VysvetlivkyOverviewModel}">
-                    <views:VysvetlivkyOverviewView />
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type vm:NastaveniaOverviewModel}">
-                    <views:NastaveniaOverviewView />
-                </DataTemplate>
-            </ContentControl.DataTemplates>
-        </ContentControl>
+    <!-- Content area -->
+    <ContentControl Content="{Binding CurrentViewModel}">
+      <ContentControl.DataTemplates>
+        <!-- Use CLR type markup to avoid MC3074 designer errors -->
+        <DataTemplate DataType="{x:Type vm:LevelyOverviewModel}">
+          <views:LevelyOverviewView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:VysvetlivkyOverviewModel}">
+          <views:VysvetlivkyOverviewView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:NastaveniaOverviewModel}">
+          <views:NastaveniaOverviewView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type lm:Level1Model}">
+          <views:Level1View />
+        </DataTemplate>
 
-    </DockPanel>
+      </ContentControl.DataTemplates>
+    </ContentControl>
+
+  </DockPanel>
 
 </UserControl>

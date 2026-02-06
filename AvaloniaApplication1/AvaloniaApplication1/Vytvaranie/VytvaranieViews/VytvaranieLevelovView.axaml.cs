@@ -10,4 +10,9 @@ public partial class VytvaranieLevelovView : UserControl
     {
         InitializeComponent();
     }
+
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
 }
