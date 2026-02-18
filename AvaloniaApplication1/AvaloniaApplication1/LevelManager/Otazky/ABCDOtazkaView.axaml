@@ -1,5 +1,25 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="AvaloniaApplication1.Views.Questions.ABCDOtazkaView">
-  <TextBlock Text="ABCD otázka"/>
+             xmlns:otazky="using:AvaloniaApplication1.LevelManager.Otazky"
+             x:Class="AvaloniaApplication1.Views.Questions.ABCDOtazkaView"
+             x:DataType="otazky:ABCDOtazka">
+
+    <StackPanel Spacing="15">
+
+        <TextBlock Text="{Binding OtazkaText}"
+                   FontSize="24"
+                   TextWrapping="Wrap"/>
+
+        <ItemsControl ItemsSource="{Binding Moznosti}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding}"
+                            Command="{Binding $parent[ContentControl].DataContext.OdpovedCommand}"
+                            CommandParameter="{Binding}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+    </StackPanel>
+
 </UserControl>

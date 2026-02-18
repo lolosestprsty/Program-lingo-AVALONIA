@@ -1,12 +1,23 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:AvaloniaApplication1"
+             xmlns:ot="using:AvaloniaApplication1.LevelManager.Otazky"
+             xmlns:views="using:AvaloniaApplication1.Views.Questions"
              xmlns:conv="clr-namespace:AvaloniaApplication1.Converters"
              x:Class="AvaloniaApplication1.App"
              RequestedThemeVariant="Light">
 
     <Application.DataTemplates>
         <local:ViewLocator/>
+
+        <DataTemplate DataType="ot:ABCDOtazka">
+            <views:ABCDOtazkaView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="ot:VstupnaOtazka">
+            <views:VstupnaOtazkaView/>
+        </DataTemplate>
+
     </Application.DataTemplates>
 
     <Application.Resources>

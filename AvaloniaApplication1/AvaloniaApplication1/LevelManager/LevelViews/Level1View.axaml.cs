@@ -18,5 +18,6 @@ public partial class Level1View : UserControl
         AvaloniaXamlLoader.Load(this);
     }
 
+
     private Level1Model? L1M => DataContext as Level1Model;
 }

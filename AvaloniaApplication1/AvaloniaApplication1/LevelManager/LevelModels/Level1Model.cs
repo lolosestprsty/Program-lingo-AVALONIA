@@ -40,15 +40,51 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         {
             Otazky.Add(new ABCDOtazka
             {
-                OtazkaText = "Čo je if?",
-                Moznosti = ["cyklus", "podmienka", "premenná", "trieda"],
+                OtazkaText = "Ktorá spoločnosť vyvinula jazyk C#?",
+                Moznosti = ["Apple", "Google", "Microsoft", "IBM"],
+                SpravnaMoznostIndex = 2
+            });
+
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "V ktorom roku bol jazyk C# predstavený spolu s .NET Framework?",
+                Moznosti = ["1998", "2002", "2005", "2010"],
                 SpravnaMoznostIndex = 1
             });
 
-            Otazky.Add(new VstupnaOtazka
+            Otazky.Add(new ABCDOtazka
             {
-                OtazkaText = "Napíš kľúčové slovo pre podmienku",
-                SpravnaOdpoved = "if"
+                OtazkaText = "Akú príponu majú zdrojové súbory jazyka C#?",
+                Moznosti = [".cpp", ".java", ".cs", ".csharp"],
+                SpravnaMoznostIndex = 2
+            });
+
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Je jazyk C# case sensitive?",
+                Moznosti = ["Áno", "Nie"],
+                SpravnaMoznostIndex = 0
+            });
+
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Ktorá z možností NIE JE uvedená ako využitie C#?",
+                Moznosti = ["Desktopové aplikácie", "Mobilné aplikácie", "Programovanie mikrovlniek", "Počítačové hry"],
+                SpravnaMoznostIndex = 2
+            });
+
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Ako sa nazýva automatická správa pamäte v C#?",
+                Moznosti = ["Memory Cleaner", "Garbage Collector", "Memory Manager", "AutoDelete"],
+                SpravnaMoznostIndex = 1
+            });
+
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Ktoré vývojové prostredie sa odporúča na začiatok s C#?",
+                Moznosti = ["PyCharm", "Eclipse", "Microsoft Visual Studio", "NetBeans"],
+                SpravnaMoznostIndex = 2
             });
         }
 
@@ -58,7 +94,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 bool spravna = AktualnaOtazka!.SkontrolujOdpoved(odpoved);
 
                 if (spravna)
-                    Progres += 100 / Otazky.Count;
+                    Progres = (int)((double)(_index + 1) / Otazky.Count * 100);
                 else
                 {
                     Otazky.Remove(AktualnaOtazka);
