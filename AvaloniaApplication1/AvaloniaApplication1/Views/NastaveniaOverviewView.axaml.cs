@@ -10,6 +10,10 @@ namespace AvaloniaApplication1.Views
         {
             InitializeComponent();
         }
+        private void InitializeComponent()
+        {
+            AvaloniaXamlLoader.Load(this);
+        }
     }
     
 }

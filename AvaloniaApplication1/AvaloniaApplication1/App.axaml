@@ -17,7 +17,6 @@
         <DataTemplate DataType="ot:VstupnaOtazka">
             <views:VstupnaOtazkaView/>
         </DataTemplate>
-
     </Application.DataTemplates>
 
     <Application.Resources>

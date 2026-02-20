@@ -3,12 +3,25 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
   
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
+  
+  <!--<ItemGroup>
+    <AvaloniaXaml Remove="App.axaml" />
+    <AvaloniaXaml Remove="LevelManager\LevelViews\Level1View.axaml" />
+    <AvaloniaXaml Remove="LevelManager\Otazky\ABCDOtazkaView.axaml" />
+    <AvaloniaXaml Remove="LevelManager\Otazky\VstupnaOtazkaView.axaml" />
+    <AvaloniaXaml Remove="Views\LevelyOverviewView.axaml" />
+    <AvaloniaXaml Remove="Views\MainView.axaml" />
+    <AvaloniaXaml Remove="Views\MainWindow.axaml" />
+    <AvaloniaXaml Remove="Views\NastaveniaOverviewView.axaml" />
+    <AvaloniaXaml Remove="Views\VysvetlivkyOverviewView.axaml" />
+  </ItemGroup>-->
+	<!-- Rely on Avalonia SDK defaults to include .axaml files for compilation. -->
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />

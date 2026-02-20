@@ -2,6 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Layout;
+using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using AvaloniaApplication1.ViewModels;
 using System;
@@ -13,6 +14,10 @@ namespace AvaloniaApplication1.Views
         public MainView()
         {
             InitializeComponent();
+        }
+        private void InitializeComponent()
+        {
+            AvaloniaXamlLoader.Load(this);
         }
 
         private MainViewModel? VM => DataContext as MainViewModel;
