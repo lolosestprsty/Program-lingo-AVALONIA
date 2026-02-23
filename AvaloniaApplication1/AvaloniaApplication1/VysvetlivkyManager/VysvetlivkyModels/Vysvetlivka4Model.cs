@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AvaloniaApplication1.VysvetlivkyManager;
-
-public class Vysvetlivka2Model
+namespace AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyModels
 {
+    internal class Vysvetlivka4Model
+    {
+    }
 }

@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             xmlns:vmod="clr-namespace:AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.Views.VysvetlivkyOverviewView"
              x:DataType="vm:VysvetlivkyOverviewModel"
@@ -21,26 +22,61 @@
                        PointerPressed="Vysvetlivka1_Click"/>
             <TextBlock Text="02 instalacia MVS" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"
                        PointerPressed="Vysvetlivka2_Click"/>
-            <TextBlock Text="03 Zaklady syntaxe" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
-            <TextBlock Text="04 Pretypovanie a konverzia" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
-            <TextBlock Text="placeholder1" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
-            <TextBlock Text="placeholder2" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
-            <TextBlock Text="placeholder3" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
-            <TextBlock Text="placeholder4" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
-            <TextBlock Text="placeholder5" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
-            <TextBlock Text="placeholder6" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
-            <TextBlock Text="placeholder7" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
-            <TextBlock Text="placeholder8" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"/>
+            <TextBlock Text="03 Zaklady syntaxe" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"
+                       PointerPressed="Vysvetlivka3_Click"/>
+            <TextBlock Text="04 Pretypovanie a konverzia" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka4_Click"/>
+            <TextBlock Text="placeholder2" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka5_Click"/>
+            <TextBlock Text="placeholder3" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka6_Click"/>
+            <TextBlock Text="placeholder4" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka7_Click"/>
+            <TextBlock Text="placeholder5" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka8_Click"/>
+            <TextBlock Text="placeholder6" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka9_Click"/>
+            <TextBlock Text="placeholder7" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka10_Click"/>
+            <TextBlock Text="placeholder8" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka11_Click"/>
         </StackPanel>
 
     </ScrollViewer>
     <ContentControl Content="{Binding SelectedVysvetlivka}" Grid.Column="2" HorizontalAlignment="Right">
         <ContentControl.DataTemplates>
-            <DataTemplate DataType="{x:Type vys:Vysvetlivka1Model}">
+            <DataTemplate DataType="vmod:Vysvetlivka1Model">
                 <vys:Vysvetlivka1View />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vys:Vysvetlivka2Model}">
+            <DataTemplate DataType="vmod:Vysvetlivka2Model">
                 <vys:Vysvetlivka2View />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka3Model">
+                <vys:Vysvetlivka3View />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka4Model">
+                <vys:Vysvetlivka4View />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka5Model">
+                <vys:Vysvetlivka5View />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka6Model">
+                <vys:Vysvetlivka6View />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka7Model">
+                <vys:Vysvetlivka7View />z
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka8Model">
+                <vys:Vysvetlivka8View />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka9Model">
+                <vys:Vysvetlivka9View />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka10Model">
+                <vys:Vysvetlivka10View />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka11Model">
+                <vys:Vysvetlivka11View />
             </DataTemplate>
         </ContentControl.DataTemplates>
     </ContentControl>

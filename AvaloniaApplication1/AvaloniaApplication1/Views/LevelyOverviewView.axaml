@@ -25,8 +25,8 @@
                                 Command="{Binding DataContext.LevelSelectedCommand, RelativeSource={RelativeSource AncestorType=views:LevelyOverviewView}}"
                                 CommandParameter="{Binding }"
                                 Background="{Binding IsEnabled, Converter={StaticResource BoolToBrushConverter}}"
-                                BorderBrush="#ABEDAD"
-                                BorderThickness="{Binding IsEnabled, Converter={StaticResource BoolToThicknessConverter}}"
+                                BorderBrush="{Binding IsEnabled, Converter={StaticResource BoolToBorderBrushConverter}}"
+                                BorderThickness="{Binding IsEnabled, Converter={StaticResource BoolToBorderThicknessConverter}}"
                                 CornerRadius="{Binding IsEnabled, Converter={StaticResource BoolToCornerRadiusConverter}}">
                              <Grid>
                                  <TextBlock Text="{Binding LevelName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Foreground="White"/>

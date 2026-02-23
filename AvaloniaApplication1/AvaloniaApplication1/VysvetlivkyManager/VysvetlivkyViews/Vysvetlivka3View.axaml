@@ -1,0 +1,146 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka3View">
+     <ScrollViewer>
+        <StackPanel Margin="40"
+                    Spacing="16"
+                    MaxWidth="800">
+
+            <!-- HLAVNÝ NADPIS -->
+            <TextBlock Text="03 Základné príkazy a syntax"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <!-- ZÁKLADY SYNTAXE -->
+            <TextBlock Text="Základy syntaxe"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Každý riadok kódu v jazyku C# ukončujeme bodkočiarkou (;). Každý blok kódu začína znakom { a končí znakom }. Bloky sa používajú pri triedach, metódach, podmienkach aj cykloch." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="Console.WriteLine(&quot;Hello, World!&quot;);"/>
+            </Border>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Bodka v zápise Console.WriteLine znamená, že voláme metódu WriteLine z triedy Console." />
+
+            <!-- KOMENTÁRE -->
+            <TextBlock Text="Komentáre"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Komentáre slúžia na vysvetlenie kódu. Program ich pri spustení ignoruje." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="// jednoriadkový komentár&#x0a;/*&#x0a;   viacriadkový&#x0a;   komentár&#x0a;*/"/>
+            </Border>
+
+            <!-- VÝPIS -->
+            <TextBlock Text="Výpis na obrazovku"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Na výpis používame metódy Write a WriteLine. Write nevytvorí nový riadok, WriteLine áno." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="Console.Write(&quot;Hello &quot;);&#x0a;Console.WriteLine(&quot;World!&quot;);"/>
+            </Border>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Operátor + slúži na spájanie textu. Pri číslach vykonáva súčet." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="Console.WriteLine(3 + 3);&#x0a;Console.WriteLine(3 + &quot;3&quot;);"/>
+            </Border>
+
+            <!-- PREMENNÉ -->
+            <TextBlock Text="Premenné"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Premenná je pomenované miesto v pamäti. Pri deklarácii určujeme dátový typ a názov." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="int cislo;&#x0a;int cislo = 3;&#x0a;cislo = 5;"/>
+            </Border>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Medzi základné dátové typy patria int, long, float, double, char, string a bool." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="int cislo = 3;&#x0a;double dCislo = 3.14;&#x0a;char znak = 'x';&#x0a;string retazec = &quot;text&quot;;&#x0a;bool nasiel = true;"/>
+            </Border>
+
+            <!-- NAČÍTANIE -->
+            <TextBlock Text="Načítanie z klávesnice"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Na načítanie vstupu používame Console.ReadLine(). Pri iných typoch je potrebná konverzia pomocou Convert." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="string meno = Console.ReadLine();&#x0a;int vek = Convert.ToInt32(Console.ReadLine());&#x0a;double vaha = Convert.ToDouble(Console.ReadLine());"/>
+            </Border>
+
+            <!-- VZOROVÝ PROGRAM -->
+            <TextBlock Text="Vzorový príklad programu"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Text="using System;&#x0a;&#x0a;namespace ConsoleApp03&#x0a;{&#x0a;    class Program&#x0a;    {&#x0a;        static void Main(string[] args)&#x0a;        {&#x0a;            Console.Write(&quot;Ako sa voláš? &quot;);&#x0a;            string meno = Console.ReadLine();&#x0a;            Console.WriteLine(&quot;Ahoj &quot; + meno);&#x0a;&#x0a;            Console.ReadKey();&#x0a;        }&#x0a;    }&#x0a;}"/>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

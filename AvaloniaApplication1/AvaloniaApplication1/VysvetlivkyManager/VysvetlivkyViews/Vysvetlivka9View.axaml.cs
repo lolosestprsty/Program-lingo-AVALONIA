@@ -2,11 +2,14 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace AvaloniaApplication1.VysvetlivkyManager;
+namespace AvaloniaApplication1;
 
-public partial class Vysvetlivka2View : UserControl
+public partial class Vysvetlivka9View : UserControl
 {
-    public Vysvetlivka2View() => InitializeComponent();
+    public Vysvetlivka9View()
+    {
+        InitializeComponent();
+    }
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);

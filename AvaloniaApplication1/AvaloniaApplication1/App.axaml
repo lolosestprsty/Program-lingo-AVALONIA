@@ -23,10 +23,44 @@
         <conv:TypeEqualsConverter x:Key="TypeEqualsConverter" />
         <conv:BoolToBrushConverter x:Key="BoolToBrushConverter" />
         <conv:BoolToThicknessConverter x:Key="BoolToThicknessConverter" />
+        <conv:BoolToBorderBrushConverter x:Key="BoolToBorderBrushConverter" />
+        <conv:BoolToBorderThicknessConverter x:Key="BoolToBorderThicknessConverter" />
         <conv:BoolToCornerRadiusConverter x:Key="BoolToCornerRadiusConverter" />
-    </Application.Resources>
+   
+        <!-- Style for buttons -->
+        <ControlTheme x:Key="ButtonTheme" TargetType="Button">
+            <Setter Property="Background" Value="#D9D9D9" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="MinHeight" Value="74"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="45">
+                
+                        <ContentPresenter x:Name="PART_ContentPresenter"
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+            <Style Selector="^:pointerover">
+				<Setter Property="Background" Value="#C0C0C0" />
+
+            </Style>
+        </ControlTheme>
+    </Application.Resources>    
 
     <Application.Styles>
         <FluentTheme />
+        <!-- Slightly darken buttons on hover by lowering opacity -->
+        <Style Selector="Button:pointerover">
+            <Setter Property="Opacity" Value="0.92" />
+        </Style>
     </Application.Styles>
 </Application>

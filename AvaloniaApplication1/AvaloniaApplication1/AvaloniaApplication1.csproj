@@ -42,7 +42,7 @@
     <Compile Update="Views\VysvetlivkyOverviewView.axaml.cs">
       <DependentUpon>VysvetlivkyOverviewView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="VysvetlivkyManager\Vysvetlivka1View.axaml.cs">
+    <Compile Update="VysvetlivkyManager\VysvetlivkyViews\Vysvetlivka1View.axaml.cs">
       <DependentUpon>Vysvetlivka1View.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
