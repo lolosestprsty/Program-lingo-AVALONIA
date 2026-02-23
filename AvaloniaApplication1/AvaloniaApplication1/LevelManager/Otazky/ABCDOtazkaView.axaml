@@ -5,24 +5,31 @@
              x:Class="AvaloniaApplication1.Views.Questions.ABCDOtazkaView"
              x:DataType="otazky:ABCDOtazka">
 
-    <StackPanel Spacing="15">
+    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+        <!-- Question -->
+        <TextBlock Grid.Row="0" Text="{Binding OtazkaText}" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,0,0,20" />
 
-        <!-- Text otázky -->
-        <TextBlock Text="{Binding OtazkaText}"
-                   FontSize="24"
-                   TextWrapping="Wrap"/>
-
-        <!-- Moznosti -->
-        <ItemsControl ItemsSource="{Binding Moznosti}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate x:DataType="otazky:ABCDMoznost">
-                    <Button Content="{Binding Text}"
-                            Command="{Binding DataContext.OdpovedCommand, RelativeSource={RelativeSource AncestorType=views:ABCDOtazkaView}}"
-                            CommandParameter="{Binding Index}" />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-
-    </StackPanel>
+        <!-- Options arranged 2x2 -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" HorizontalAlignment="Center" VerticalAlignment="Center" ColumnSpacing="10" RowSpacing="10">
+            <ItemsControl ItemsSource="{Binding Moznosti}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="2" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="otazky:ABCDMoznost">
+                        <Button Content="{Binding Text}"
+                                Width="220"
+                                Height="60"
+                                Command="{Binding DataContext.OdpovedCommand, RelativeSource={RelativeSource AncestorType=views:ABCDOtazkaView}}"
+                                CommandParameter="{Binding Index}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </Grid>
 
 </UserControl>

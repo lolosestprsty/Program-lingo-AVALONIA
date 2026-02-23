@@ -11,32 +11,58 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
     public partial class Level1Model : ViewModelBase
     {
         private readonly MainViewModel _main;
-
+        private readonly int _initialCount;
+        private int _index = 0;
+        private int _correctCount = 0;
         public Level1Model(MainViewModel main)
         {
             _main = main;
 
+            //nacitanie
+            NacitajOtazky();
+
+            // remember initial count to compute progress
+            _initialCount = Otazky.Count;
+
+            // initialize index and counts
+            _index = 0;
+            _correctCount = 0;
+
             //definovanie commandu
             OdpovedCommand = new RelayCommand<object>(odpoved =>
             {
-                bool spravna = AktualnaOtazka!.SkontrolujOdpoved(odpoved);
+                if (AktualnaOtazka is null)
+                    return;
+
+                bool spravna = AktualnaOtazka.SkontrolujOdpoved(odpoved);
 
                 if (spravna)
-                    Progres = (int)((double)(_index + 1) / Otazky.Count * 100);
-                else
                 {
-                    Otazky.Remove(AktualnaOtazka);
-                    Otazky.Add(AktualnaOtazka);
+                    _correctCount++;
                 }
 
-                DalsiaOtazka();
+                // update progress (based on how many answered correctly so far)
+                Progres = (int)((double)_correctCount / _initialCount * 100);
+
+                // move to next question
+                _index++;
+
+                if (_index >= Otazky.Count)
+                {
+                    // finished - show summary
+                    CorrectCount = _correctCount;
+                    IsFinished = true;
+                    return;
+                }
+
+                AktualnaOtazka = Otazky[_index];
             });
-            //nacitanie
-            NacitajOtazky();
-            //command ku kazdej otazke
+
+            //command ku kazdej otazke (set the command on question instances so views that use it directly can call it)
             foreach (var otazka in Otazky)
                 if (otazka is ABCDOtazka a)
                     a.OdpovedCommand = OdpovedCommand;
+
             //prva otazka je aktualna
             AktualnaOtazka = Otazky.First();
         }
@@ -57,7 +83,13 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         [ObservableProperty]
         private int progres; // 0–100
 
-        private int _index;
+        [ObservableProperty]
+        private int correctCount;
+
+        [ObservableProperty]
+        private bool isFinished;
+
+        // index already declared above
 
 
         private void NacitajOtazky()
@@ -142,6 +174,18 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         }
 
         public IRelayCommand<object> OdpovedCommand { get; set; }
+
+        public IRelayCommand OkCommand =>
+            new RelayCommand(() =>
+            {
+                // only unlock next level when all questions were answered correctly
+                if (CorrectCount == _initialCount)
+                {
+                    _main.Level1Completed = true;
+                }
+                // return to overview regardless
+                _main.ShowLevelyOverviewCommand.Execute(null);
+            });
 
         private void DalsiaOtazka()
         {

@@ -26,6 +26,9 @@ namespace AvaloniaApplication1.ViewModels
             CurrentViewModel = new Level1Model(this);
         }
 
+        [ObservableProperty]
+        private bool level1Completed;
+
         [RelayCommand]
         private void ShowVysvetlivkyOverview()
         {

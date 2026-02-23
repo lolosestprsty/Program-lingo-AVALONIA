@@ -9,37 +9,37 @@
              x:DataType="vm:LevelyOverviewModel"
              xmlns:local="using:AvaloniaApplication1">
 
-  <Grid>
-      <Label>Levely</Label>
-	 <Border>
-		 <ScrollViewer HorizontalScrollBarVisibility="Visible">
-             <ItemsControl ItemsSource="{Binding LevelCollection}">
+  <Grid RowDefinitions="*,Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Border Grid.Row="0">
+      <ScrollViewer Name="levelsScrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,80">
+        <ItemsControl ItemsSource="{Binding LevelCollection}" HorizontalAlignment="Center" VerticalAlignment="Center">
                  <ItemsControl.ItemsPanel>
                      <ItemsPanelTemplate>
-                         <StackPanel Orientation="Horizontal"/>
+                         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" />
                      </ItemsPanelTemplate>
                  </ItemsControl.ItemsPanel>
                  <ItemsControl.ItemTemplate>
                      <DataTemplate>
-                         <Button Background="#62BD67" Height="100" Width="100" CornerRadius="35" Margin="80" BorderBrush="#ABEDAD" BorderThickness="8"
-                                Command="{Binding $parent[views:LevelyOverviewView]((vm:LevelyOverviewModel)DataContext).LevelSelectedCommand }" 
-                                CommandParameter="{Binding }">
-<!--                             <Image Source="{Binding ButtonImage}" Height="90" Width="90"/>
--->                         
-                            <TextBlock Text="{Binding LevelName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20"/>
-                        </Button>
+                         <Button Height="100" Width="100" Margin="40"
+                                IsEnabled="{Binding IsEnabled}"
+                                Command="{Binding DataContext.LevelSelectedCommand, RelativeSource={RelativeSource AncestorType=views:LevelyOverviewView}}"
+                                CommandParameter="{Binding }"
+                                Background="{Binding IsEnabled, Converter={StaticResource BoolToBrushConverter}}"
+                                BorderBrush="#ABEDAD"
+                                BorderThickness="{Binding IsEnabled, Converter={StaticResource BoolToThicknessConverter}}"
+                                CornerRadius="{Binding IsEnabled, Converter={StaticResource BoolToCornerRadiusConverter}}">
+                             <Grid>
+                                 <TextBlock Text="{Binding LevelName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Foreground="White"/>
+                             </Grid>
+                         </Button>
                      </DataTemplate>
                  </ItemsControl.ItemTemplate>
-                 </ItemsControl>
-			 <!--<StackPanel Orientation="Horizontal">
-                 <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
-                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
-                 </Button>
-                <Button Background="White" Height="90" Width="90" CornerRadius="50" Margin="80">
-                     <Image Source="avares://AvaloniaApplication1/Assets/ButtonLevel.png" Height="90" Width="90"/>
-                 </Button>
-             </StackPanel>-->
-         </ScrollViewer>
-     </Border>
+        </ItemsControl>
+      </ScrollViewer>
+    </Border>
+    <!-- external scrollbar placed at bottom of view -->
+    <Border Grid.Row="1" Padding="8" Background="Transparent">
+      <ScrollBar Name="levelsScrollBar" Orientation="Horizontal" Minimum="0" SmallChange="10" LargeChange="100" />
+    </Border>
   </Grid>
 </UserControl>

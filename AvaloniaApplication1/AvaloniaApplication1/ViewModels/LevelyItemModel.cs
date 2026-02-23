@@ -16,5 +16,11 @@ namespace AvaloniaApplication1.ViewModels
             get => _levelDescription;
             set => SetProperty(ref _levelDescription, value);
         }
+        private bool _isEnabled;
+        public bool IsEnabled
+        {
+            get => _isEnabled;
+            set => SetProperty(ref _isEnabled, value);
+        }
     }
 }

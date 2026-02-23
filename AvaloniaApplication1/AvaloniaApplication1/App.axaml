@@ -21,6 +21,9 @@
 
     <Application.Resources>
         <conv:TypeEqualsConverter x:Key="TypeEqualsConverter" />
+        <conv:BoolToBrushConverter x:Key="BoolToBrushConverter" />
+        <conv:BoolToThicknessConverter x:Key="BoolToThicknessConverter" />
+        <conv:BoolToCornerRadiusConverter x:Key="BoolToCornerRadiusConverter" />
     </Application.Resources>
 
     <Application.Styles>
