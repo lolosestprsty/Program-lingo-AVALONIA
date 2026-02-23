@@ -10,8 +10,8 @@ namespace AvaloniaApplication1.Converters
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             if (value is bool b && b)
-                return new SolidColorBrush(Color.Parse("#ABEDAD")); // enabled - light green border
-            return new SolidColorBrush(Color.Parse("#5A5A5A")); // disabled - darker gray border
+                return new SolidColorBrush(Color.Parse("#A8E6AE")); // enabled - light green border
+            return new SolidColorBrush(Color.Parse("#9B9B9B")); // disabled - light gray border
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) => throw new NotSupportedException();

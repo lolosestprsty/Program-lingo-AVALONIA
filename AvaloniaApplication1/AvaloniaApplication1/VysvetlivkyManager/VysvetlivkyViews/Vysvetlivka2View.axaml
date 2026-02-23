@@ -1,6 +1,6 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="AvaloniaApplication1.VysvetlivkyManager.Vysvetlivka2View">
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka2View">
 
     <ScrollViewer>
         <StackPanel Margin="40"

@@ -8,11 +8,12 @@
              x:Class="AvaloniaApplication1.Views.VysvetlivkyOverviewView"
              x:DataType="vm:VysvetlivkyOverviewModel"
              xmlns:local="using:AvaloniaApplication1"
-             xmlns:vys="clr-namespace:AvaloniaApplication1.VysvetlivkyManager">
+             xmlns:vys="clr-namespace:AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews"
+             xmlns:vysApp="clr-namespace:AvaloniaApplication1">
 
-   <Grid RowDefinitions="*">
+   <Grid ColumnDefinitions="Auto,*">
        
-        <ScrollViewer Grid.Column="1"
+        <ScrollViewer Grid.Column="0"
                   VerticalScrollBarVisibility="Auto"
                   MaxWidth="250"
                   HorizontalAlignment="Left">
@@ -43,7 +44,7 @@
         </StackPanel>
 
     </ScrollViewer>
-    <ContentControl Content="{Binding SelectedVysvetlivka}" Grid.Column="2" HorizontalAlignment="Right">
+    <ContentControl Content="{Binding SelectedVysvetlivka}" Grid.Column="1" HorizontalAlignment="Center">
         <ContentControl.DataTemplates>
             <DataTemplate DataType="vmod:Vysvetlivka1Model">
                 <vys:Vysvetlivka1View />
@@ -55,28 +56,28 @@
                 <vys:Vysvetlivka3View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka4Model">
-                <vys:Vysvetlivka4View />
+                <vysApp:Vysvetlivka4View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka5Model">
-                <vys:Vysvetlivka5View />
+                <vysApp:Vysvetlivka5View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka6Model">
-                <vys:Vysvetlivka6View />
+                <vysApp:Vysvetlivka6View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka7Model">
-                <vys:Vysvetlivka7View />z
+                <vysApp:Vysvetlivka7View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka8Model">
-                <vys:Vysvetlivka8View />
+                <vysApp:Vysvetlivka8View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka9Model">
-                <vys:Vysvetlivka9View />
+                <vysApp:Vysvetlivka9View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka10Model">
-                <vys:Vysvetlivka10View />
+                <vysApp:Vysvetlivka10View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka11Model">
-                <vys:Vysvetlivka11View />
+                <vysApp:Vysvetlivka11View />
             </DataTemplate>
         </ContentControl.DataTemplates>
     </ContentControl>

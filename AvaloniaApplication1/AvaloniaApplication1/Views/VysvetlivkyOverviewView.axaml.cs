@@ -62,9 +62,5 @@ namespace AvaloniaApplication1.Views
     {
         VOM?.ShowVysvetlivka11Command.Execute(null);
     }
-        private void Vysvetlivka3_Click(object? sender, PointerPressedEventArgs e)
-        {
-            VOM?.ShowVysvetlivka3Command.Execute(null);
-        }
     }
 }
