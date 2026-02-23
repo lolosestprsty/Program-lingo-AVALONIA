@@ -32,7 +32,8 @@
                    Maximum="100"
                    Value="{Binding Progres}"
                    CornerRadius="5"
-                   Foreground="#62BD67"/>
+                   Foreground="{Binding ProgressColor}"
+                   HorizontalAlignment="Stretch" />
     </Grid>
     <ContentControl Grid.Row="1"
                 Grid.RowSpan="2"

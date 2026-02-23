@@ -14,6 +14,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         private readonly int _initialCount;
         private int _index = 0;
         private int _correctCount = 0;
+        private int _answeredCount = 0;
         public Level1Model(MainViewModel main)
         {
             _main = main;
@@ -36,13 +37,22 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 bool spravna = AktualnaOtazka.SkontrolujOdpoved(odpoved);
 
+                // count every answered question
+                _answeredCount++;
+
                 if (spravna)
                 {
                     _correctCount++;
+                    ProgressColor = Brushes.Green;
+                }
+                else
+                {
+                    // mark progress color red for wrong answer
+                    ProgressColor = Brushes.Red;
                 }
 
-                // update progress (based on how many answered correctly so far)
-                Progres = (int)((double)_correctCount / _initialCount * 100);
+                // update progress (based on how many questions were answered so far)
+                Progres = (int)((double)_answeredCount / _initialCount * 100);
 
                 // move to next question
                 _index++;
@@ -84,6 +94,9 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         private int progres; // 0–100
 
         [ObservableProperty]
+        private Avalonia.Media.IBrush progressColor = Brushes.Green;
+
+        [ObservableProperty]
         private int correctCount;
 
         [ObservableProperty]
@@ -91,7 +104,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         // index already declared above
 
-
+        #region Nacitaj Otazky
         private void NacitajOtazky()
         {
             Otazky.Add(new ABCDOtazka
@@ -172,7 +185,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 SpravnaMoznostIndex = 2
             });
         }
-
+        #endregion
         public IRelayCommand<object> OdpovedCommand { get; set; }
 
         public IRelayCommand OkCommand =>
