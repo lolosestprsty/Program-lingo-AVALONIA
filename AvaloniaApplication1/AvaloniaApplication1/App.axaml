@@ -17,6 +17,10 @@
         <DataTemplate DataType="ot:VstupnaOtazka">
             <views:VstupnaOtazkaView/>
         </DataTemplate>
+
+        <DataTemplate DataType="ot:ParovaciaOtazka">
+            <ot:ParovaciaOtazkaView/>
+        </DataTemplate>
     </Application.DataTemplates>
 
     <Application.Resources>

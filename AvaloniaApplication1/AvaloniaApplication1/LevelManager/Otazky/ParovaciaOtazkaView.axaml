@@ -1,0 +1,57 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ot="using:AvaloniaApplication1.LevelManager.Otazky"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication1.LevelManager.Otazky.ParovaciaOtazkaView"
+             x:DataType="ot:ParovaciaOtazka">
+
+    <StackPanel Spacing="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <!-- Question Text -->
+        <TextBlock Text="{Binding OtazkaText}" 
+                   FontSize="24" 
+                   FontWeight="Bold"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <!-- Two Columns for Matching -->
+        <Grid ColumnDefinitions="Auto,40,Auto" HorizontalAlignment="Center">
+            <!-- Left Column -->
+            <StackPanel Grid.Column="0" Spacing="10" VerticalAlignment="Center">
+                <ItemsControl ItemsSource="{Binding LavyStlpec}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Spacing="10"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="ot:ParovaciaPolozka">
+                            <ot:ParovaciaPolozkaButton DataContext="{Binding}" IsLeft="True"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+
+            <!-- Spacing Column -->
+            <Border Grid.Column="1"/>
+
+            <!-- Right Column -->
+            <StackPanel Grid.Column="2" Spacing="10" VerticalAlignment="Center">
+                <ItemsControl ItemsSource="{Binding PravyStlpec}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Spacing="10"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="ot:ParovaciaPolozka">
+                            <ot:ParovaciaPolozkaButton DataContext="{Binding}" IsLeft="False"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</UserControl>

@@ -18,7 +18,7 @@
     <Grid ColumnDefinitions="Auto,*"
           VerticalAlignment="Center">
 
-      <Button Content="?"
+      <Button Content="X"
               FontSize="25"
               HorizontalAlignment="Left"
               Cursor="Hand"
@@ -50,7 +50,7 @@
     <Border Grid.RowSpan="3" Background="#80000000" IsVisible="{Binding IsFinished}">
         <Border HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" Padding="20">
             <StackPanel Spacing="10">
-                <TextBlock Text="Koniec leve?a" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" />
+                <TextBlock Text="Koniec levelu" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" />
                 <TextBlock Text="{Binding CorrectCount, StringFormat='Spravne odpovede: {0}'}" HorizontalAlignment="Center" />
                 <Button Content="OK" Command="{Binding OkCommand}" HorizontalAlignment="Center" />
             </StackPanel>

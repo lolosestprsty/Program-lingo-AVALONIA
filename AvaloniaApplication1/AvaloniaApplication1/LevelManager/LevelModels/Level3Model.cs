@@ -67,6 +67,11 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                     a.OdpovedCommand = OdpovedCommand;
                 else if (otazka is VstupnaOtazka v)
                     v.OdpovedCommand = OdpovedCommand;
+                else if (otazka is ParovaciaOtazka p)
+                {
+                    p.OdpovedCommand = OdpovedCommand;
+                    p.SelectCommand = new RelayCommand<ParovaciaPolozka>(item => p.SelectItem(item!));
+                }
             }
 
             AktualnaOtazka = Otazky.First();
@@ -130,61 +135,31 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 SpravnaOdpoved = "char"
             });
 
-            // Otázka 13 - Spoj dátový typ int s významom
-            Otazky.Add(new ABCDOtazka
+            // Otázka 13-16 - Spoj dvojice (dátové typy s význammi)
+            var parovaciaOtazka = new ParovaciaOtazka
             {
-                OtazkaText = "Spoj dátový typ 'int' s jeho významom:",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="celé číslo", Index=0 },
-                    new ABCDMoznost{ Text="desatinné číslo", Index=1 },
-                    new ABCDMoznost{ Text="jeden znak", Index=2 },
-                    new ABCDMoznost{ Text="text", Index=3 },
-                },
-                SpravnaMoznostIndex = 0
-            });
+                OtazkaText = "Spoj dvojice - Dátové typy a ich významy"
+            };
 
-            // Otázka 14 - Spoj dátový typ double s významom
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Spoj dátový typ 'double' s jeho významom:",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="celé číslo", Index=0 },
-                    new ABCDMoznost{ Text="desatinné číslo", Index=1 },
-                    new ABCDMoznost{ Text="jeden znak", Index=2 },
-                    new ABCDMoznost{ Text="text", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
+            // Ľavý stĺpec - dátové typy
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "int", Index = 0, IsLeft = true });
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "double", Index = 1, IsLeft = true });
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "char", Index = 2, IsLeft = true });
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "string", Index = 3, IsLeft = true });
 
-            // Otázka 15 - Spoj dátový typ char s významom
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Spoj dátový typ 'char' s jeho významom:",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="celé číslo", Index=0 },
-                    new ABCDMoznost{ Text="desatinné číslo", Index=1 },
-                    new ABCDMoznost{ Text="jeden znak", Index=2 },
-                    new ABCDMoznost{ Text="text", Index=3 },
-                },
-                SpravnaMoznostIndex = 2
-            });
+            // Pravý stĺpec - významy (v inom poradí)
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "text", Index = 0, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "celé číslo", Index = 1, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "desatinné číslo", Index = 2, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "jeden znak", Index = 3, IsLeft = false });
 
-            // Otázka 16 - Spoj dátový typ string s významom
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Spoj dátový typ 'string' s jeho významom:",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="celé číslo", Index=0 },
-                    new ABCDMoznost{ Text="desatinné číslo", Index=1 },
-                    new ABCDMoznost{ Text="jeden znak", Index=2 },
-                    new ABCDMoznost{ Text="text", Index=3 },
-                },
-                SpravnaMoznostIndex = 3
-            });
+            // Správne páry
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "int", Prava = "celé číslo" });
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "double", Prava = "desatinné číslo" });
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "char", Prava = "jeden znak" });
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "string", Prava = "text" });
+
+            Otazky.Add(parovaciaOtazka);
         }
     }
 }

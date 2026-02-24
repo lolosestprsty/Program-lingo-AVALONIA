@@ -11,6 +11,7 @@
     <!-- Answer TextBox -->
     <TextBox Grid.Row="1" 
              x:Name="AnswerTextBox"
+             Text="{Binding UserInput}"
              Width="400" 
              Height="50"
              FontSize="18"
@@ -20,19 +21,16 @@
     
     <!-- Submit Button -->
     <Button Grid.Row="2"
+            x:Name="SubmitButton"
             Content="Odosla?"
             Width="200"
-            Height="50"
+            Theme="{StaticResource ButtonTheme}"
             FontSize="18"
             HorizontalAlignment="Center"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
             Command="{Binding OdpovedCommand}"
-            CommandParameter="{Binding #AnswerTextBox.Text}">
-      <Button.Styles>
-        <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
-          <Setter Property="CornerRadius" Value="20" />
-        </Style>
-      </Button.Styles>
-    </Button>
+            CommandParameter="{Binding UserInput}" />
   </Grid>
   
 </UserControl>

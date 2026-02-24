@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ot="using:AvaloniaApplication1.LevelManager.Otazky"
+             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="50"
+             x:Class="AvaloniaApplication1.LevelManager.Otazky.ParovaciaPolozkaButton"
+             x:DataType="ot:ParovaciaPolozka">
+
+    <Button x:Name="MainButton"
+            Content="{Binding Text}"
+            IsEnabled="{Binding IsEnabled}"
+            MinWidth="200"
+            MinHeight="50"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#D9D9D9"
+            BorderBrush="Gray"
+            BorderThickness="2"
+            CornerRadius="8"
+            Margin="5"
+            Click="Button_Click">
+        <Button.Styles>
+            <Style Selector="Button[IsEnabled=False]">
+                <Setter Property="Opacity" Value="0.3"/>
+            </Style>
+        </Button.Styles>
+    </Button>
+</UserControl>
