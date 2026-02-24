@@ -35,6 +35,25 @@ namespace AvaloniaApplication1.Views
 
             var tcs = new System.Threading.Tasks.TaskCompletionSource<bool>();
 
+            var buttonTheme = Application.Current?.Resources["ButtonTheme"] as Avalonia.Styling.ControlTheme;
+
+            var yesBtn = new Button 
+            { 
+                Content = "Áno", 
+                Width = 90,
+                Theme = buttonTheme,
+                HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+                VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center
+            };
+            var noBtn = new Button 
+            { 
+                Content = "Nie", 
+                Width = 90,
+                Theme = buttonTheme,
+                HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+                VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center
+            };
+
             var dlg = new Window
             {
                 Width = 420,
@@ -47,27 +66,26 @@ namespace AvaloniaApplication1.Views
                     Margin = new Thickness(12),
                     Children =
                     {
-                        new TextBlock { Text = "Naozaj chcete opusti? aplikáciu?", Margin = new Thickness(0,0,0,12) },
+                        new TextBlock 
+                        { 
+                            Text = "Naozaj chcete opusti? aplikáciu?", 
+                            Margin = new Thickness(0,0,0,12),
+                            TextAlignment = Avalonia.Media.TextAlignment.Center,
+                            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
+                        },
                         new StackPanel
                         {
                             Orientation = Avalonia.Layout.Orientation.Horizontal,
                             HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
                             Spacing = 10,
-                            Children =
-                            {
-                                new Button { Name = "YesBtn", Content = "Áno", Width = 90 },
-                                new Button { Name = "NoBtn", Content = "Nie", Width = 90 }
-                            }
+                            Children = { yesBtn, noBtn }
                         }
                     }
                 }
             };
 
-            var yes = dlg.FindControl<Button>("YesBtn");
-            var no = dlg.FindControl<Button>("NoBtn");
-
-            if (yes != null) yes.Click += (_, __) => { tcs.TrySetResult(true); dlg.Close(); };
-            if (no != null) no.Click += (_, __) => { tcs.TrySetResult(false); dlg.Close(); };
+            yesBtn.Click += (_, __) => { tcs.TrySetResult(true); dlg.Close(); };
+            noBtn.Click += (_, __) => { tcs.TrySetResult(false); dlg.Close(); };
 
             await dlg.ShowDialog(owner);
             var result = await tcs.Task;

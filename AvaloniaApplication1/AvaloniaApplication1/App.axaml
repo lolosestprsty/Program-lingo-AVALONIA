@@ -33,7 +33,7 @@
             <Setter Property="BorderThickness" Value="2" />
             <Setter Property="Padding" Value="0" />
             <Setter Property="Margin" Value="5" />
-            <Setter Property="MinHeight" Value="74"/>
+            <Setter Property="MinHeight" Value="40"/>
             <Setter Property="Template">
                 <ControlTemplate>
                     <Border Background="{TemplateBinding Background}"

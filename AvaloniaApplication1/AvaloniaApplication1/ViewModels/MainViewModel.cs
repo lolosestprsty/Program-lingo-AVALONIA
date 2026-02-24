@@ -30,6 +30,24 @@ namespace AvaloniaApplication1.ViewModels
         private bool level1Completed;
 
         [RelayCommand]
+        private void ShowLevel2()
+        {
+            CurrentViewModel = new Level2Model(this);
+        }
+
+        [ObservableProperty]
+        private bool level2Completed;
+
+        [RelayCommand]
+        private void ShowLevel3()
+        {
+            CurrentViewModel = new Level3Model(this);
+        }
+
+        [ObservableProperty]
+        private bool level3Completed;
+
+        [RelayCommand]
         private void ShowVysvetlivkyOverview()
         {
             CurrentViewModel = new VysvetlivkyOverviewModel();
@@ -38,7 +56,7 @@ namespace AvaloniaApplication1.ViewModels
         [RelayCommand]
         private void ShowNastaveniaOverview()
         {
-            CurrentViewModel = new NastaveniaOverviewModel();
+            CurrentViewModel = new NastaveniaOverviewModel(this);
         }
     }
 }

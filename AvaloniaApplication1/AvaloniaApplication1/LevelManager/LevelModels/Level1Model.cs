@@ -191,8 +191,9 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         public IRelayCommand OkCommand =>
             new RelayCommand(() =>
             {
-                // only unlock next level when all questions were answered correctly
-                if (CorrectCount == _initialCount)
+                // unlock next level when 75% or more questions were answered correctly
+                double percentageCorrect = (double)CorrectCount / _initialCount * 100;
+                if (percentageCorrect >= 75)
                 {
                     _main.Level1Completed = true;
                 }

@@ -28,6 +28,13 @@
                                 BorderBrush="{Binding IsEnabled, Converter={StaticResource BoolToBorderBrushConverter}}"
                                 BorderThickness="{Binding IsEnabled, Converter={StaticResource BoolToBorderThicknessConverter}}"
                                 CornerRadius="{Binding IsEnabled, Converter={StaticResource BoolToCornerRadiusConverter}}">
+                             <Button.Styles>
+                                 <Style Selector="Button:disabled">
+                                     <Setter Property="Background" Value="{Binding IsEnabled, Converter={StaticResource BoolToBrushConverter}}"/>
+                                     <Setter Property="BorderBrush" Value="{Binding IsEnabled, Converter={StaticResource BoolToBorderBrushConverter}}"/>
+                                     <Setter Property="Opacity" Value="1.0"/>
+                                 </Style>
+                             </Button.Styles>
                              <Grid>
                                  <TextBlock Text="{Binding LevelName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Foreground="White"/>
                              </Grid>

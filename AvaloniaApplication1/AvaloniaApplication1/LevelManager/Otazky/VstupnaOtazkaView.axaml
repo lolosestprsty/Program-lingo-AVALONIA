@@ -1,5 +1,38 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="AvaloniaApplication1.Views.Questions.VstupnaOtazkaView">
-  <TextBlock Text="Vstupná otázka"/>
+             xmlns:otazky="using:AvaloniaApplication1.LevelManager.Otazky"
+             x:Class="AvaloniaApplication1.Views.Questions.VstupnaOtazkaView"
+             x:DataType="otazky:VstupnaOtazka">
+  
+  <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="40">
+    <!-- Question -->
+    <TextBlock Grid.Row="0" Text="{Binding OtazkaText}" FontSize="28" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,10,0,30" FontWeight="SemiBold" />
+    
+    <!-- Answer TextBox -->
+    <TextBox Grid.Row="1" 
+             x:Name="AnswerTextBox"
+             Width="400" 
+             Height="50"
+             FontSize="18"
+             HorizontalAlignment="Center"
+             Margin="0,20,0,20"
+             Watermark="Zadajte odpove?..." />
+    
+    <!-- Submit Button -->
+    <Button Grid.Row="2"
+            Content="Odosla?"
+            Width="200"
+            Height="50"
+            FontSize="18"
+            HorizontalAlignment="Center"
+            Command="{Binding OdpovedCommand}"
+            CommandParameter="{Binding #AnswerTextBox.Text}">
+      <Button.Styles>
+        <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
+          <Setter Property="CornerRadius" Value="20" />
+        </Style>
+      </Button.Styles>
+    </Button>
+  </Grid>
+  
 </UserControl>

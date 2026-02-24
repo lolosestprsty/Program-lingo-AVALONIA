@@ -25,7 +25,9 @@ namespace AvaloniaApplication1.ViewModels
 
         private void Main_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(MainViewModel.Level1Completed))
+            if (e.PropertyName == nameof(MainViewModel.Level1Completed) ||
+                e.PropertyName == nameof(MainViewModel.Level2Completed) ||
+                e.PropertyName == nameof(MainViewModel.Level3Completed))
             {
                 UpdateLevelAvailability();
             }
@@ -33,7 +35,6 @@ namespace AvaloniaApplication1.ViewModels
 
         private void UpdateLevelAvailability()
         {
-            // level 1 always enabled
             for (int i = 0; i < LevelCollection.Count; i++)
             {
                 var item = LevelCollection[i];
@@ -43,8 +44,10 @@ namespace AvaloniaApplication1.ViewModels
                         item.IsEnabled = true;
                     else if (n == 2)
                         item.IsEnabled = _main.Level1Completed;
+                    else if (n == 3)
+                        item.IsEnabled = _main.Level2Completed;
                     else
-                        item.IsEnabled = false; // other levels locked for now
+                        item.IsEnabled = false;
                 }
             }
         }
@@ -60,6 +63,14 @@ namespace AvaloniaApplication1.ViewModels
                 if (level?.LevelName == "1")
                 {
                     _main.ShowLevel1Command.Execute(null);
+                }
+                else if (level?.LevelName == "2")
+                {
+                    _main.ShowLevel2Command.Execute(null);
+                }
+                else if (level?.LevelName == "3")
+                {
+                    _main.ShowLevel3Command.Execute(null);
                 }
             });
 

@@ -9,9 +9,65 @@
              xmlns:local="using:AvaloniaApplication1">
     <Grid>
      
-     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
-        <Label>Nastavenia</Label>
-        <Button Name="ExitButton" Content="Exit Application" />
+     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="15">
+        <Label HorizontalAlignment="Center" FontSize="24" FontWeight="Bold">Nastavenia</Label>
+        
+        <!-- Admin Login Section -->
+        <Border BorderBrush="Gray" BorderThickness="1" Padding="20" CornerRadius="5">
+            <StackPanel Spacing="10">
+                <Label HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold">Admin prístup</Label>
+                
+                <!-- Show login form when not logged in -->
+                <StackPanel Spacing="10" IsVisible="{Binding !IsAdmin}">
+                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center">
+                        Prihlásenie odomkne všetky levely
+                    </TextBlock>
+                    <TextBox Name="AdminPasswordBox"
+                             Text="{Binding AdminPasswordInput}"
+                             Watermark="Zadajte heslo"
+                             PasswordChar="•"
+                             Width="200"
+                             HorizontalAlignment="Center" />
+                    <Button Content="Prihlási? sa ako Admin"
+                            Command="{Binding AdminLoginCommand}"
+                            Theme="{StaticResource ButtonTheme}"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Width="200" />
+                </StackPanel>
+                
+                <!-- Show logout button when logged in -->
+                <StackPanel Spacing="10" IsVisible="{Binding IsAdmin}">
+                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"
+                               Foreground="Green" FontWeight="Bold">
+                        Admin prihlásený! Všetky levely odomknuté.
+                    </TextBlock>
+                    <Button Content="Odhlási? sa"
+                            Command="{Binding AdminLogoutCommand}"
+                            Theme="{StaticResource ButtonTheme}"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Width="200" />
+                </StackPanel>
+                
+                <TextBlock Text="{Binding LoginMessage}"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center"
+                           FontWeight="Bold"
+                           IsVisible="{Binding !IsAdmin}">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{Binding LoginMessageColor}" />
+                    </TextBlock.Foreground>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+        
+        <Button Name="ExitButton" 
+                Content="Exit Application" 
+                Theme="{StaticResource ButtonTheme}"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Width="200" />
      </StackPanel>
     </Grid>
 </UserControl>

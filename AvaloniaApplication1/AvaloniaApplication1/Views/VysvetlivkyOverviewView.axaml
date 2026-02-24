@@ -8,8 +8,7 @@
              x:Class="AvaloniaApplication1.Views.VysvetlivkyOverviewView"
              x:DataType="vm:VysvetlivkyOverviewModel"
              xmlns:local="using:AvaloniaApplication1"
-             xmlns:vys="clr-namespace:AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews"
-             xmlns:vysApp="clr-namespace:AvaloniaApplication1">
+             xmlns:vys="clr-namespace:AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews">
 
    <Grid ColumnDefinitions="Auto,*">
        
@@ -56,28 +55,28 @@
                 <vys:Vysvetlivka3View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka4Model">
-                <vysApp:Vysvetlivka4View />
+                <vys:Vysvetlivka4View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka5Model">
-                <vysApp:Vysvetlivka5View />
+                <vys:Vysvetlivka5View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka6Model">
-                <vysApp:Vysvetlivka6View />
+                <vys:Vysvetlivka6View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka7Model">
-                <vysApp:Vysvetlivka7View />
+                <vys:Vysvetlivka7View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka8Model">
-                <vysApp:Vysvetlivka8View />
+                <vys:Vysvetlivka8View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka9Model">
-                <vysApp:Vysvetlivka9View />
+                <vys:Vysvetlivka9View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka10Model">
-                <vysApp:Vysvetlivka10View />
+                <vys:Vysvetlivka10View />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka11Model">
-                <vysApp:Vysvetlivka11View />
+                <vys:Vysvetlivka11View />
             </DataTemplate>
         </ContentControl.DataTemplates>
     </ContentControl>
