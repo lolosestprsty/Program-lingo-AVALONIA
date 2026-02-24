@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -21,15 +23,63 @@ namespace AvaloniaApplication1.ViewModels
             LoadLevels();
             // set initial enabled state based on main
             UpdateLevelAvailability();
+            UpdatePaniPImage();
         }
 
         private void Main_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(MainViewModel.Level1Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level2Completed) ||
-                e.PropertyName == nameof(MainViewModel.Level3Completed))
+                e.PropertyName == nameof(MainViewModel.Level3Completed) ||
+                e.PropertyName == nameof(MainViewModel.Level1Failed) ||
+                e.PropertyName == nameof(MainViewModel.Level2Failed) ||
+                e.PropertyName == nameof(MainViewModel.Level3Failed))
             {
                 UpdateLevelAvailability();
+                UpdatePaniPImage();
+            }
+        }
+
+        private void UpdatePaniPImage()
+        {
+            string imageName;
+            string message;
+            
+            // Ak je aspoň jeden level neúspešný (failed), zobraziť PaniP-Sad
+            if (_main.Level1Failed || _main.Level2Failed || _main.Level3Failed)
+            {
+                imageName = "PaniP-Sad.png";
+                message = "Hupsi, škoda. Skúsiš to znovu?";
+            }
+            // Ak je aspoň jeden level úspešný (completed), zobraziť PaniP-Happy
+            else if (_main.Level1Completed || _main.Level2Completed || _main.Level3Completed)
+            {
+                imageName = "PaniP-Happy.png";
+                // Zistíme číslo najvyššieho dokončeného levelu
+                int completedLevel = 0;
+                if (_main.Level3Completed) completedLevel = 3;
+                else if (_main.Level2Completed) completedLevel = 2;
+                else if (_main.Level1Completed) completedLevel = 1;
+                message = $"Woop woop, úspešne si prešiel {completedLevel}. level!";
+            }
+            // Inak zobraziť PaniP-ENTER (žiadny level nebol dokončený)
+            else
+            {
+                imageName = "PaniP-ENTER.png";
+                message = "Začni hrať!";
+            }
+            
+            PaniPMessage = message;
+            
+            try
+            {
+                var uri = new Uri($"avares://AvaloniaApplication1/Assets/{imageName}");
+                PaniPImage = new Bitmap(AssetLoader.Open(uri));
+                Debug.WriteLine($"PaniP image updated to: {imageName}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Failed to load image {imageName}: {ex.Message}");
             }
         }
 
@@ -54,6 +104,12 @@ namespace AvaloniaApplication1.ViewModels
 
         #region Properties
         public ObservableCollection<LevelyItemModel> LevelCollection { get; set; }
+
+        [ObservableProperty]
+        private Bitmap? paniPImage;
+
+        [ObservableProperty]
+        private string paniPMessage = string.Empty;
         #endregion
         #region commands
         public IRelayCommand<LevelyItemModel> LevelSelectedCommand =>

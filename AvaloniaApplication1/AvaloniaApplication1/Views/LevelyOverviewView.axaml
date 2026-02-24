@@ -10,40 +10,72 @@
              xmlns:local="using:AvaloniaApplication1">
 
   <Grid RowDefinitions="*,Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-    <Border Grid.Row="0">
-      <ScrollViewer Name="levelsScrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,80">
-        <ItemsControl ItemsSource="{Binding LevelCollection}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                 <ItemsControl.ItemsPanel>
-                     <ItemsPanelTemplate>
-                         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" />
-                     </ItemsPanelTemplate>
-                 </ItemsControl.ItemsPanel>
-                 <ItemsControl.ItemTemplate>
-                     <DataTemplate>
-                         <Button Height="100" Width="100" Margin="40"
-                                IsEnabled="{Binding IsEnabled}"
-                                Command="{Binding DataContext.LevelSelectedCommand, RelativeSource={RelativeSource AncestorType=views:LevelyOverviewView}}"
-                                CommandParameter="{Binding }"
-                                Background="{Binding IsEnabled, Converter={StaticResource BoolToBrushConverter}}"
-                                BorderBrush="{Binding IsEnabled, Converter={StaticResource BoolToBorderBrushConverter}}"
-                                BorderThickness="{Binding IsEnabled, Converter={StaticResource BoolToBorderThicknessConverter}}"
-                                CornerRadius="{Binding IsEnabled, Converter={StaticResource BoolToCornerRadiusConverter}}">
-                             <Button.Styles>
-                                 <Style Selector="Button:disabled">
-                                     <Setter Property="Background" Value="{Binding IsEnabled, Converter={StaticResource BoolToBrushConverter}}"/>
-                                     <Setter Property="BorderBrush" Value="{Binding IsEnabled, Converter={StaticResource BoolToBorderBrushConverter}}"/>
-                                     <Setter Property="Opacity" Value="1.0"/>
-                                 </Style>
-                             </Button.Styles>
-                             <Grid>
-                                 <TextBlock Text="{Binding LevelName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Foreground="White"/>
-                             </Grid>
-                         </Button>
-                     </DataTemplate>
-                 </ItemsControl.ItemTemplate>
+    <!-- Main content with levels -->
+    <Grid Grid.Row="0">
+      <!-- Scrollovate?ný obsah s levelmi -->
+      <ScrollViewer Name="levelsScrollViewer" 
+                    HorizontalScrollBarVisibility="Hidden" 
+                    VerticalScrollBarVisibility="Disabled" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Margin="0,0,0,0">
+        <ItemsControl ItemsSource="{Binding LevelCollection}" 
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"
+                      Margin="120,0,0,0">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Button Height="100" Width="100" Margin="40"
+                      IsEnabled="{Binding IsEnabled}"
+                      Command="{Binding DataContext.LevelSelectedCommand, RelativeSource={RelativeSource AncestorType=views:LevelyOverviewView}}"
+                      CommandParameter="{Binding }"
+                      Background="{Binding IsEnabled, Converter={StaticResource BoolToBrushConverter}}"
+                      BorderBrush="{Binding IsEnabled, Converter={StaticResource BoolToBorderBrushConverter}}"
+                      BorderThickness="{Binding IsEnabled, Converter={StaticResource BoolToBorderThicknessConverter}}"
+                      CornerRadius="{Binding IsEnabled, Converter={StaticResource BoolToCornerRadiusConverter}}">
+                <Button.Styles>
+                  <Style Selector="Button:disabled">
+                    <Setter Property="Background" Value="{Binding IsEnabled, Converter={StaticResource BoolToBrushConverter}}"/>
+                    <Setter Property="BorderBrush" Value="{Binding IsEnabled, Converter={StaticResource BoolToBorderBrushConverter}}"/>
+                    <Setter Property="Opacity" Value="1.0"/>
+                  </Style>
+                </Button.Styles>
+                <Grid>
+                  <TextBlock Text="{Binding LevelName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Foreground="White"/>
+                </Grid>
+              </Button>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
         </ItemsControl>
       </ScrollViewer>
-    </Border>
+      
+      <!-- PaniP overlay postavi?ka v ?avom dolnom rohu s textom -->
+      <StackPanel HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom" 
+                  Margin="20,0,0,20"
+                  IsHitTestVisible="False"
+                  Orientation="Horizontal"
+                  Spacing="10"
+                  Name="paniPContainer">
+        <Image Source="{Binding PaniPImage}" 
+               Stretch="Uniform"
+               VerticalAlignment="Bottom"
+               Name="paniPImage"/>
+        <TextBlock Text="{Binding PaniPMessage}" 
+                   VerticalAlignment="Center"
+                   FontSize="18"
+                   FontWeight="SemiBold"
+                   Foreground="#333333"
+                   TextWrapping="Wrap"
+                   MaxWidth="200"/>
+      </StackPanel>
+    </Grid>
+    
     <!-- external scrollbar placed at bottom of view -->
     <Border Grid.Row="1" Padding="8" Background="Transparent">
       <ScrollBar Name="levelsScrollBar" Orientation="Horizontal" Minimum="0" SmallChange="10" LargeChange="100" />

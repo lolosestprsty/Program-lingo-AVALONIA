@@ -6,9 +6,14 @@ namespace AvaloniaApplication1.ViewModels
 {
     public partial class MainViewModel : ViewModelBase
     {
+        private readonly LevelyOverviewModel _levelyOverviewModel;
+        private readonly EnterModel _enterModel;
+
         public MainViewModel()
         {
-            currentViewModel = new LevelyOverviewModel(this);
+            _levelyOverviewModel = new LevelyOverviewModel(this);
+            _enterModel = new EnterModel(this);
+            currentViewModel = _enterModel;
         }
 
         [ObservableProperty]
@@ -17,7 +22,7 @@ namespace AvaloniaApplication1.ViewModels
         [RelayCommand]
         private void ShowLevelyOverview()
         {
-            CurrentViewModel = new LevelyOverviewModel(this);
+            CurrentViewModel = _levelyOverviewModel;
         }
 
         [RelayCommand]
@@ -29,6 +34,9 @@ namespace AvaloniaApplication1.ViewModels
         [ObservableProperty]
         private bool level1Completed;
 
+        [ObservableProperty]
+        private bool level1Failed;
+
         [RelayCommand]
         private void ShowLevel2()
         {
@@ -38,6 +46,9 @@ namespace AvaloniaApplication1.ViewModels
         [ObservableProperty]
         private bool level2Completed;
 
+        [ObservableProperty]
+        private bool level2Failed;
+
         [RelayCommand]
         private void ShowLevel3()
         {
@@ -46,6 +57,9 @@ namespace AvaloniaApplication1.ViewModels
 
         [ObservableProperty]
         private bool level3Completed;
+
+        [ObservableProperty]
+        private bool level3Failed;
 
         [RelayCommand]
         private void ShowVysvetlivkyOverview()

@@ -33,6 +33,13 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 if (AktualnaOtazka is null)
                     return;
 
+                // Validate empty input for VstupnaOtazka
+                if (AktualnaOtazka is VstupnaOtazka && odpoved is string textInput && string.IsNullOrWhiteSpace(textInput))
+                {
+                    Console.WriteLine("vypln textove pole");
+                    return;
+                }
+
                 bool spravna = AktualnaOtazka.SkontrolujOdpoved(odpoved);
 
                 _answeredCount++;
@@ -91,6 +98,8 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         [ObservableProperty] private int correctCount;
         [ObservableProperty] private bool isFinished;
 
+        public int TotalQuestions => _initialCount;
+
         public IRelayCommand<object> OdpovedCommand { get; set; }
 
         public IRelayCommand OkCommand =>
@@ -101,6 +110,11 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 if (percentageCorrect >= 75)
                 {
                     _main.Level3Completed = true;
+                    _main.Level3Failed = false;
+                }
+                else
+                {
+                    _main.Level3Failed = true;
                 }
                 _main.ShowLevelyOverviewCommand.Execute(null);
             });

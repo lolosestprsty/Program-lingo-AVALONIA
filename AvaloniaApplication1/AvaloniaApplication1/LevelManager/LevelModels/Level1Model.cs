@@ -102,6 +102,8 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         [ObservableProperty]
         private bool isFinished;
 
+        public int TotalQuestions => _initialCount;
+
         // index already declared above
 
         #region Nacitaj Otazky
@@ -196,6 +198,11 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 if (percentageCorrect >= 75)
                 {
                     _main.Level1Completed = true;
+                    _main.Level1Failed = false;
+                }
+                else
+                {
+                    _main.Level1Failed = true;
                 }
                 // return to overview regardless
                 _main.ShowLevelyOverviewCommand.Execute(null);

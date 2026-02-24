@@ -27,9 +27,18 @@ public partial class VstupnaOtazkaView : UserControl
     {
         if (e.Key == Key.Enter && _submitButton != null)
         {
-            if (DataContext is VstupnaOtazka otazka && otazka.OdpovedCommand?.CanExecute(otazka.UserInput) == true)
+            if (DataContext is VstupnaOtazka otazka)
             {
-                otazka.OdpovedCommand.Execute(otazka.UserInput);
+                if (string.IsNullOrWhiteSpace(otazka.UserInput))
+                {
+                    System.Console.WriteLine("vypln textove pole");
+                    return;
+                }
+                
+                if (otazka.OdpovedCommand?.CanExecute(otazka.UserInput) == true)
+                {
+                    otazka.OdpovedCommand.Execute(otazka.UserInput);
+                }
             }
         }
     }

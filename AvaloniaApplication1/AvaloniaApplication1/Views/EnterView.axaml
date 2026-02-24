@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:AvaloniaApplication1.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="AvaloniaApplication1.Views.EnterView"
+             x:DataType="vm:EnterModel"
+             Background="White">
+    
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Spacing="40">
+            
+            <TextBlock Text="Program-Lingo !!" 
+                       FontSize="80" 
+                       FontWeight="Bold"
+                       Foreground="#7FB069"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+            
+            <Grid ColumnDefinitions="Auto,Auto" 
+                  HorizontalAlignment="Center">
+                
+                <Image Grid.Column="0"
+                       Source="{Binding PaniPImage}"
+                       Width="400"
+                       Height="400"
+                       Stretch="Uniform"
+                       Margin="0,0,40,0"/>
+                
+                <Button Grid.Column="1"
+                        Content="ENTER"
+                        FontSize="36"
+                        FontWeight="Bold"
+                        Foreground="Black"
+                        Background="#E8E8E8"
+                        CornerRadius="20"
+                        Padding="60,20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Command="{Binding EnterAppCommand}">
+                    <Button.Styles>
+                        <Style Selector="Button:pointerover">
+                            <Setter Property="Background" Value="#D0D0D0"/>
+                        </Style>
+                        <Style Selector="Button:pressed">
+                            <Setter Property="Background" Value="#C0C0C0"/>
+                        </Style>
+                    </Button.Styles>
+                </Button>
+            </Grid>
+            
+        </StackPanel>
+    </Grid>
+    
+</UserControl>

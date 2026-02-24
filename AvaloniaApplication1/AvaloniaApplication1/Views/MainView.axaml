@@ -23,7 +23,7 @@
     <!-- Top navigation bar -->
     <Border DockPanel.Dock="Top"
             Background="#ABEDAD"
-            Height="50"
+            Height="80"
             IsVisible="{Binding CurrentViewModel, Converter={StaticResource HideNavForLevelsConverter}}">
       <StackPanel Orientation="Horizontal"
                   VerticalAlignment="Center"
@@ -31,7 +31,7 @@
                   Margin="0,0,20,0">
         <TextBlock Text="Vysvetlivky" 
                    Cursor="Hand" PointerPressed="Vysvetlivky_Click" 
-                   FontSize="24" Margin="30,0,70,0" 
+                   FontSize="32" Margin="40,0,80,0" 
                    FontWeight="SemiBold" 
                    Opacity="{Binding CurrentViewModel, 
                      Converter={StaticResource TypeEqualsConverter},
@@ -40,7 +40,7 @@
                    
         <TextBlock Text="Levely" 
                    Cursor="Hand" PointerPressed="Levely_Click" 
-                   FontSize="24" Margin="30,0,70,0" 
+                   FontSize="32" Margin="40,0,80,0" 
                    FontWeight="SemiBold"
                    Opacity="{Binding CurrentViewModel, 
                      Converter={StaticResource TypeEqualsConverter},
@@ -48,7 +48,7 @@
                    /> 
         <TextBlock Text="Nastavenia" 
                    Cursor="Hand" PointerPressed="Nastavenia_Click" 
-                   FontSize="24" Margin="30,0,0,0" 
+                   FontSize="32" Margin="40,0,0,0" 
                    FontWeight="SemiBold"
                    Opacity="{Binding CurrentViewModel, 
                      Converter={StaticResource TypeEqualsConverter},

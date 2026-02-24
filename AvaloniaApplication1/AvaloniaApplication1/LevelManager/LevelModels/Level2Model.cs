@@ -82,6 +82,8 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         [ObservableProperty] private int correctCount;
         [ObservableProperty] private bool isFinished;
 
+        public int TotalQuestions => _initialCount;
+
         public IRelayCommand<object> OdpovedCommand { get; set; }
 
         public IRelayCommand OkCommand =>
@@ -92,6 +94,11 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 if (percentageCorrect >= 75)
                 {
                     _main.Level2Completed = true;
+                    _main.Level2Failed = false;
+                }
+                else
+                {
+                    _main.Level2Failed = true;
                 }
                 _main.ShowLevelyOverviewCommand.Execute(null);
             });
