@@ -26,13 +26,13 @@
                        PointerPressed="Vysvetlivka3_Click"/>
             <TextBlock Text="04 Pretypovanie a konverzia" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka4_Click"/>
-            <TextBlock Text="placeholder2" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+            <TextBlock Text="05 Prikaz vetvenia if, ..." FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka5_Click"/>
-            <TextBlock Text="placeholder3" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+            <TextBlock Text="06 Prikaz SWITCH" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka6_Click"/>
-            <TextBlock Text="placeholder4" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+            <TextBlock Text="07a Prikaz cyklu FOR" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka7_Click"/>
-            <TextBlock Text="placeholder5" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+            <TextBlock Text="07b Prikaz cyklu FOR" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka8_Click"/>
             <TextBlock Text="placeholder6" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka9_Click"/>
@@ -63,8 +63,11 @@
             <DataTemplate DataType="vmod:Vysvetlivka6Model">
                 <vys:Vysvetlivka6View />
             </DataTemplate>
-            <DataTemplate DataType="vmod:Vysvetlivka7Model">
-                <vys:Vysvetlivka7View />
+            <DataTemplate DataType="vmod:Vysvetlivka7aModel">
+                <vys:Vysvetlivka7aView />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka7bModel">
+                <vys:Vysvetlivka7bView />
             </DataTemplate>
             <DataTemplate DataType="vmod:Vysvetlivka8Model">
                 <vys:Vysvetlivka8View />

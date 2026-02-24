@@ -13,22 +13,17 @@ namespace AvaloniaApplication1.Views
     {
         private ScrollViewer? _scrollViewer;
         private ScrollBar? _scrollBar;
-        private StackPanel? _paniPContainer;
 
         public LevelyOverviewView()
         {
             InitializeComponent();
             this.AttachedToVisualTree += OnAttached;
-            this.SizeChanged += OnSizeChanged;
         }
 
         private void OnAttached(object? sender, VisualTreeAttachmentEventArgs e)
         {
             _scrollViewer = this.FindControl<ScrollViewer>("levelsScrollViewer");
             _scrollBar = this.FindControl<ScrollBar>("levelsScrollBar");
-            _paniPContainer = this.FindControl<StackPanel>("paniPContainer");
-            
-            UpdatePaniPSize();
             
             if (_scrollViewer is { } sv && _scrollBar is { } sb)
             {
@@ -49,20 +44,6 @@ namespace AvaloniaApplication1.Views
                         sv.Offset = new Vector(sb.Value, sv.Offset.Y);
                     }
                 };
-            }
-        }
-
-        private void OnSizeChanged(object? sender, SizeChangedEventArgs e)
-        {
-            UpdatePaniPSize();
-        }
-
-        private void UpdatePaniPSize()
-        {
-            if (_paniPContainer != null && Bounds.Height > 0)
-            {
-                // Set PaniP container to 60% of the vertical height
-                _paniPContainer.MaxHeight = Bounds.Height * 0.6;
             }
         }
 

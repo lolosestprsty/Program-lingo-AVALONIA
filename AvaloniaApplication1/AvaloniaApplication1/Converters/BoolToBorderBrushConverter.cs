@@ -11,7 +11,7 @@ namespace AvaloniaApplication1.Converters
         {
             if (value is bool b && b)
                 return new SolidColorBrush(Color.Parse("#A8E6AE")); // enabled - light green border
-            return new SolidColorBrush(Color.Parse("#8F8F8F")); // disabled - medium gray border
+            return new SolidColorBrush(Color.Parse("#A0A0A0")); // disabled - light gray border (lighter than fill)
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) => throw new NotSupportedException();

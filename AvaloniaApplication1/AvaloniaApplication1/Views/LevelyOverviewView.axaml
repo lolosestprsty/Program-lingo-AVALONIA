@@ -9,20 +9,21 @@
              x:DataType="vm:LevelyOverviewModel"
              xmlns:local="using:AvaloniaApplication1">
 
-  <Grid RowDefinitions="*,Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+  <Grid RowDefinitions="*,Auto,Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
     <!-- Main content with levels -->
-    <Grid Grid.Row="0">
+    <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
       <!-- Scrollovate?ný obsah s levelmi -->
       <ScrollViewer Name="levelsScrollViewer" 
                     HorizontalScrollBarVisibility="Hidden" 
                     VerticalScrollBarVisibility="Disabled" 
                     HorizontalAlignment="Stretch" 
                     VerticalAlignment="Stretch" 
-                    Margin="0,0,0,0">
-        <ItemsControl ItemsSource="{Binding LevelCollection}" 
-                      HorizontalAlignment="Center" 
-                      VerticalAlignment="Center"
-                      Margin="120,0,0,0">
+                    Margin="0">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+          <ItemsControl ItemsSource="{Binding LevelCollection}" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Bottom"
+                        Margin="0">
           <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
               <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" />
@@ -52,32 +53,36 @@
             </DataTemplate>
           </ItemsControl.ItemTemplate>
         </ItemsControl>
+        </Grid>
       </ScrollViewer>
-      
-      <!-- PaniP overlay postavi?ka v ?avom dolnom rohu s textom -->
-      <StackPanel HorizontalAlignment="Left" 
-                  VerticalAlignment="Bottom" 
-                  Margin="20,0,0,20"
-                  IsHitTestVisible="False"
-                  Orientation="Horizontal"
-                  Spacing="10"
-                  Name="paniPContainer">
-        <Image Source="{Binding PaniPImage}" 
-               Stretch="Uniform"
-               VerticalAlignment="Bottom"
-               Name="paniPImage"/>
-        <TextBlock Text="{Binding PaniPMessage}" 
-                   VerticalAlignment="Center"
-                   FontSize="18"
-                   FontWeight="SemiBold"
-                   Foreground="#333333"
-                   TextWrapping="Wrap"
-                   MaxWidth="200"/>
-      </StackPanel>
     </Grid>
     
-    <!-- external scrollbar placed at bottom of view -->
-    <Border Grid.Row="1" Padding="8" Background="Transparent">
+    <!-- PaniP a text dole -->
+    <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+      <!-- PaniP úplne dole na ?avej strane -->
+      <Image Grid.Column="0"
+             Source="{Binding PaniPImage}" 
+             Stretch="Uniform"
+             VerticalAlignment="Bottom"
+             HorizontalAlignment="Left"
+             MaxHeight="250"
+             Name="paniPImage"/>
+      
+      <!-- Text ved?a PaniP -->
+      <TextBlock Grid.Column="1"
+                 Text="{Binding PaniPMessage}"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Left"
+                 Margin="20,0,0,0"
+                 FontSize="24"
+                 FontWeight="SemiBold"
+                 Foreground="White"
+                 TextWrapping="Wrap"
+                 MaxWidth="400"/>
+    </Grid>
+    
+    <!-- Scrollbar cez celú šírku dole -->
+    <Border Grid.Row="2" Padding="50,8,20,8" Background="Transparent" HorizontalAlignment="Stretch">
       <ScrollBar Name="levelsScrollBar" Orientation="Horizontal" Minimum="0" SmallChange="10" LargeChange="100" />
     </Border>
   </Grid>

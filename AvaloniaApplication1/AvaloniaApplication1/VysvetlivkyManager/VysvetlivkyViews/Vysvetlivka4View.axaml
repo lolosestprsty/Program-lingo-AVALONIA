@@ -1,8 +1,93 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka4View">
-  Welcome to Avalonia!
+  <ScrollViewer>
+        <StackPanel Margin="40"
+                    Spacing="16"
+                    MaxWidth="800">
+
+            <!-- HLAVNÝ NADPIS -->
+            <TextBlock Text="Pretypovanie / Konverzia"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Pretypovanie alebo konverzia je zmena dátového typu hodnoty na iný typ. Napríklad z desatinného čísla na celé číslo alebo zo stringu na int." />
+
+            <!-- IMPLICITNÁ -->
+            <TextBlock Text="Implicitná konverzia"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Implicitná konverzia je automatická a neprichádza pri nej k strate údajov. Napríklad pri prevode z int na double." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="int cislo = 3;&#x0a;double dCislo = cislo;&#x0a;&#x0a;Console.WriteLine(cislo);&#x0a;Console.WriteLine(dCislo);"/>
+            </Border>
+
+            <!-- EXPLICITNÁ -->
+            <TextBlock Text="Explicitná konverzia"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Explicitnú konverziu zapisuje programátor manuálne pomocou okrúhlych zátvoriek. Pri tomto type konverzie môže dôjsť k strate údajov, napríklad pri prevode z double na int." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="double dCislo = 3.14;&#x0a;int cislo = (int)dCislo;&#x0a;&#x0a;Console.WriteLine(dCislo);&#x0a;Console.WriteLine(cislo);"/>
+            </Border>
+
+            <!-- CONVERT -->
+            <TextBlock Text="Trieda Convert"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Na bezpečnú konverziu medzi typmi používame triedu Convert. Umožňuje prevody medzi string, int, double a ďalšími typmi." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Text="int cislo = 10;&#x0a;double dCislo = 3.14;&#x0a;bool nasiel = true;&#x0a;string text1 = &quot;55&quot;;&#x0a;&#x0a;Console.WriteLine(Convert.ToString(cislo));&#x0a;Console.WriteLine(Convert.ToDouble(cislo));&#x0a;Console.WriteLine(Convert.ToInt32(dCislo));&#x0a;Console.WriteLine(Convert.ToString(nasiel));"/>
+            </Border>
+
+            <!-- ODDEĽOVAČ -->
+            <TextBlock Text="Oddeľovač desatinných miest"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="V zdrojovom kóde sa vždy používa bodka ako oddeľovač desatinných miest. V konzole však závisí od jazykového nastavenia systému." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Text="double dCislo = 0.125;&#x0a;&#x0a;string text = Convert.ToString(dCislo, new CultureInfo(&quot;en-US&quot;));&#x0a;double cislo2 = Convert.ToDouble(text, new CultureInfo(&quot;en-US&quot;));"/>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

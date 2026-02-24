@@ -53,7 +53,7 @@ namespace AvaloniaApplication1.ViewModels
         [RelayCommand]
         private void ShowVysvetlivka7()
         {
-            SelectedVysvetlivka = new Vysvetlivka7Model();
+            SelectedVysvetlivka = new Vysvetlivka7aModel();
         }
         [RelayCommand]
         private void ShowVysvetlivka8()

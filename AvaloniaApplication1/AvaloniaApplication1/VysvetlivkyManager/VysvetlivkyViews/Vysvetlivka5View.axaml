@@ -1,8 +1,120 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka5View">
-  Welcome to Avalonia!
+  <ScrollViewer>
+        <StackPanel Margin="40"
+                    Spacing="16"
+                    MaxWidth="800">
+
+            <!-- HLAVNÝ NADPIS -->
+            <TextBlock Text="Príkaz vetvenia – if, else, else if"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Príkaz vetvenia používame vtedy, keď sa program potrebuje rozhodnúť, čo sa má vykonať na základe podmienky." />
+
+            <!-- IF -->
+            <TextBlock Text="Príkaz if"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Ak je podmienka splnená (true), vykoná sa blok kódu v zložených zátvorkách." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="if (podmienka)
+{
+    // blok kódu
+}"/>
+            </Border>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Pri porovnávaní používame operátor ==. Jedno = znamená priradenie hodnoty." />
+
+            <!-- LOGICKÉ OPERÁTORY -->
+            <TextBlock Text="Logické operátory"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Operátor &amp;&amp; znamená AND – obe podmienky musia byť splnené. Operátor || znamená OR – stačí, aby bola splnená aspoň jedna podmienka." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+           FontSize="15"
+           Text="if (x &gt; y &amp;&amp; x &lt; 10)
+{
+    Console.WriteLine(&quot;Podmienka splnená&quot;);
+}"/>
+            </Border>
+
+            <!-- ELSE -->
+            <TextBlock Text="Vetva else"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Vetvu else použijeme, ak chceme vykonať iný blok kódu v prípade, že podmienka nie je splnená." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                       FontSize="15"
+                       Text="if (time &lt; 18)
+                        {
+                            Console.WriteLine(&quot;Dobrý deň.&quot;);
+                        }
+                        else
+                        {
+                            Console.WriteLine(&quot;Dobrý večer.&quot;);
+                        }"/>
+            </Border>
+
+            <!-- ELSE IF -->
+            <TextBlock Text="Vetva else if"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Ak máme viac možností rozhodovania, použijeme else if. Vetva if môže byť len jedna a musí byť prvá. Vetiev else if môže byť viac. Vetva else môže byť len jedna a musí byť posledná." />
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Text="if (time &lt; 10)
+            {
+                Console.WriteLine(&quot;Dobré ráno.&quot;);
+            }
+            else if (time &lt; 20)
+            {
+                Console.WriteLine(&quot;Dobrý deň.&quot;);
+            }
+            else
+            {
+                Console.WriteLine(&quot;Dobrý večer.&quot;);
+            }" />
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

@@ -11,7 +11,7 @@ namespace AvaloniaApplication1.Converters
         {
             if (value is bool b && b)
                 return new SolidColorBrush(Color.Parse("#5CAD61")); // enabled - darker green inner
-            return new SolidColorBrush(Color.Parse("#5A5A5A")); // disabled - dark gray inner (lighter than before)
+            return new SolidColorBrush(Color.Parse("#888888")); // disabled - light gray inner
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) => throw new NotSupportedException();

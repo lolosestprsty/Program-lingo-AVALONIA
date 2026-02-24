@@ -15,6 +15,11 @@ namespace AvaloniaApplication1.Converters
             var ns = value.GetType().Namespace ?? string.Empty;
             if (ns.StartsWith("AvaloniaApplication1.LevelManager", StringComparison.Ordinal))
                 return false; // hide nav
+            
+            // Hide navigation for EnterModel
+            if (value.GetType().Name == "EnterModel")
+                return false; // hide nav
+            
             return true; // show nav for other view-models
         }
 

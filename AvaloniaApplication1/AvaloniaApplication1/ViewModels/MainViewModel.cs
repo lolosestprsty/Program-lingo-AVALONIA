@@ -1,4 +1,5 @@
 ﻿using AvaloniaApplication1.LevelManager.LevelModels;
+using AvaloniaApplication1.LevelManager.LevelModels;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -60,6 +61,42 @@ namespace AvaloniaApplication1.ViewModels
 
         [ObservableProperty]
         private bool level3Failed;
+
+        [RelayCommand]
+        private void ShowLevel4()
+        {
+            CurrentViewModel = new Level4Model(this);
+        }
+
+        [ObservableProperty]
+        private bool level4Completed;
+
+        [ObservableProperty]
+        private bool level4Failed;
+
+        [RelayCommand]
+        private void ShowLevel5()
+        {
+            CurrentViewModel = new Level5Model(this);
+        }
+
+        [ObservableProperty]
+        private bool level5Completed;
+
+        [ObservableProperty]
+        private bool level5Failed;
+
+        [RelayCommand]
+        private void ShowLevel6()
+        {
+            CurrentViewModel = new Level6Model(this);
+        }
+
+        [ObservableProperty]
+        private bool level6Completed;
+
+        [ObservableProperty]
+        private bool level6Failed;
 
         [RelayCommand]
         private void ShowVysvetlivkyOverview()

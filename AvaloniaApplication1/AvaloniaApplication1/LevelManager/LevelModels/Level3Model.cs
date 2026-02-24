@@ -162,10 +162,10 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
             parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "string", Index = 3, IsLeft = true });
 
             // Pravý stĺpec - významy (v inom poradí)
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "text", Index = 0, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "celé číslo", Index = 1, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "desatinné číslo", Index = 2, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "jeden znak", Index = 3, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "desatinné číslo", Index = 0, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "jeden znak", Index = 1, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "text", Index = 2, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "celé číslo", Index = 3, IsLeft = false });
 
             // Správne páry
             parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "int", Prava = "celé číslo" });

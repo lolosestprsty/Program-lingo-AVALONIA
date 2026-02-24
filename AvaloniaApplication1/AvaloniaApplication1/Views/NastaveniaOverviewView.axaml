@@ -1,4 +1,4 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+ï»¿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -10,25 +10,24 @@
     <Grid>
      
      <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="15">
-        <Label HorizontalAlignment="Center" FontSize="24" FontWeight="Bold">Nastavenia</Label>
         
         <!-- Admin Login Section -->
         <Border BorderBrush="Gray" BorderThickness="1" Padding="20" CornerRadius="5">
             <StackPanel Spacing="10">
-                <Label HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold">Admin prístup</Label>
+                <Label HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold">Admin prÃ­stup</Label>
                 
                 <!-- Show login form when not logged in -->
                 <StackPanel Spacing="10" IsVisible="{Binding !IsAdmin}">
                     <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center">
-                        Prihlásenie odomkne všetky levely
+                        PrihlÃ¡senie odomkne vÅ¡etky levely
                     </TextBlock>
                     <TextBox Name="AdminPasswordBox"
                              Text="{Binding AdminPasswordInput}"
                              Watermark="Zadajte heslo"
-                             PasswordChar="•"
+                             PasswordChar="â€¢"
                              Width="200"
                              HorizontalAlignment="Center" />
-                    <Button Content="Prihlási? sa ako Admin"
+                    <Button Content="prihlÃ¡siÅ¥ sa ako admin"
                             Command="{Binding AdminLoginCommand}"
                             Theme="{StaticResource ButtonTheme}"
                             HorizontalContentAlignment="Center"
@@ -40,9 +39,9 @@
                 <StackPanel Spacing="10" IsVisible="{Binding IsAdmin}">
                     <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"
                                Foreground="Green" FontWeight="Bold">
-                        Admin prihlásenı! Všetky levely odomknuté.
+                        Admin prihlÃ¡senÃ½! VÅ¡etky levely odomknutÃ©.
                     </TextBlock>
-                    <Button Content="Odhlási? sa"
+                    <Button Content="odhlÃ¡siÅ¥ sa"
                             Command="{Binding AdminLogoutCommand}"
                             Theme="{StaticResource ButtonTheme}"
                             HorizontalContentAlignment="Center"
@@ -63,7 +62,7 @@
         </Border>
         
         <Button Name="ExitButton" 
-                Content="Exit Application" 
+                Content="odÃ­sÅ¥ z aplikÃ¡cie" 
                 Theme="{StaticResource ButtonTheme}"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"

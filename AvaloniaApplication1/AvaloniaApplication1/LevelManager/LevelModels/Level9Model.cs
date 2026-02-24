@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyModels
+namespace AvaloniaApplication1.LevelManager.LevelModels
 {
-    internal class Vysvetlivka7Model
+    internal class Level9Model
     {
     }
 }

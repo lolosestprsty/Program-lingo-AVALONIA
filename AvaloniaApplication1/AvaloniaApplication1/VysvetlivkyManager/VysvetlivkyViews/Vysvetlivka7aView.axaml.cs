@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews;
 
-public partial class Vysvetlivka7View : UserControl
+public partial class Vysvetlivka7aView : UserControl
 {
-    public Vysvetlivka7View()
+    public Vysvetlivka7aView()
     {
         InitializeComponent();
     }

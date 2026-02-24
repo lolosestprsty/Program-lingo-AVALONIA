@@ -1,8 +1,132 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka6View">
-  Welcome to Avalonia!
+    <ScrollViewer>
+        <StackPanel Margin="40"
+                    Spacing="16"
+                    MaxWidth="900">
+
+            <!-- NADPIS -->
+            <TextBlock Text="Príkaz vetvenia – switch"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Príkaz switch sa používa vtedy, keď si v programe vyberáme z viacerých možností. Premenná je vyhodnotená iba raz a následne sa porovnáva s jednotlivými vetvami case." />
+
+            <!-- ZÁKLADNÁ ŠTRUKTÚRA -->
+            <TextBlock Text="Základná štruktúra"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           xml:space="preserve">
+                switch(premenna)
+                {
+                    case hodnota1:
+                        // blok programu
+                        break;
+
+                    case hodnota2:
+                        // blok programu
+                        break;
+
+                    default:
+                        // vykoná sa ak žiadna možnosť neplatí
+                        break;
+                }
+                </TextBlock>
+            </Border>
+
+            <!-- PRÍKLAD 1 -->
+            <TextBlock Text="Príklad 1 – známka ako číslo"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           xml:space="preserve">
+                Console.WriteLine("Napíš známku");
+                int grade = Convert.ToInt32(Console.ReadLine());
+
+                switch (grade)
+                {
+                    case 1: Console.WriteLine("výborný"); break;
+                    case 2: Console.WriteLine("chválitebný"); break;
+                    case 3: Console.WriteLine("dobrý"); break;
+                    case 4: Console.WriteLine("dostatočný"); break;
+                    case 5: Console.WriteLine("nedostatočný"); break;
+                    default: Console.WriteLine("Neplatná známka"); break;
+                }
+                </TextBlock>
+            </Border>
+
+            <!-- PRÍKLAD 2 -->
+            <TextBlock Text="Príklad 2 – hodnotenie ako písmeno"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           xml:space="preserve">
+                Console.WriteLine("Napíš známku");
+                char grade = Console.ReadLine()[0];
+
+                switch (grade)
+                {
+                    case 'E': Console.WriteLine("Excellent"); break;
+                    case 'V': Console.WriteLine("Very Good"); break;
+                    case 'G': Console.WriteLine("Good"); break;
+                    case 'A': Console.WriteLine("Average"); break;
+                    case 'F': Console.WriteLine("Fail"); break;
+                    default: Console.WriteLine("Error"); break;
+                }
+                </TextBlock>
+            </Border>
+
+            <!-- VYSVETLENIE -->
+            <TextBlock Text="Dôležité poznámky"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Každá vetva case musí byť ukončená príkazom break. Vetva default sa vykoná v prípade, že neplatí ani jedna z možností." />
+
+            <!-- OTÁZKY -->
+            <TextBlock Text="Otázky na precvičenie"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18" TextWrapping="Wrap"
+                       Text="1. Na čo slúži príkaz switch v jazyku C#?" />
+
+            <TextBlock FontSize="18" TextWrapping="Wrap"
+                       Text="2. Kedy je vhodnejšie použiť switch namiesto if-else?" />
+
+            <TextBlock FontSize="18" TextWrapping="Wrap"
+                       Text="3. Čo sa stane, ak v switch bloku vynecháme príkaz break?" />
+
+            <TextBlock FontSize="18" TextWrapping="Wrap"
+                       Text="4. Na čo slúži vetva default?" />
+
+            <TextBlock FontSize="18" TextWrapping="Wrap"
+                       Text="5. Naprogramuj pomocou switch výpis názvu mesiaca podľa čísla (1–12)." />
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
