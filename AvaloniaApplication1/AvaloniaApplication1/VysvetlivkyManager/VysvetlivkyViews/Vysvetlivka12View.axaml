@@ -1,10 +1,59 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka12View">
   <ScrollViewer>
-    <TextBlock Text="Vysvetlivka 12 - Obsah tu..." Margin="20"/>
-  </ScrollViewer>
+        <StackPanel Margin="40" Spacing="16" MaxWidth="900">
+
+            <TextBlock Text="Štruktúry" FontSize="30" FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18" TextWrapping="Wrap"
+                       Text="Štruktúra je používateľom definovaný dátový typ, ktorý umožňuje zoskupiť viacero údajov pod jedným názvom." />
+
+            <TextBlock Text="Definícia štruktúry" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+struct Ziak
+{
+    public string meno;
+    public int vek;
+    public double vyska;
+}
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Vytvorenie premennej typu štruktúra" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+Ziak z1 = new Ziak();
+z1.meno = "Adam";
+z1.vek = 15;
+z1.vyska = 185;
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Výpis hodnôt zo štruktúry" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+Console.WriteLine("Meno: " + z1.meno);
+Console.WriteLine("Vek: " + z1.vek);
+Console.WriteLine("Vyska: " + z1.vyska);
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Použitie štruktúr v metódach" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+static void vypisUdajeZiaka(Ziak z) { ... }
+static void zadajUdaje(ref Ziak z) { ... }
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Otázky na precvičenie" FontSize="22" FontWeight="SemiBold"/>
+            <TextBlock FontSize="18" TextWrapping="Wrap" Text="1. Vytvor štruktúru Bod2D a metódu pre vzdialenosť dvoch bodov."/>
+            <TextBlock FontSize="18" TextWrapping="Wrap" Text="2. Vytvor štruktúru Datum a over jej platnosť."/>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

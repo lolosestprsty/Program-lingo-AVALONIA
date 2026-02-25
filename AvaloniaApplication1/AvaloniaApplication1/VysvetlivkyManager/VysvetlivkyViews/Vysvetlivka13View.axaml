@@ -1,10 +1,63 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka13View">
   <ScrollViewer>
-    <TextBlock Text="Vysvetlivka 13 - Obsah tu..." Margin="20"/>
-  </ScrollViewer>
+        <StackPanel Margin="40" Spacing="16" MaxWidth="900">
+
+            <TextBlock Text="Pole štruktúr" FontSize="30" FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18" TextWrapping="Wrap"
+                       Text="Pole štruktúr funguje podobne ako pole premenných, ale každý prvok je komplexný dátový typ." />
+
+            <TextBlock Text="Vytvorenie poľa štruktúr" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+Ziak[] ziaci = new Ziak[10];
+ziaci[0].meno = "Adam";
+ziaci[0].vek = 15;
+ziaci[0].vyska = 185;
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Načítanie údajov o žiakoch" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+for (int i = 0; i &lt; 10; i++)
+{
+    Console.WriteLine("Zadaj meno: ");
+    ziaci[i].meno = Console.ReadLine();
+    Console.WriteLine("Zadaj vek: ");
+    ziaci[i].vek = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Zadaj vysku: ");
+    ziaci[i].vyska = Convert.ToDouble(Console.ReadLine());
+}
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Výpis údajov a výpočty" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+Console.WriteLine("Udaje o ziakoch: ");
+for (int i = 0; i &lt; 10; i++)
+{
+    Console.WriteLine("Meno: " + ziaci[i].meno);
+    Console.WriteLine("Vek: " + ziaci[i].vek);
+    Console.WriteLine("Vyska: " + ziaci[i].vyska);
+}
+
+double sucet = 0;
+for (int i = 0; i &lt; 10; i++) sucet += ziaci[i].vyska;
+Console.WriteLine("Priemerná výška žiakov je: " + (sucet/10));
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Otázky na precvičenie" FontSize="22" FontWeight="SemiBold"/>
+            <TextBlock FontSize="18" TextWrapping="Wrap" Text="1. Vytvor štruktúru Student a pole 5 študentov. Vypíš priemerné známky."/>
+            <TextBlock FontSize="18" TextWrapping="Wrap" Text="2. Vytvor štruktúru Produkt, pole produktov a vypočítaj hodnotu zásob."/>
+            <TextBlock FontSize="18" TextWrapping="Wrap" Text="3. Vytvor štruktúru Kniha a vypíš knihy vydané po roku 2010."/>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

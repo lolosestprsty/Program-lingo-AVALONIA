@@ -1,8 +1,85 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka11View">
-  Welcome to Avalonia!
+  <ScrollViewer>
+        <StackPanel Margin="40" Spacing="16" MaxWidth="900">
+
+            <TextBlock Text="Metódy" FontSize="30" FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18" TextWrapping="Wrap"
+                       Text="Metóda je časť programu, ktorá má svoj názov a obsahuje zdrojový kód. Voláme ju pomocou jej názvu a okrúhlych zátvoriek. Metódu môžeme zavolať kdekoľvek v programe a viackrát." />
+
+            <TextBlock Text="Výhody používania metód" FontSize="22" FontWeight="SemiBold"/>
+            <TextBlock FontSize="18" TextWrapping="Wrap"
+                       Text="• Prehľadnosť – členenie programu na menšie časti
+• Opakované použitie
+• Viacnásobné využitie kódu pre rôzne vstupy" />
+
+            <TextBlock Text="Štruktúra metódy" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+modifikátory_prístupu typ_návratovej_hodnoty názov_metódy(vstupné_argumenty) {
+    telo_metódy – zdrojový kód
+}
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Príklad 1 – Metóda a volanie metódy" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+internal class Program
+{
+    static void metóda1()
+    {
+        Console.WriteLine("Teraz sme vo metóde1");
+    }
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Toto je hlavna metóda");
+        metóda1();
+        Console.WriteLine("Znovu sme v hlavnej metóde");
+        Console.ReadKey();
+    }
+}
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Príklad 2 – Metódy so vstupmi a výstupom" FontSize="22" FontWeight="SemiBold"/>
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas" FontSize="15" xml:space="preserve">
+// metóda s jedným vstupom a bez výstupu
+static void pozdrav2(string meno)
+{
+    Console.WriteLine("Ahoj " + meno + "!");
+}
+
+// metóda s dvomi vstupmi a výstupom
+static int obsahObdlznika(int a, int b)
+{
+    return a * b;
+}
+
+static void Main(string[] args)
+{
+    string meno;
+    Console.WriteLine("Ako sa volas?");
+    meno = Console.ReadLine();
+    pozdrav2(meno);
+    int o = obsahObdlznika(10, 20);
+    Console.WriteLine("Obsah obdlznika je: " + o);
+    Console.ReadKey();
+}
+                </TextBlock>
+            </Border>
+
+            <TextBlock Text="Otázky na precvičenie" FontSize="22" FontWeight="SemiBold"/>
+            <TextBlock FontSize="18" TextWrapping="Wrap" Text="1. Napíš metódu, ktorá vypíše čísla 1 až N."/>
+            <TextBlock FontSize="18" TextWrapping="Wrap" Text="2. Napíš metódu, ktorá vráti 'ANO' alebo 'NIE' podľa intervalu."/>
+            <TextBlock FontSize="18" TextWrapping="Wrap" Text="3. Napíš metódu, ktorá rozpozná 2D alebo 3D geometrický útvar."/>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
