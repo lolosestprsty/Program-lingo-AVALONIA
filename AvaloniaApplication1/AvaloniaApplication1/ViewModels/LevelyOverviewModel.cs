@@ -34,12 +34,16 @@ namespace AvaloniaApplication1.ViewModels
                 e.PropertyName == nameof(MainViewModel.Level4Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level5Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level6Completed) ||
+                e.PropertyName == nameof(MainViewModel.Level7Completed) ||
+                e.PropertyName == nameof(MainViewModel.Level8Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level1Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level2Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level3Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level4Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level5Failed) ||
-                e.PropertyName == nameof(MainViewModel.Level6Failed))
+                e.PropertyName == nameof(MainViewModel.Level6Failed) ||
+                e.PropertyName == nameof(MainViewModel.Level7Failed) ||
+                e.PropertyName == nameof(MainViewModel.Level8Failed))
             {
                 UpdateLevelAvailability();
                 UpdatePaniPImage();
@@ -52,18 +56,20 @@ namespace AvaloniaApplication1.ViewModels
             string message;
             
             // Ak je aspoň jeden level neúspešný (failed), zobraziť PaniP-Sad
-            if (_main.Level1Failed || _main.Level2Failed || _main.Level3Failed || _main.Level4Failed || _main.Level5Failed || _main.Level6Failed)
+            if (_main.Level1Failed || _main.Level2Failed || _main.Level3Failed || _main.Level4Failed || _main.Level5Failed || _main.Level6Failed || _main.Level7Failed || _main.Level8Failed)
             {
                 imageName = "PaniP-Sad.png";
                 message = "Hupsi, škoda. Skúsiš to znovu?";
             }
             // Ak je aspoň jeden level úspešný (completed), zobraziť PaniP-Happy
-            else if (_main.Level1Completed || _main.Level2Completed || _main.Level3Completed || _main.Level4Completed || _main.Level5Completed || _main.Level6Completed)
+            else if (_main.Level1Completed || _main.Level2Completed || _main.Level3Completed || _main.Level4Completed || _main.Level5Completed || _main.Level6Completed || _main.Level7Completed || _main.Level8Completed)
             {
                 imageName = "PaniP-Happy.png";
                 // Zistíme číslo najvyššieho dokončeného levelu
                 int completedLevel = 0;
-                if (_main.Level6Completed) completedLevel = 6;
+                if (_main.Level8Completed) completedLevel = 8;
+                else if (_main.Level7Completed) completedLevel = 7;
+                else if (_main.Level6Completed) completedLevel = 6;
                 else if (_main.Level5Completed) completedLevel = 5;
                 else if (_main.Level4Completed) completedLevel = 4;
                 else if (_main.Level3Completed) completedLevel = 3;
@@ -111,6 +117,10 @@ namespace AvaloniaApplication1.ViewModels
                         item.IsEnabled = _main.Level4Completed;
                     else if (n == 6)
                         item.IsEnabled = _main.Level5Completed;
+                    else if (n == 7)
+                        item.IsEnabled = _main.Level6Completed;
+                    else if (n == 8)
+                        item.IsEnabled = _main.Level7Completed;
                     else
                         item.IsEnabled = false;
                 }
@@ -154,6 +164,14 @@ namespace AvaloniaApplication1.ViewModels
                 else if (level?.LevelName == "6")
                 {
                     _main.ShowLevel6Command.Execute(null);
+                }
+                else if (level?.LevelName == "7")
+                {
+                    _main.ShowLevel7Command.Execute(null);
+                }
+                else if (level?.LevelName == "8")
+                {
+                    _main.ShowLevel8Command.Execute(null);
                 }
             });
 

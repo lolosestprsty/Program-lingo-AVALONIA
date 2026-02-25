@@ -34,7 +34,7 @@
                        PointerPressed="Vysvetlivka7_Click"/>
             <TextBlock Text="07b Prikaz cyklu FOR" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka8_Click"/>
-            <TextBlock Text="placeholder6" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+            <TextBlock Text="08 Generovanie nahodnych cisel " FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka9_Click"/>
             <TextBlock Text="placeholder7" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka10_Click"/>

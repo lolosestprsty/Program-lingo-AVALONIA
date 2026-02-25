@@ -10,4 +10,8 @@ public partial class Vysvetlivka7bView : UserControl
     {
         InitializeComponent();
     }
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
 }

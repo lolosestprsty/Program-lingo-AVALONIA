@@ -1,8 +1,68 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka7aView">
-  
+  <ScrollViewer>
+        <StackPanel Margin="40" Spacing="16" MaxWidth="900">
+
+            <TextBlock Text="Cykly – FOR"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Cyklus for používame vtedy, keď poznáme presný počet opakovaní alebo interval hodnôt."/>
+
+            <TextBlock Text="Syntax cyklu FOR"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Text="for (ZACIATOK; PODMIENKA; KROK)
+                {
+                    // príkazy
+                }"/>
+            </Border>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Cyklus má tri časti: začiatok (napr. int i = 0), podmienku (napr. i &lt; 10) a krok (napr. i++)."/>
+
+            <TextBlock Text="Príklad – čísla 1 až 5"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="for (int i = 1; i &lt;= 5; i++)
+                {
+                    Console.WriteLine(i);
+                }"/>
+            </Border>
+
+            <TextBlock Text="Príklad – párne čísla v intervale"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Text="for (int i = x; i &lt;= y; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        Console.WriteLine(i);
+                    }
+                }"/>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
