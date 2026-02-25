@@ -25,8 +25,8 @@
                 
                 <Image Grid.Column="0"
                        Source="{Binding PaniPImage}"
-                       Width="400"
-                       Height="400"
+                       Width="550"
+                       Height="550"
                        Stretch="Uniform"
                        Margin="0,0,40,0"/>
                 

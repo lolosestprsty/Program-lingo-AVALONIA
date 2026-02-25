@@ -22,5 +22,12 @@ namespace AvaloniaApplication1.ViewModels
             get => _isEnabled;
             set => SetProperty(ref _isEnabled, value);
         }
+        
+        private int _index;
+        public int Index
+        {
+            get => _index;
+            set => SetProperty(ref _index, value);
+        }
     }
 }

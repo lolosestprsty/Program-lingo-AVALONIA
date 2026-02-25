@@ -42,6 +42,14 @@ namespace AvaloniaApplication1.Views
     {
         VOM?.ShowVysvetlivka6Command.Execute(null);
     }
+    private void Vysvetlivka7a_Click(object? sender, PointerPressedEventArgs e)
+    {
+        VOM?.ShowVysvetlivka7aCommand.Execute(null);
+    }
+    private void Vysvetlivka7b_Click(object? sender, PointerPressedEventArgs e)
+    {
+        VOM?.ShowVysvetlivka7bCommand.Execute(null);
+    }
     private void Vysvetlivka7_Click(object? sender, PointerPressedEventArgs e)
     {
         VOM?.ShowVysvetlivka7Command.Execute(null);
@@ -61,6 +69,14 @@ namespace AvaloniaApplication1.Views
     private void Vysvetlivka11_Click(object? sender, PointerPressedEventArgs e)
     {
         VOM?.ShowVysvetlivka11Command.Execute(null);
+    }
+    private void Vysvetlivka12_Click(object? sender, PointerPressedEventArgs e)
+    {
+        VOM?.ShowVysvetlivka12Command.Execute(null);
+    }
+    private void Vysvetlivka13_Click(object? sender, PointerPressedEventArgs e)
+    {
+        VOM?.ShowVysvetlivka13Command.Execute(null);
     }
     }
 }

@@ -186,6 +186,7 @@ namespace AvaloniaApplication1.ViewModels
                 LevelCollection.Add(new LevelyItemModel
                 {
                     LevelName = i.ToString(),
+                    Index = i - 1, // 0-based index pre converter
                     IsEnabled = i == 1 // only level 1 enabled initially
                 });
             }

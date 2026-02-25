@@ -51,6 +51,16 @@ namespace AvaloniaApplication1.ViewModels
             SelectedVysvetlivka = new Vysvetlivka6Model();
         }
         [RelayCommand]
+        private void ShowVysvetlivka7a()
+        {
+            SelectedVysvetlivka = new Vysvetlivka7aModel();
+        }
+        [RelayCommand]
+        private void ShowVysvetlivka7b()
+        {
+            SelectedVysvetlivka = new Vysvetlivka7bModel();
+        }
+        [RelayCommand]
         private void ShowVysvetlivka7()
         {
             SelectedVysvetlivka = new Vysvetlivka7aModel();
@@ -74,6 +84,16 @@ namespace AvaloniaApplication1.ViewModels
         private void ShowVysvetlivka11()
         {
             SelectedVysvetlivka = new Vysvetlivka11Model();
+        }
+        [RelayCommand]
+        private void ShowVysvetlivka12()
+        {
+            SelectedVysvetlivka = new Vysvetlivka12Model();
+        }
+        [RelayCommand]
+        private void ShowVysvetlivka13()
+        {
+            SelectedVysvetlivka = new Vysvetlivka13Model();
         }
     }
 }

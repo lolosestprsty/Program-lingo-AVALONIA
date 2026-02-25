@@ -1,18 +1,18 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:lm="clr-namespace:AvaloniaApplication1.LevelManager.LevelModels"
-             xmlns:o="clr-namespace:AvaloniaApplication1.LevelManager.Otazky"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:lm="clr-namespace:AvaloniaApplication1.LevelManager.LevelModels"
+           xmlns:o="clr-namespace:AvaloniaApplication1.LevelManager.Otazky"
              
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:views="clr-namespace:AvaloniaApplication1.Views.Questions;assembly=AvaloniaApplication1"
-             x:Class="AvaloniaApplication1.Views.Level8View"
-             x:DataType="lm:Level8Model">
+           mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+           xmlns:views="clr-namespace:AvaloniaApplication1.Views.Questions;assembly=AvaloniaApplication1"
+           x:Class="AvaloniaApplication1.Views.Level8View"
+           x:DataType="lm:Level8Model">
 
-  <Grid Margin="20"
-        RowDefinitions="Auto,Auto,*"
-        ColumnDefinitions="*">
+<Grid Margin="20"
+      RowDefinitions="Auto,Auto,*"
+      ColumnDefinitions="*">
 
     <!-- Horný panel -->
     <Grid ColumnDefinitions="Auto,*"

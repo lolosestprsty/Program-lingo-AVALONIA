@@ -5,74 +5,66 @@
            mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
            x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka7bView">
 <ScrollViewer>
-      <StackPanel Margin="40" Spacing="16" MaxWidth="900">
+        <StackPanel Margin="40" Spacing="16" MaxWidth="800">
 
-          <TextBlock Text="Cykly – WHILE a DO WHILE"
-                     FontSize="30"
-                     FontWeight="SemiBold"/>
+            <TextBlock Text="Cyklus WHILE"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
 
-          <TextBlock FontSize="18"
-                     TextWrapping="Wrap"
-                     Text="Cyklus while používame vtedy, keď nepoznáme presný počet opakovaní, ale poznáme podmienku ukončenia."/>
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Cyklus while používame, keď nepoznáme presný počet opakovaní, ale poznáme podmienku ukončenia."/>
 
-          <TextBlock Text="Syntax WHILE"
-                     FontSize="22"
-                     FontWeight="SemiBold"/>
-
-            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
                 <TextBlock FontFamily="Consolas"
                            FontSize="15"
-                           Text="while (podmienka)
+                           Text="int i = 0;
+while (i &lt; 5)
 {
-    // príkazy
+    Console.WriteLine(i);
+    i++;
 }"/>
             </Border>
 
-            <TextBlock FontSize="18"
-                       TextWrapping="Wrap"
-                       Text="Ak podmienka nie je splnená na začiatku, cyklus sa nemusí vykonať ani raz."/>
-
-            <TextBlock Text="Syntax DO WHILE"
+            <TextBlock Text="Cyklus DO...WHILE"
                        FontSize="22"
                        FontWeight="SemiBold"/>
 
-            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
-                <TextBlock FontFamily="Consolas"
-                           FontSize="15"
-                           Text="do
-{
-    // príkazy
-}
-while (podmienka);"/>
-            </Border>
-
             <TextBlock FontSize="18"
                        TextWrapping="Wrap"
-                       Text="Cyklus do...while sa vykoná aspoň raz, pretože podmienka sa kontroluje až na konci."/>
+                       Text="Cyklus do...while vykoná príkazy aspoň raz a až potom testuje podmienku."/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="int i = 0;
+do
+{
+    Console.WriteLine(i);
+    i++;
+}
+while (i &lt; 5);"/>
+            </Border>
 
             <TextBlock Text="BREAK a CONTINUE"
                        FontSize="22"
                        FontWeight="SemiBold"/>
 
-            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
                 <TextBlock FontFamily="Consolas"
                            FontSize="15"
-                           TextWrapping="Wrap"
                            Text="for (int i = 0; i &lt; 10; i++)
 {
     if (i == 4)
         break;
-}"/>
-            </Border>
 
-            <Border Background="#F3F3F3" CornerRadius="8" Padding="12">
-                <TextBlock FontFamily="Consolas"
-                           FontSize="15"
-                           TextWrapping="Wrap"
-                           Text="for (int i = 0; i &lt; 10; i++)
-{
-    if (i == 4)
-        continue;
+    Console.WriteLine(i);
 }"/>
             </Border>
 

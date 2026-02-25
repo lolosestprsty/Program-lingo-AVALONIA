@@ -31,15 +31,21 @@
             <TextBlock Text="06 Prikaz SWITCH" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka6_Click"/>
             <TextBlock Text="07a Prikaz cyklu FOR" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka7_Click"/>
-            <TextBlock Text="07b Prikaz cyklu FOR" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka8_Click"/>
+                       PointerPressed="Vysvetlivka7a_Click"/>
+            <TextBlock Text="07b Cykly WHILE a DO WHILE" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka7b_Click"/>
             <TextBlock Text="08 Generovanie nahodnych cisel " FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka8_Click"/>
+            <TextBlock Text="09 Pole" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka9_Click"/>
-            <TextBlock Text="placeholder7" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+            <TextBlock Text="10 Dvojroymerne pole" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka10_Click"/>
-            <TextBlock Text="placeholder8" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+            <TextBlock Text="11 Metody" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka11_Click"/>
+            <TextBlock Text="12 Struktura" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka12_Click"/>
+            <TextBlock Text="13 Praca so suborom" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+                       PointerPressed="Vysvetlivka13_Click"/>
         </StackPanel>
 
     </ScrollViewer>

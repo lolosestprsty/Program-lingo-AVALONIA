@@ -1,0 +1,91 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:views="clr-namespace:AvaloniaApplication1.Views"
+           xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+           xmlns:conv="clr-namespace:AvaloniaApplication1.Converters"
+           mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+           x:Class="AvaloniaApplication1.Views.LevelyOverviewView"
+           x:DataType="vm:LevelyOverviewModel"
+           xmlns:local="using:AvaloniaApplication1">
+
+<UserControl.Resources>
+  <conv:IndexToMarginConverter x:Key="IndexToMarginConverter"/>
+</UserControl.Resources>
+
+<Grid RowDefinitions="*,Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <!-- Main content with levels -->
+    <Grid Grid.Row="0">
+      <!-- Scrollovate?ný obsah s levelmi -->
+      <ScrollViewer Name="levelsScrollViewer" 
+                    HorizontalScrollBarVisibility="Hidden" 
+                    VerticalScrollBarVisibility="Disabled" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch">
+        <ItemsControl ItemsSource="{Binding LevelCollection}" 
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"
+                      Margin="0,60,0,60">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <!-- Alternujúci margin pre efekt "vlnky" -->
+              <Button Height="100" Width="100" 
+                      Margin="{Binding Index, Converter={StaticResource IndexToMarginConverter}}"
+                      IsEnabled="{Binding IsEnabled}"
+                      Command="{Binding DataContext.LevelSelectedCommand, RelativeSource={RelativeSource AncestorType=views:LevelyOverviewView}}"
+                      CommandParameter="{Binding }"
+                      Background="{Binding IsEnabled, Converter={StaticResource BoolToBrushConverter}}"
+                      BorderBrush="{Binding IsEnabled, Converter={StaticResource BoolToBorderBrushConverter}}"
+                      BorderThickness="{Binding IsEnabled, Converter={StaticResource BoolToBorderThicknessConverter}}"
+                      CornerRadius="{Binding IsEnabled, Converter={StaticResource BoolToCornerRadiusConverter}}">
+                <Button.Styles>
+                  <Style Selector="Button:disabled">
+                    <Setter Property="Background" Value="{Binding IsEnabled, Converter={StaticResource BoolToBrushConverter}}"/>
+                    <Setter Property="BorderBrush" Value="{Binding IsEnabled, Converter={StaticResource BoolToBorderBrushConverter}}"/>
+                    <Setter Property="Opacity" Value="1.0"/>
+                  </Style>
+                </Button.Styles>
+                <Grid>
+                  <TextBlock Text="{Binding LevelName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Foreground="White"/>
+                </Grid>
+              </Button>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+      
+      <!-- PaniP a text ako overlay - nad levelmi -->
+      <StackPanel HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom" 
+                  Margin="20,0,0,20"
+                  IsHitTestVisible="False"
+                  Orientation="Horizontal"
+                  Spacing="10"
+                  Name="paniPContainer">
+        <Image Source="{Binding PaniPImage}" 
+               Stretch="Uniform"
+               VerticalAlignment="Bottom"
+               MaxHeight="300"
+               Name="paniPImage"/>
+        <TextBlock Text="{Binding PaniPMessage}" 
+                   VerticalAlignment="Center"
+                   FontSize="24"
+                   FontWeight="SemiBold"
+                   Foreground="#333333"
+                   TextWrapping="Wrap"
+                   MaxWidth="300"/>
+      </StackPanel>
+    </Grid>
+    
+    <!-- Scrollbar cez celú šírku dole -->
+    <Border Grid.Row="1" Padding="50,8,20,8" Background="Transparent" HorizontalAlignment="Stretch">
+      <ScrollBar Name="levelsScrollBar" Orientation="Horizontal" Minimum="0" SmallChange="10" LargeChange="100" />
+    </Border>
+  </Grid>
+</UserControl>
