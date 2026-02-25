@@ -1,4 +1,4 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿    <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:otazky="using:AvaloniaApplication1.LevelManager.Otazky"
              x:Class="AvaloniaApplication1.Views.Questions.VstupnaOtazkaView"
@@ -17,12 +17,12 @@
              FontSize="18"
              HorizontalAlignment="Center"
              Margin="0,20,0,20"
-             Watermark="Zadajte odpove?..." />
+             Watermark="Zadajte odpoveď..." />
     
     <!-- Submit Button -->
     <Button Grid.Row="2"
             x:Name="SubmitButton"
-            Content="Odosla?"
+            Content="Odoslať"
             Width="200"
             Theme="{StaticResource ButtonTheme}"
             FontSize="18"

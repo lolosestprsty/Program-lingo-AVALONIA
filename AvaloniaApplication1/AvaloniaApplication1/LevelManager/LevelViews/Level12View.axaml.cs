@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaApplication1.LevelManager.LevelViews;
 
-public partial class Level11View : UserControl
+public partial class Level12View : UserControl
 {
-    public Level11View()
+    public Level12View()
     {
         InitializeComponent();
     }

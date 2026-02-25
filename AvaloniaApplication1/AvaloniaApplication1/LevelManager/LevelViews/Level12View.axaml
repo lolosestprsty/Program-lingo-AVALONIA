@@ -7,8 +7,8 @@
              
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:views="clr-namespace:AvaloniaApplication1.Views.Questions;assembly=AvaloniaApplication1"
-             x:Class="AvaloniaApplication1.LevelManager.LevelViews.Level11View"
-             x:DataType="lm:Level11Model">
+             x:Class="AvaloniaApplication1.LevelManager.LevelViews.Level12View"
+             x:DataType="lm:Level12Model">
 
   <Grid Margin="20"
         RowDefinitions="Auto,Auto,*"

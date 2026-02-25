@@ -38,6 +38,8 @@ namespace AvaloniaApplication1.ViewModels
                 e.PropertyName == nameof(MainViewModel.Level8Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level9Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level10Completed) ||
+                e.PropertyName == nameof(MainViewModel.Level11Completed) ||
+                e.PropertyName == nameof(MainViewModel.Level12Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level1Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level2Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level3Failed) ||
@@ -47,7 +49,9 @@ namespace AvaloniaApplication1.ViewModels
                 e.PropertyName == nameof(MainViewModel.Level7Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level8Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level9Failed) ||
-                e.PropertyName == nameof(MainViewModel.Level10Failed))
+                e.PropertyName == nameof(MainViewModel.Level10Failed) ||
+                e.PropertyName == nameof(MainViewModel.Level11Failed) ||
+                e.PropertyName == nameof(MainViewModel.Level12Failed))
             {
                 UpdateLevelAvailability();
                 UpdatePaniPImage();
@@ -60,18 +64,20 @@ namespace AvaloniaApplication1.ViewModels
             string message;
             
             // Ak je aspoň jeden level neúspešný (failed), zobraziť PaniP-Sad
-            if (_main.Level1Failed || _main.Level2Failed || _main.Level3Failed || _main.Level4Failed || _main.Level5Failed || _main.Level6Failed || _main.Level7Failed || _main.Level8Failed || _main.Level9Failed || _main.Level10Failed)
+            if (_main.Level1Failed || _main.Level2Failed || _main.Level3Failed || _main.Level4Failed || _main.Level5Failed || _main.Level6Failed || _main.Level7Failed || _main.Level8Failed || _main.Level9Failed || _main.Level10Failed || _main.Level11Failed || _main.Level12Failed)
             {
                 imageName = "PaniP-Sad.png";
                 message = "Hupsi, škoda. Skúsiš to znovu?";
             }
             // Ak je aspoň jeden level úspešný (completed), zobraziť PaniP-Happy
-            else if (_main.Level1Completed || _main.Level2Completed || _main.Level3Completed || _main.Level4Completed || _main.Level5Completed || _main.Level6Completed || _main.Level7Completed || _main.Level8Completed || _main.Level9Completed || _main.Level10Completed)
+            else if (_main.Level1Completed || _main.Level2Completed || _main.Level3Completed || _main.Level4Completed || _main.Level5Completed || _main.Level6Completed || _main.Level7Completed || _main.Level8Completed || _main.Level9Completed || _main.Level10Completed || _main.Level11Completed || _main.Level12Completed)
             {
                 imageName = "PaniP-Happy.png";
                 // Zistíme číslo najvyššieho dokončeného levelu
                 int completedLevel = 0;
-                if (_main.Level10Completed) completedLevel = 10;
+                if (_main.Level12Completed) completedLevel = 12;
+                else if (_main.Level11Completed) completedLevel = 11;
+                else if (_main.Level10Completed) completedLevel = 10;
                 else if (_main.Level9Completed) completedLevel = 9;
                 else if (_main.Level8Completed) completedLevel = 8;
                 else if (_main.Level7Completed) completedLevel = 7;
@@ -131,6 +137,10 @@ namespace AvaloniaApplication1.ViewModels
                         item.IsEnabled = _main.Level8Completed;
                     else if (n == 10)
                         item.IsEnabled = _main.Level9Completed;
+                    else if (n == 11)
+                        item.IsEnabled = _main.Level10Completed;
+                    else if (n == 12)
+                        item.IsEnabled = true; // Temporarily enabled for testing - change back to: _main.Level11Completed
                     else
                         item.IsEnabled = false;
                 }
@@ -191,6 +201,14 @@ namespace AvaloniaApplication1.ViewModels
                 {
                     _main.ShowLevel10Command.Execute(null);
                 }
+                else if (level?.LevelName == "11")
+                {
+                    _main.ShowLevel11Command.Execute(null);
+                }
+                else if (level?.LevelName == "12")
+                {
+                    _main.ShowLevel12Command.Execute(null);
+                }
             });
 
         #endregion
@@ -199,7 +217,7 @@ namespace AvaloniaApplication1.ViewModels
         {
             LevelCollection = new ObservableCollection<LevelyItemModel>(); // Initialize LevelCollection
 
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 12; i++)
             {
                 LevelCollection.Add(new LevelyItemModel
                 {

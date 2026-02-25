@@ -146,6 +146,30 @@ namespace AvaloniaApplication1.ViewModels
         [ObservableProperty]
         private bool level10Failed;
 
+        [RelayCommand]
+        private void ShowLevel11()
+        {
+            CurrentViewModel = new Level11Model(this);
+        }
+
+        [ObservableProperty]
+        private bool level11Completed;
+
+        [ObservableProperty]
+        private bool level11Failed;
+
+        [RelayCommand]
+        private void ShowLevel12()
+        {
+            CurrentViewModel = new Level12Model(this);
+        }
+
+        [ObservableProperty]
+        private bool level12Completed;
+
+        [ObservableProperty]
+        private bool level12Failed;
+
 
         [RelayCommand]
         private void ShowVysvetlivkyOverview()
