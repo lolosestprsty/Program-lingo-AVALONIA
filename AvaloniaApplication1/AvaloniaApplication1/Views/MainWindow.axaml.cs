@@ -8,6 +8,12 @@ namespace AvaloniaApplication1.Views
         public MainWindow()
         {
             InitializeComponent();
+            
+            // Nastavi? okno na fullscreen (maximalizované)
+            WindowState = WindowState.Maximized;
+            
+            // Volite?ne: Pre skuto?ný fullscreen bez lišty úloh
+            // WindowState = WindowState.FullScreen;
         }
 
         private void InitializeComponent()

@@ -5,6 +5,8 @@ using Avalonia.Interactivity;
 using Avalonia.VisualTree;
 using Avalonia.Controls.ApplicationLifetimes;
 using System;
+using Avalonia.Input;
+using AvaloniaApplication1.ViewModels;
 
 namespace AvaloniaApplication1.Views
 {
@@ -25,6 +27,22 @@ namespace AvaloniaApplication1.Views
             var exitBtn = this.FindControl<Button>("ExitButton");
             if (exitBtn != null)
                 exitBtn.Click += ExitBtn_Click;
+        }
+
+        private void AdminPasswordBox_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                // Get the DataContext (which is NastaveniaOverviewModel)
+                if (DataContext is NastaveniaOverviewModel viewModel)
+                {
+                    // Execute the AdminLoginCommand
+                    if (viewModel.AdminLoginCommand.CanExecute(null))
+                    {
+                        viewModel.AdminLoginCommand.Execute(null);
+                    }
+                }
+            }
         }
 
         private async void ExitBtn_Click(object? sender, RoutedEventArgs e)

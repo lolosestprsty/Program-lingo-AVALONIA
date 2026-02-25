@@ -143,9 +143,9 @@ namespace AvaloniaApplication1.ViewModels
                     else if (n == 11)
                         item.IsEnabled = _main.Level10Completed;
                     else if (n == 12)
-                        item.IsEnabled = true; // Dočasne aktivované na testovanie - zmeniť späť na: _main.Level11Completed
+                        item.IsEnabled = _main.Level11Completed;
                     else if (n == 13)
-                        item.IsEnabled = true; // Dočasne aktivované na testovanie - zmeniť späť na: _main.Level12Completed
+                        item.IsEnabled = _main.Level12Completed;
                     else
                         item.IsEnabled = false;
                 }

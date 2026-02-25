@@ -26,7 +26,8 @@
                              Watermark="Zadajte heslo"
                              PasswordChar="•"
                              Width="200"
-                             HorizontalAlignment="Center" />
+                             HorizontalAlignment="Center"
+                             KeyDown="AdminPasswordBox_KeyDown" />
                     <Button Content="prihlásiť sa ako admin"
                             Command="{Binding AdminLoginCommand}"
                             Theme="{StaticResource ButtonTheme}"

@@ -34,7 +34,7 @@
                        PointerPressed="Vysvetlivka7a_Click"/>
             <TextBlock Text="07b Cykly WHILE a DO WHILE" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka7b_Click"/>
-            <TextBlock Text="08 Generovanie nahodnych cisel " FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+            <TextBlock Text="08 Nahodne cisla" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka8_Click"/>
             <TextBlock Text="09 Pole" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka9_Click"/>
