@@ -1,8 +1,66 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka8View">
-  Welcome to Avalonia!
+  <ScrollViewer>
+        <StackPanel Margin="40" Spacing="16" MaxWidth="800">
+
+            <TextBlock Text="Generovanie náhodných čísel – Random"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Trieda Random slúži na generovanie náhodných (pseudonáhodných) čísel v jazyku C#."/>
+
+            <TextBlock Text="Vytvorenie generátora:"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="Random rand = new Random();"/>
+            </Border>
+
+            <TextBlock Text="Metóda Next():"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="int cislo = rand.Next();"/>
+            </Border>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Next() generuje celé číslo od 0 po veľmi veľké číslo (int.MaxValue)."/>
+
+            <TextBlock Text="Rozsah čísel:"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="rand.Next(100);       // 0 - 99
+                rand.Next(10, 100);   // 10 - 99
+                rand.NextDouble();    // 0.0 - menej ako 1.0"/>
+            </Border>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Horná hranica rozsahu sa nikdy negeneruje."/>
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

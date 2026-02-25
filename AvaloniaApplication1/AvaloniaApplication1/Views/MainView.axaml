@@ -94,6 +94,12 @@
         <DataTemplate DataType="{x:Type lm:Level8Model}">
           <views:Level8View />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type lm:Level9Model}">
+          <views:Level9View />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type lm:Level10Model}">
+          <views:Level10View />
+        </DataTemplate>
 
       </ContentControl.DataTemplates>
     </ContentControl>

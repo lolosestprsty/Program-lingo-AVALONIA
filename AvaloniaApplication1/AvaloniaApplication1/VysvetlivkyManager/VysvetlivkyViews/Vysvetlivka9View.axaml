@@ -1,8 +1,100 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka9View">
-  Welcome to Avalonia!
+  <ScrollViewer>
+        <StackPanel Margin="40" Spacing="16" MaxWidth="900">
+
+            <TextBlock Text="Pole (Array)"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Pole je premenná, do ktorej môžeme uložiť viacero hodnôt rovnakého typu."/>
+
+            <TextBlock Text="Vytvorenie a inicializácia poľa:"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="string[] ziaci = { &quot;Jozko&quot;, &quot;Ferko&quot;, &quot;Janko&quot;, &quot;Anicka&quot; };"/>
+            </Border>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Prvý prvok poľa má index 0. K prvkom pristupujeme pomocou hranatých zátvoriek."/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="Console.WriteLine(ziaci[0]);
+ziaci[0] = &quot;Peter&quot;;"/>
+            </Border>
+
+            <TextBlock Text="Počet prvkov v poli:"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="Console.WriteLine(ziaci.Length);"/>
+            </Border>
+
+            <TextBlock Text="Výpis pomocou for:"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="for (int i = 0; i &lt; ziaci.Length; i++)
+{
+    Console.WriteLine(ziaci[i]);
+}"/>
+            </Border>
+
+            <TextBlock Text="Výpis pomocou foreach:"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="foreach (string meno in ziaci)
+{
+    Console.WriteLine(meno);
+}"/>
+            </Border>
+
+            <TextBlock Text="Trieda Array:"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           Text="Array.Sort(ziaci);
+                Array.Reverse(ziaci);"/>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

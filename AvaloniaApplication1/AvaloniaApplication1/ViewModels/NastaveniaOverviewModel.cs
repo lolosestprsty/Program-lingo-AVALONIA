@@ -49,6 +49,8 @@ namespace AvaloniaApplication1.ViewModels
                 _main.Level6Completed = true;
                 _main.Level7Completed = true;
                 _main.Level8Completed = true;
+                _main.Level9Completed = true;
+                _main.Level10Completed = true;
                 LoginMessage = string.Empty;
                 AdminPasswordInput = string.Empty;
             }
@@ -74,6 +76,8 @@ namespace AvaloniaApplication1.ViewModels
             _main.Level6Completed = false;
             _main.Level7Completed = false;
             _main.Level8Completed = false;
+            _main.Level9Completed = false;
+            _main.Level10Completed = false;
             LoginMessage = string.Empty;
             AdminPasswordInput = string.Empty;
         }

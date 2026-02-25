@@ -10,7 +10,7 @@
                     MaxWidth="800">
 
             <!-- HLAVNÝ NADPIS -->
-            <TextBlock Text="03 Základné príkazy a syntax"
+            <TextBlock Text="Základné príkazy a syntax"
                        FontSize="30"
                        FontWeight="SemiBold"/>
 

@@ -36,6 +36,8 @@ namespace AvaloniaApplication1.ViewModels
                 e.PropertyName == nameof(MainViewModel.Level6Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level7Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level8Completed) ||
+                e.PropertyName == nameof(MainViewModel.Level9Completed) ||
+                e.PropertyName == nameof(MainViewModel.Level10Completed) ||
                 e.PropertyName == nameof(MainViewModel.Level1Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level2Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level3Failed) ||
@@ -43,7 +45,9 @@ namespace AvaloniaApplication1.ViewModels
                 e.PropertyName == nameof(MainViewModel.Level5Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level6Failed) ||
                 e.PropertyName == nameof(MainViewModel.Level7Failed) ||
-                e.PropertyName == nameof(MainViewModel.Level8Failed))
+                e.PropertyName == nameof(MainViewModel.Level8Failed) ||
+                e.PropertyName == nameof(MainViewModel.Level9Failed) ||
+                e.PropertyName == nameof(MainViewModel.Level10Failed))
             {
                 UpdateLevelAvailability();
                 UpdatePaniPImage();
@@ -56,18 +60,20 @@ namespace AvaloniaApplication1.ViewModels
             string message;
             
             // Ak je aspoň jeden level neúspešný (failed), zobraziť PaniP-Sad
-            if (_main.Level1Failed || _main.Level2Failed || _main.Level3Failed || _main.Level4Failed || _main.Level5Failed || _main.Level6Failed || _main.Level7Failed || _main.Level8Failed)
+            if (_main.Level1Failed || _main.Level2Failed || _main.Level3Failed || _main.Level4Failed || _main.Level5Failed || _main.Level6Failed || _main.Level7Failed || _main.Level8Failed || _main.Level9Failed || _main.Level10Failed)
             {
                 imageName = "PaniP-Sad.png";
                 message = "Hupsi, škoda. Skúsiš to znovu?";
             }
             // Ak je aspoň jeden level úspešný (completed), zobraziť PaniP-Happy
-            else if (_main.Level1Completed || _main.Level2Completed || _main.Level3Completed || _main.Level4Completed || _main.Level5Completed || _main.Level6Completed || _main.Level7Completed || _main.Level8Completed)
+            else if (_main.Level1Completed || _main.Level2Completed || _main.Level3Completed || _main.Level4Completed || _main.Level5Completed || _main.Level6Completed || _main.Level7Completed || _main.Level8Completed || _main.Level9Completed || _main.Level10Completed)
             {
                 imageName = "PaniP-Happy.png";
                 // Zistíme číslo najvyššieho dokončeného levelu
                 int completedLevel = 0;
-                if (_main.Level8Completed) completedLevel = 8;
+                if (_main.Level10Completed) completedLevel = 10;
+                else if (_main.Level9Completed) completedLevel = 9;
+                else if (_main.Level8Completed) completedLevel = 8;
                 else if (_main.Level7Completed) completedLevel = 7;
                 else if (_main.Level6Completed) completedLevel = 6;
                 else if (_main.Level5Completed) completedLevel = 5;
@@ -121,6 +127,10 @@ namespace AvaloniaApplication1.ViewModels
                         item.IsEnabled = _main.Level6Completed;
                     else if (n == 8)
                         item.IsEnabled = _main.Level7Completed;
+                    else if (n == 9)
+                        item.IsEnabled = _main.Level8Completed;
+                    else if (n == 10)
+                        item.IsEnabled = _main.Level9Completed;
                     else
                         item.IsEnabled = false;
                 }
@@ -172,6 +182,14 @@ namespace AvaloniaApplication1.ViewModels
                 else if (level?.LevelName == "8")
                 {
                     _main.ShowLevel8Command.Execute(null);
+                }
+                else if (level?.LevelName == "9")
+                {
+                    _main.ShowLevel9Command.Execute(null);
+                }
+                else if (level?.LevelName == "10")
+                {
+                    _main.ShowLevel10Command.Execute(null);
                 }
             });
 

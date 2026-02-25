@@ -1,8 +1,127 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication1.VysvetlivkyManager.VysvetlivkyViews.Vysvetlivka10View">
-  Welcome to Avalonia!
+   <ScrollViewer>
+        <StackPanel Margin="40"
+                    Spacing="16"
+                    MaxWidth="800">
+
+            <!-- HLAVNÝ NADPIS -->
+            <TextBlock Text="Dvojrozmerné pole"
+                       FontSize="30"
+                       FontWeight="SemiBold"/>
+
+            <!-- DEFINÍCIA -->
+            <TextBlock Text="Čo je dvojrozmerné pole?"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Dvojrozmerné pole je premenná, do ktorej môžeme uložiť viacero hodnôt vo forme riadkov a stĺpcov. Predstavujeme si ho ako tabuľku." />
+
+            <!-- VYTVORENIE -->
+            <TextBlock Text="Vytvorenie dvojrozmerného poľa"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="int[,] cisla = { {10,20,30}, {40,50,60}, {70,80,90} };&#x0a;int[,] pole = new int[4,3];"/>
+            </Border>
+
+            <TextBlock FontSize="18"
+                       TextWrapping="Wrap"
+                       Text="Prvý index označuje riadok a druhý index označuje stĺpec. Prvý prvok má index [0,0]." />
+
+            <!-- PRÍSTUP K PRVKOM -->
+            <TextBlock Text="Prístup k prvkom"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="Console.WriteLine(pole[0,0]);&#x0a;pole[0,0] = 100;"/>
+            </Border>
+
+            <!-- ROZMERY -->
+            <TextBlock Text="Zistenie rozmerov poľa"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="16"
+                           Text="pole.Length;&#x0a;pole.GetLength(0); // počet riadkov&#x0a;pole.GetLength(1); // počet stĺpcov"/>
+            </Border>
+
+            <!-- PRECHOD POĽOM -->
+            <TextBlock Text="Prechod cez 2D pole"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Text="for (int i = 0; i &lt; pole.GetLength(0); i++)&#x0a;{&#x0a;    for (int j = 0; j &lt; pole.GetLength(1); j++)&#x0a;    {&#x0a;        Console.Write(pole[i,j] + &quot; &quot;);&#x0a;    }&#x0a;    Console.WriteLine();&#x0a;}"/>
+            </Border>
+
+            <!-- SÚČET -->
+            <TextBlock Text="Súčet prvkov"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Text="int sucet = 0;&#x0a;for (int i = 0; i &lt; pole.GetLength(0); i++)&#x0a;{&#x0a;    for (int j = 0; j &lt; pole.GetLength(1); j++)&#x0a;    {&#x0a;        sucet += pole[i,j];&#x0a;    }&#x0a;}"/>
+            </Border>
+
+            <!-- MIN A MAX -->
+            <TextBlock Text="Hľadanie maxima a minima"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Text="int max = pole[0,0];&#x0a;int min = pole[0,0];"/>
+            </Border>
+
+            <!-- PRÍKLAD PROGRAMU -->
+            <TextBlock Text="Vzorový príklad programu"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+
+            <Border Background="#F3F3F3"
+                    CornerRadius="8"
+                    Padding="12">
+                <TextBlock FontFamily="Consolas"
+                           FontSize="14"
+                           TextWrapping="Wrap"
+                           Text="using System;&#x0a;&#x0a;namespace ConsoleApp11&#x0a;{&#x0a;    class Program&#x0a;    {&#x0a;        static void Main(string[] args)&#x0a;        {&#x0a;            int[,] pole = new int[3,6];&#x0a;            Random rnd = new Random();&#x0a;            double sucet = 0;&#x0a;&#x0a;            for (int i = 0; i &lt; pole.GetLength(0); i++)&#x0a;            {&#x0a;                for (int j = 0; j &lt; pole.GetLength(1); j++)&#x0a;                {&#x0a;                    pole[i,j] = rnd.Next(10);&#x0a;                    Console.Write(pole[i,j] + &quot; &quot;);&#x0a;                    sucet += pole[i,j];&#x0a;                }&#x0a;                Console.WriteLine();&#x0a;            }&#x0a;&#x0a;            Console.WriteLine(&quot;Sucet = &quot; + sucet);&#x0a;            Console.WriteLine(&quot;Priemer = &quot; + (sucet / pole.Length));&#x0a;&#x0a;            Console.ReadKey();&#x0a;        }&#x0a;    }&#x0a;}"/>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
