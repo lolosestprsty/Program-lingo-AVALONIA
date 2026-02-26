@@ -17,7 +17,7 @@
                    Margin="0,0,0,20"/>
 
         <!-- Two Columns for Matching -->
-        <Grid ColumnDefinitions="Auto,40,Auto" HorizontalAlignment="Center">
+        <Grid ColumnDefinitions="Auto,40,Auto" HorizontalAlignment="Center" Grid.IsSharedSizeScope="True">
             <!-- Left Column -->
             <StackPanel Grid.Column="0" Spacing="10" VerticalAlignment="Center">
                 <ItemsControl ItemsSource="{Binding LavyStlpec}">
@@ -55,3 +55,4 @@
         </Grid>
     </StackPanel>
 </UserControl>
+

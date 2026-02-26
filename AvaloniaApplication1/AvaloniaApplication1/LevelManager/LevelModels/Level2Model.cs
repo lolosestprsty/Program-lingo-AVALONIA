@@ -62,8 +62,12 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
             });
 
             foreach (var otazka in Otazky)
+            {
                 if (otazka is ABCDOtazka a)
                     a.OdpovedCommand = OdpovedCommand;
+                else if (otazka is VstupnaOtazka v)
+                    v.OdpovedCommand = OdpovedCommand;
+            }
 
             AktualnaOtazka = Otazky.First();
         }
@@ -105,6 +109,20 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
+            // Načítaj dáta z JSON pomocou helper metódy
+            var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(2);
+
+            if (otazkyZJson.Count > 0)
+            {
+                // Pridaj otázky do kolekcie
+                foreach (var otazka in otazkyZJson)
+                {
+                    Otazky.Add(otazka);
+                }
+                return;
+            }
+
+            // Fallback: hardcoded otázky
             // Otázka 1
             Otazky.Add(new ABCDOtazka
             {

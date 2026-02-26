@@ -122,6 +122,19 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
+            // Načítaj dáta z JSON pomocou helper metódy
+            var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(6);
+
+            if (otazkyZJson.Count > 0)
+            {
+                foreach (var otazka in otazkyZJson)
+                {
+                    Otazky.Add(otazka);
+                }
+                return;
+            }
+
+            // Fallback: hardcoded otázky
             // Otázka 1 - ABCD
             Otazky.Add(new ABCDOtazka
             {

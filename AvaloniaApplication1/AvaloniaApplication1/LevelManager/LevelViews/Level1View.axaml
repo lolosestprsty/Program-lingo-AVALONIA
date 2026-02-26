@@ -51,9 +51,9 @@
     <Border Grid.RowSpan="3" Background="#80000000" IsVisible="{Binding IsFinished}">
         <Border HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" Padding="20">
             <StackPanel Spacing="10">
-                <TextBlock Text="Koniec leveľa" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" />
+                <TextBlock Text="Koniec levela" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" />
                 <TextBlock HorizontalAlignment="Center">
-                    <Run Text="Skóre: " />
+                    <Run Text="Skore: " />
                     <Run Text="{Binding CorrectCount}" />
                     <Run Text="/" />
                     <Run Text="{Binding TotalQuestions}" />

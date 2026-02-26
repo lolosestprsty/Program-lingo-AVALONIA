@@ -55,7 +55,7 @@
             <StackPanel Spacing="10">
                 <TextBlock Text="Koniec levelu" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" />
                 <TextBlock HorizontalAlignment="Center">
-                    <Run Text="Skóre: " />
+                    <Run Text="Skore: " />
                     <Run Text="{Binding CorrectCount}" />
                     <Run Text="/" />
                     <Run Text="{Binding TotalQuestions}" />

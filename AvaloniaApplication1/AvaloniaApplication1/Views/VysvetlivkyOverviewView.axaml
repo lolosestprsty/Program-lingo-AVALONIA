@@ -19,33 +19,33 @@
 
         <StackPanel Background="#62BD67">
             <TextBlock Text="01 Uvod k jazyku C#" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"
-                       PointerPressed="Vysvetlivka1_Click"/>
+                       PointerPressed="Vysvetlivka1_Click" Cursor="Hand"/>
             <TextBlock Text="02 instalacia MVS" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"
-                       PointerPressed="Vysvetlivka2_Click"/>
+                       PointerPressed="Vysvetlivka2_Click" Cursor="Hand"/>
             <TextBlock Text="03 Zaklady syntaxe" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5"
-                       PointerPressed="Vysvetlivka3_Click"/>
+                       PointerPressed="Vysvetlivka3_Click" Cursor="Hand"/>
             <TextBlock Text="04 Pretypovanie a konverzia" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka4_Click"/>
+                       PointerPressed="Vysvetlivka4_Click" Cursor="Hand"/>
             <TextBlock Text="05 Prikaz vetvenia if, ..." FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka5_Click"/>
+                       PointerPressed="Vysvetlivka5_Click" Cursor="Hand"/>
             <TextBlock Text="06 Prikaz SWITCH" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka6_Click"/>
+                       PointerPressed="Vysvetlivka6_Click" Cursor="Hand"/>
             <TextBlock Text="07a Prikaz cyklu FOR" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka7a_Click"/>
+                       PointerPressed="Vysvetlivka7a_Click" Cursor="Hand"/>
             <TextBlock Text="07b Cykly WHILE a DO WHILE" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka7b_Click"/>
+                       PointerPressed="Vysvetlivka7b_Click" Cursor="Hand"/>
             <TextBlock Text="08 Nahodne cisla" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka8_Click"/>
+                       PointerPressed="Vysvetlivka8_Click" Cursor="Hand"/>
             <TextBlock Text="09 Pole" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka9_Click"/>
+                       PointerPressed="Vysvetlivka9_Click" Cursor="Hand"/>
             <TextBlock Text="10 Dvojroymerne pole" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka10_Click"/>
+                       PointerPressed="Vysvetlivka10_Click" Cursor="Hand"/>
             <TextBlock Text="11 Metody" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka11_Click"/>
+                       PointerPressed="Vysvetlivka11_Click" Cursor="Hand"/>
             <TextBlock Text="12 Struktura" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka12_Click"/>
+                       PointerPressed="Vysvetlivka12_Click" Cursor="Hand"/>
             <TextBlock Text="13 Praca so suborom" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
-                       PointerPressed="Vysvetlivka13_Click"/>
+                       PointerPressed="Vysvetlivka13_Click" Cursor="Hand"/>
         </StackPanel>
 
     </ScrollViewer>
@@ -87,8 +87,15 @@
             <DataTemplate DataType="vmod:Vysvetlivka11Model">
                 <vys:Vysvetlivka11View />
             </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka12Model">
+                <vys:Vysvetlivka12View />
+            </DataTemplate>
+            <DataTemplate DataType="vmod:Vysvetlivka13Model">
+                <vys:Vysvetlivka13View />
+            </DataTemplate>
         </ContentControl.DataTemplates>
     </ContentControl>
 </Grid>
  
 </UserControl>
+

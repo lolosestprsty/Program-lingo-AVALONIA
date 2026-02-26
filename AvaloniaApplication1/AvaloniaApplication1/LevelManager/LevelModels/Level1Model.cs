@@ -3,6 +3,7 @@ using AvaloniaApplication1.LevelManager.Otazky;
 using AvaloniaApplication1.ViewModels;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -19,7 +20,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         {
             _main = main;
 
-            //nacitanie
+            //nacitanie z JSON
             NacitajOtazky();
 
             // remember initial count to compute progress
@@ -70,8 +71,12 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
             //command ku kazdej otazke (set the command on question instances so views that use it directly can call it)
             foreach (var otazka in Otazky)
+            {
                 if (otazka is ABCDOtazka a)
                     a.OdpovedCommand = OdpovedCommand;
+                else if (otazka is VstupnaOtazka v)
+                    v.OdpovedCommand = OdpovedCommand;
+            }
 
             //prva otazka je aktualna
             AktualnaOtazka = Otazky.First();
@@ -108,6 +113,25 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         #region Nacitaj Otazky
         private void NacitajOtazky()
+        {
+            // Načítaj dáta z JSON pomocou helper metódy
+            var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(1);
+
+            if (otazkyZJson.Count == 0)
+            {
+                // Fallback: ak JSON zlyhá, použiť hardcoded otázky
+                NacitajOtazkyHardcoded();
+                return;
+            }
+
+            // Pridaj otázky do kolekcie
+            foreach (var otazka in otazkyZJson)
+            {
+                Otazky.Add(otazka);
+            }
+        }
+
+        private void NacitajOtazkyHardcoded()
         {
             Otazky.Add(new ABCDOtazka
             {
