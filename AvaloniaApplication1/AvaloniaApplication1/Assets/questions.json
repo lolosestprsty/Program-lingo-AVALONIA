@@ -1,242 +1,843 @@
-{
-    "levels": [
-        {
-            "levelNumber": 1,
-            "name": "Úvod do C#",
-            "difficulty": "easy",
-            "questions": [
-                {
-                    "type": "ABCD",
-                    "text": "Ktorá spoločnosť vyvinula jazyk C#?",
-                    "explanation": "C# bol vytvorený spoločnosťou Microsoft ako súčasť platformy .NET.",
-                    "options": [
-                        {
-                            "id": 1,
-                            "question_id": 1,
-                            "option_text": "Apple",
-                            "option_index": 0,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 2,
-                            "question_id": 1,
-                            "option_text": "Google",
-                            "option_index": 1,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 3,
-                            "question_id": 1,
-                            "option_text": "Microsoft",
-                            "option_index": 2,
-                            "is_correct": 1
-                        },
-                        {
-                            "id": 4,
-                            "question_id": 1,
-                            "option_text": "IBM",
-                            "option_index": 3,
-                            "is_correct": 0
-                        }
-                    ]
-                },
-                {
-                    "type": "ABCD",
-                    "text": "V ktorom roku bol jazyk C# predstavený spolu s .NET Framework?",
-                    "explanation": "C# bol predstavený v roku 2002.",
-                    "options": [
-                        {
-                            "id": 5,
-                            "question_id": 2,
-                            "option_text": "1998",
-                            "option_index": 0,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 6,
-                            "question_id": 2,
-                            "option_text": "2002",
-                            "option_index": 1,
-                            "is_correct": 1
-                        },
-                        {
-                            "id": 7,
-                            "question_id": 2,
-                            "option_text": "2005",
-                            "option_index": 2,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 8,
-                            "question_id": 2,
-                            "option_text": "2010",
-                            "option_index": 3,
-                            "is_correct": 0
-                        }
-                    ]
-                },
-                {
-                    "type": "ABCD",
-                    "text": "Akú príponu majú zdrojové súbory jazyka C#?",
-                    "explanation": "Zdrojové súbory C# majú príponu .cs",
-                    "options": [
-                        {
-                            "id": 9,
-                            "question_id": 3,
-                            "option_text": ".cpp",
-                            "option_index": 0,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 10,
-                            "question_id": 3,
-                            "option_text": ".java",
-                            "option_index": 1,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 11,
-                            "question_id": 3,
-                            "option_text": ".cs",
-                            "option_index": 2,
-                            "is_correct": 1
-                        },
-                        {
-                            "id": 12,
-                            "question_id": 3,
-                            "option_text": ".csharp",
-                            "option_index": 3,
-                            "is_correct": 0
-                        }
-                    ]
-                },
-                {
-                    "type": "ABCD",
-                    "text": "Je jazyk C# case sensitive?",
-                    "explanation": "C# rozlišuje veľké a malé písmená (case sensitive).",
-                    "options": [
-                        {
-                            "id": 13,
-                            "question_id": 4,
-                            "option_text": "ÁNO",
-                            "option_index": 0,
-                            "is_correct": 1
-                        },
-                        {
-                            "id": 14,
-                            "question_id": 4,
-                            "option_text": "NIE",
-                            "option_index": 1,
-                            "is_correct": 0
-                        }
-                    ]
-                },
-                {
-                    "type": "ABCD",
-                    "text": "Ktorá z možností NIE JE uvedená ako využitie C#?",
-                    "explanation": "C# sa používa na desktopové, mobilné aplikácie a hry, ale nie na programovanie mikrovlniek.",
-                    "options": [
-                        {
-                            "id": 15,
-                            "question_id": 5,
-                            "option_text": "Desktopové aplikácie",
-                            "option_index": 0,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 16,
-                            "question_id": 5,
-                            "option_text": "Mobilné aplikácie",
-                            "option_index": 1,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 17,
-                            "question_id": 5,
-                            "option_text": "Programovanie mikrovlniek",
-                            "option_index": 2,
-                            "is_correct": 1
-                        },
-                        {
-                            "id": 18,
-                            "question_id": 5,
-                            "option_text": "Počítačové hry",
-                            "option_index": 3,
-                            "is_correct": 0
-                        }
-                    ]
-                },
-                {
-                    "type": "ABCD",
-                    "text": "Ako sa nazýva automatická správa pamäte v C#?",
-                    "explanation": "Garbage Collector v C# automaticky uvoľňuje pamäť.",
-                    "options": [
-                        {
-                            "id": 19,
-                            "question_id": 6,
-                            "option_text": "Memory Cleaner",
-                            "option_index": 0,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 20,
-                            "question_id": 6,
-                            "option_text": "Garbage Collector",
-                            "option_index": 1,
-                            "is_correct": 1
-                        },
-                        {
-                            "id": 21,
-                            "question_id": 6,
-                            "option_text": "Memory Manager",
-                            "option_index": 2,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 22,
-                            "question_id": 6,
-                            "option_text": "AutoDelete",
-                            "option_index": 3,
-                            "is_correct": 0
-                        }
-                    ]
-                },
-                {
-                    "type": "ABCD",
-                    "text": "Ktoré vývojové prostredie sa odporúča na začiatok s C#?",
-                    "explanation": "Microsoft Visual Studio je najpoužívanejšie IDE pre C#.",
-                    "options": [
-                        {
-                            "id": 23,
-                            "question_id": 7,
-                            "option_text": "PyCharm",
-                            "option_index": 0,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 24,
-                            "question_id": 7,
-                            "option_text": "Eclipse",
-                            "option_index": 1,
-                            "is_correct": 0
-                        },
-                        {
-                            "id": 25,
-                            "question_id": 7,
-                            "option_text": "Microsoft Visual Studio",
-                            "option_index": 2,
-                            "is_correct": 1
-                        },
-                        {
-                            "id": 26,
-                            "question_id": 7,
-                            "option_text": "NetBeans",
-                            "option_index": 3,
-                            "is_correct": 0
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+﻿{
+    "levels":  [
+                   {
+                       "levelNumber":  1,
+                       "name":  "Uvod do C#",
+                       "difficulty":  "easy",
+                       "questions":  [
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Ktora spolocnost vyvinula jazyk C#?",
+                                             "explanation":  "C# bol vytvoreny spolocnostou Microsoft ako sucast platformy .NET.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  1,
+                                                                 "question_id":  1,
+                                                                 "option_text":  "Apple",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  2,
+                                                                 "question_id":  1,
+                                                                 "option_text":  "Google",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  3,
+                                                                 "question_id":  1,
+                                                                 "option_text":  "Microsoft",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  4,
+                                                                 "question_id":  1,
+                                                                 "option_text":  "IBM",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "V ktorom roku bol jazyk C# predstaveny spolu s .NET Framework?",
+                                             "explanation":  "C# bol predstaveny v roku 2002.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  5,
+                                                                 "question_id":  2,
+                                                                 "option_text":  "1998",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  6,
+                                                                 "question_id":  2,
+                                                                 "option_text":  "2002",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  7,
+                                                                 "question_id":  2,
+                                                                 "option_text":  "2005",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  8,
+                                                                 "question_id":  2,
+                                                                 "option_text":  "2010",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Aku priponu maju zdrojove subory jazyka C#?",
+                                             "explanation":  "Zdrojove subory C# maju priponu .cs",
+                                             "options":  [
+                                                             {
+                                                                 "id":  9,
+                                                                 "question_id":  3,
+                                                                 "option_text":  ".cpp",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  10,
+                                                                 "question_id":  3,
+                                                                 "option_text":  ".java",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  11,
+                                                                 "question_id":  3,
+                                                                 "option_text":  ".cs",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  12,
+                                                                 "question_id":  3,
+                                                                 "option_text":  ".csharp",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Je jazyk C# case sensitive?",
+                                             "explanation":  "C# rozlisuje velke a male pismena (case sensitive).",
+                                             "options":  [
+                                                             {
+                                                                 "id":  13,
+                                                                 "question_id":  4,
+                                                                 "option_text":  "ANO",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  14,
+                                                                 "question_id":  4,
+                                                                 "option_text":  "NIE",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Ktora z moznosti NIE JE uvedena ako vyuzitie C#?",
+                                             "explanation":  "C# sa pouziva na desktopove, mobilne aplikacie a hry, ale nie na programovanie mikrovlniek.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  15,
+                                                                 "question_id":  5,
+                                                                 "option_text":  "Desktopove aplikacie",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  16,
+                                                                 "question_id":  5,
+                                                                 "option_text":  "Mobilne aplikacie",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  17,
+                                                                 "question_id":  5,
+                                                                 "option_text":  "Programovanie mikrovlniek",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  18,
+                                                                 "question_id":  5,
+                                                                 "option_text":  "Pocitacove hry",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Ako sa nazyva automaticka sprava pamate v C#?",
+                                             "explanation":  "Garbage Collector v C# automaticky uvolnuje pamat.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  19,
+                                                                 "question_id":  6,
+                                                                 "option_text":  "Memory Cleaner",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  20,
+                                                                 "question_id":  6,
+                                                                 "option_text":  "Garbage Collector",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  21,
+                                                                 "question_id":  6,
+                                                                 "option_text":  "Memory Manager",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  22,
+                                                                 "question_id":  6,
+                                                                 "option_text":  "AutoDelete",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Ktore vyvojove prostredie sa odporuca na zaciatok s C#?",
+                                             "explanation":  "Microsoft Visual Studio je najpouzivanejsie IDE pre C#.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  23,
+                                                                 "question_id":  7,
+                                                                 "option_text":  "PyCharm",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  24,
+                                                                 "question_id":  7,
+                                                                 "option_text":  "Eclipse",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  25,
+                                                                 "question_id":  7,
+                                                                 "option_text":  "Microsoft Visual Studio",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  26,
+                                                                 "question_id":  7,
+                                                                 "option_text":  "NetBeans",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                   },
+                   {
+                       "levelNumber":  2,
+                       "name":  "Zaklady syntaxe",
+                       "difficulty":  "easy",
+                       "questions":  [
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Cim sa ukoncuje kazdy riadok kodu v jazyku C#?",
+                                             "explanation":  "Kazdy prikaz v C# sa ukoncuje bodkociarkou.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  27,
+                                                                 "question_id":  8,
+                                                                 "option_text":  "Bodkou",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  28,
+                                                                 "question_id":  8,
+                                                                 "option_text":  "Dvojbodkou",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  29,
+                                                                 "question_id":  8,
+                                                                 "option_text":  "Bodkociarkou",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  30,
+                                                                 "question_id":  8,
+                                                                 "option_text":  "Ciarkou",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Na co sluzia zlozene zatvorky {} v jazyku C#?",
+                                             "explanation":  "Zlozene zatvorky oznacuju blok kodu.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  31,
+                                                                 "question_id":  9,
+                                                                 "option_text":  "Na oddelenie parametrov",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  32,
+                                                                 "question_id":  9,
+                                                                 "option_text":  "Na oznacenie bloku kodu",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  33,
+                                                                 "question_id":  9,
+                                                                 "option_text":  "Na ukoncenie programu",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  34,
+                                                                 "question_id":  9,
+                                                                 "option_text":  "Na zapisovanie komentarov",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Co znamena zapis Console.WriteLine?",
+                                             "explanation":  "WriteLine vypise text do konzoly a presunie kurzor na novy riadok.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  35,
+                                                                 "question_id":  10,
+                                                                 "option_text":  "Vytvorenie premennej",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  36,
+                                                                 "question_id":  10,
+                                                                 "option_text":  "Vypis textu do konzoly a prechod na novy riadok",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  37,
+                                                                 "question_id":  10,
+                                                                 "option_text":  "Nacitanie vstupu",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  38,
+                                                                 "question_id":  10,
+                                                                 "option_text":  "Ukoncenie programu",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Co robi bodka medzi Console a WriteLine?",
+                                             "explanation":  "Bodka umoznuje pristup k metode triedy.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  39,
+                                                                 "question_id":  11,
+                                                                 "option_text":  "Oddeluje dva riadky kodu",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  40,
+                                                                 "question_id":  11,
+                                                                 "option_text":  "Spaja dva texty",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  41,
+                                                                 "question_id":  11,
+                                                                 "option_text":  "Umoznuje pristup k metode triedy",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  42,
+                                                                 "question_id":  11,
+                                                                 "option_text":  "Ukoncuje blok kodu",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Aky je rozdiel medzi Write() a WriteLine()?",
+                                             "explanation":  "Write nevytvori novy riadok, WriteLine ano.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  43,
+                                                                 "question_id":  12,
+                                                                 "option_text":  "Nie je ziadny rozdiel",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  44,
+                                                                 "question_id":  12,
+                                                                 "option_text":  "WriteLine vypise text bez odriadkovania",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  45,
+                                                                 "question_id":  12,
+                                                                 "option_text":  "Write nevytvori novy riadok, WriteLine ano",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  46,
+                                                                 "question_id":  12,
+                                                                 "option_text":  "Write sluzi na vstup",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Ako zapisujeme jednoriadkovy komentar?",
+                                             "explanation":  "Jednoriadkovy komentar zacina //",
+                                             "options":  [
+                                                             {
+                                                                 "id":  47,
+                                                                 "question_id":  13,
+                                                                 "option_text":  "/* komentar */",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  48,
+                                                                 "question_id":  13,
+                                                                 "option_text":  "// komentar",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  49,
+                                                                 "question_id":  13,
+                                                                 "option_text":  "# komentar",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  50,
+                                                                 "question_id":  13,
+                                                                 "option_text":  "-- komentar",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Co je premenna?",
+                                             "explanation":  "Premenna je pomenovane miesto v pamati.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  51,
+                                                                 "question_id":  14,
+                                                                 "option_text":  "Funkcia na vypis",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  52,
+                                                                 "question_id":  14,
+                                                                 "option_text":  "Pomenovane miesto v pamati",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  53,
+                                                                 "question_id":  14,
+                                                                 "option_text":  "Typ komentara",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  54,
+                                                                 "question_id":  14,
+                                                                 "option_text":  "Operator",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "type":  "ABCD",
+                                             "text":  "Ktory datovy typ sluzi na ulozenie textu?",
+                                             "explanation":  "String sa pouziva na ulozenie textovych retazcov.",
+                                             "options":  [
+                                                             {
+                                                                 "id":  55,
+                                                                 "question_id":  15,
+                                                                 "option_text":  "int",
+                                                                 "option_index":  0,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  56,
+                                                                 "question_id":  15,
+                                                                 "option_text":  "double",
+                                                                 "option_index":  1,
+                                                                 "is_correct":  0
+                                                             },
+                                                             {
+                                                                 "id":  57,
+                                                                 "question_id":  15,
+                                                                 "option_text":  "string",
+                                                                 "option_index":  2,
+                                                                 "is_correct":  1
+                                                             },
+                                                             {
+                                                                 "id":  58,
+                                                                 "question_id":  15,
+                                                                 "option_text":  "char",
+                                                                 "option_index":  3,
+                                                                 "is_correct":  0
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                   },
+                   {
+                       "difficulty":  "easy",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  ";",
+                                             "type":  "Input",
+                                             "text":  "Každý riadok kódu ukončujeme znakom _______"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Console.ReadLine()",
+                                             "type":  "Input",
+                                             "text":  "Na načítanie vstupu z klávesnice používame metódu __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Convert.ToInt32",
+                                             "type":  "Input",
+                                             "text":  "Prevod vstupu na celé číslo urobíme pomocou __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "char",
+                                             "type":  "Input",
+                                             "text":  "Dátový typ pre jedno písmeno alebo znak je __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj dvojice - Dátové typy a ich významy"
+                                         }
+                                     ],
+                       "name":  "Datove typy",
+                       "levelNumber":  3
+                   },
+                   {
+                       "difficulty":  "easy",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "okr�hlych",
+                                             "type":  "Input",
+                                             "text":  "Manu�lne pretypovanie zapisujeme pomocou __________ z�tvoriek."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "�dajov",
+                                             "type":  "Input",
+                                             "text":  "Pri explicitnej konverzii m�e d�js? k strate __________."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "bodka",
+                                             "type":  "Input",
+                                             "text":  "V zdrojovom k�de sa ako odde?ova? desatinn�ch miest v�dy pou��va __________."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj spr�vne dvojice"
+                                         }
+                                     ],
+                       "name":  "Konverzie",
+                       "levelNumber":  4
+                   },
+                   {
+                       "difficulty":  "medium",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "==",
+                                             "type":  "Input",
+                                             "text":  "Operátor na porovnanie rovnosti je _______"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "||",
+                                             "type":  "Input",
+                                             "text":  "Operátor OR zapisujeme ako _______"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "else",
+                                             "type":  "Input",
+                                             "text":  "Vetva, ktorá sa vykoná ak podmienka nie je splnená, sa nazýva _______"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj správne dvojice"
+                                         }
+                                     ],
+                       "name":  "Podmienky",
+                       "levelNumber":  5
+                   },
+                   {
+                       "difficulty":  "medium",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "break",
+                                             "type":  "Input",
+                                             "text":  "Každá vetva case musí byť ukončená príkazom __________."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "default",
+                                             "type":  "Input",
+                                             "text":  "Vetva, ktorá sa vykoná, ak nenastane žiadna možnosť: __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj správne pojmy"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj operáciu s významom"
+                                         }
+                                     ],
+                       "name":  "Switch",
+                       "levelNumber":  6
+                   },
+                   {
+                       "difficulty":  "medium",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "i",
+                                             "type":  "Input",
+                                             "text":  "V cykle for sa premenná cyklu zvyčajne označuje písmenom ____."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "i--",
+                                             "type":  "Input",
+                                             "text":  "Aby sa cyklus for opakoval klesajúco, krok nastavíme na ____."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spojte časti cyklu for s ich významom"
+                                         }
+                                     ],
+                       "name":  "Cyklus for",
+                       "levelNumber":  7
+                   },
+                   {
+                       "difficulty":  "medium",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "premenná",
+                                             "type":  "Input",
+                                             "text":  "Nekonečný cyklus pri while môže vzniknúť, ak sa ______________ v podmienke nemení."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "preskočí",
+                                             "type":  "Input",
+                                             "text":  "Príkaz continue spôsobí, že aktuálna iterácia cyklu sa ______________ a cyklus pokračuje ďalšou iteráciou."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spojte typ cyklu s jeho vlastnosťou"
+                                         }
+                                     ],
+                       "name":  "Cyklus while",
+                       "levelNumber":  8
+                   },
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "NextDouble",
+                                             "type":  "Input",
+                                             "text":  "Doplň názov metódy, ktorá generuje desatinné číslo od 0 po menej ako 1:\\n\\nrand.__________();"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "menšia",
+                                             "type":  "Input",
+                                             "text":  "Horná hranica v metóde Next(min, max) je vždy __________ (menšia / väčšia / rovná)."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj správne dvojice - Metóda a jej rozsah"
+                                         }
+                                     ],
+                       "name":  "Nahodne cisla",
+                       "levelNumber":  9
+                   },
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Length",
+                                             "type":  "Input",
+                                             "text":  "Doplň názov vlastnosti, ktorá vracia počet prvkov poľa:\\n\\npole.__________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "IndexOutOfRangeException",
+                                             "type":  "Input",
+                                             "text":  "Ak sa pokúsime použiť index mimo rozsahu poľa, vznikne chyba typu: __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj správne dvojice"
+                                         }
+                                     ],
+                       "name":  "Polia",
+                       "levelNumber":  10
+                   },
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "GetLength",
+                                             "type":  "Input",
+                                             "text":  "Doplň metódu na zistenie počtu stĺpcov:\\n\\npole.________(1);"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Next",
+                                             "type":  "Input",
+                                             "text":  "Doplň inicializáciu náhodného čísla do poľa:\\n\\npole[i,j] = random.________(100);"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj funkcie s ich významom"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj pojmy s ich významom"
+                                         }
+                                     ],
+                       "name":  "Funkcie",
+                       "levelNumber":  11
+                   },
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "struct",
+                                             "type":  "Input",
+                                             "text":  "Doplň správne kľúčové slovo:\\n\\n________ Ziak\\n{\\n    public string meno;\\n    public int vek;\\n}"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Ziak",
+                                             "type":  "Input",
+                                             "text":  "Doplň vytvorenie premennej typu Ziak:\\n\\nZiak z1 = new ________();"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "meno",
+                                             "type":  "Input",
+                                             "text":  "Doplň chýbajúcu časť (prístup k členu štruktúry):\\n\\nZiak z1 = new Ziak();\\nz1._______ = \\"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj pojem s jeho významom"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj kód s významom"
+                                         }
+                                     ],
+                       "name":  "Struktury",
+                       "levelNumber":  12
+                   },
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Append",
+                                             "type":  "Input",
+                                             "text":  "Doplň správny FileMode (ak súbor existuje, doplní obsah na koniec):\\n\\nFileStream file = new FileStream(\\"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "StreamReader",
+                                             "type":  "Input",
+                                             "text":  "Doplň názov triedy na čítanie textu zo súboru:\\n\\nFileStream file = new FileStream(\\"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj FileMode s jeho významom"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj triedu s jej funkciou"
+                                         }
+                                     ],
+                       "name":  "Rekurzia",
+                       "levelNumber":  13
+                   }
+               ]
 }

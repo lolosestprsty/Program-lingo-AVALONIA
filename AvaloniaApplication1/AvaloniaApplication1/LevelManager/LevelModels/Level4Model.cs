@@ -121,121 +121,12 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
-            // Na?ítaj dáta z JSON pomocou helper metódy
             var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(4);
 
-            if (otazkyZJson.Count > 0)
+            foreach (var otazka in otazkyZJson)
             {
-                foreach (var otazka in otazkyZJson)
-                {
-                    Otazky.Add(otazka);
-                }
-                return;
+                Otazky.Add(otazka);
             }
-
-            // Fallback: hardcoded otázky
-            // Otázka 1 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "?o je implicitná konverzia?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Manuálne pretypovanie", Index=0 },
-                    new ABCDMoznost{ Text="Automatická konverzia bez straty údajov", Index=1 },
-                    new ABCDMoznost{ Text="Prevod stringu na bool", Index=2 },
-                    new ABCDMoznost{ Text="Chyba programu", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 2 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "?o sa stane pri (int)3.14?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Výsledok je 3.14", Index=0 },
-                    new ABCDMoznost{ Text="Výsledok je 4", Index=1 },
-                    new ABCDMoznost{ Text="Výsledok je 3", Index=2 },
-                    new ABCDMoznost{ Text="Chyba", Index=3 },
-                },
-                SpravnaMoznostIndex = 2
-            });
-
-            // Otázka 3 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Ktorý príkaz prevedie int na string?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Convert.ToDouble()", Index=0 },
-                    new ABCDMoznost{ Text="Convert.ToString()", Index=1 },
-                    new ABCDMoznost{ Text="Convert.ToBool()", Index=2 },
-                    new ABCDMoznost{ Text="Convert.Int()", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 4 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Pre?o používame CultureInfo(\"en-US\")?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Na zrýchlenie programu", Index=0 },
-                    new ABCDMoznost{ Text="Na zmenu jazyka aplikácie", Index=1 },
-                    new ABCDMoznost{ Text="Na nastavenie bodky ako odde?ova?a desatinných miest", Index=2 },
-                    new ABCDMoznost{ Text="Na výpis dátumu", Index=3 },
-                },
-                SpravnaMoznostIndex = 2
-            });
-
-            // Otázka 5 - Dopl?ova?ka
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "Manuálne pretypovanie zapisujeme pomocou __________ zátvoriek.",
-                SpravnaOdpoved = "okrúhlych"
-            });
-
-            // Otázka 6 - Dopl?ova?ka
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "Pri explicitnej konverzii môže dôjs? k strate __________.",
-                SpravnaOdpoved = "údajov"
-            });
-
-            // Otázka 7 - Dopl?ova?ka
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "V zdrojovom kóde sa ako odde?ova? desatinných miest vždy používa __________.",
-                SpravnaOdpoved = "bodka"
-            });
-
-            // Otázka 8 - Spoj dvojice
-            var parovaciaOtazka = new ParovaciaOtazka
-            {
-                OtazkaText = "Spoj správne dvojice"
-            };
-
-            // ?avý st?pec
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "Implicitná konverzia", Index = 0, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "Explicitná konverzia", Index = 1, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "Convert.ToInt32", Index = 2, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "CultureInfo(\"en-US\")", Index = 3, IsLeft = true });
-
-            // Pravý st?pec (premiešané poradie)
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "manuálne pretypovanie", Index = 0, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "bodka ako odde?ova?", Index = 1, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "bez straty údajov", Index = 2, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "prevod na int", Index = 3, IsLeft = false });
-
-            // Správne páry
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "Implicitná konverzia", Prava = "bez straty údajov" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "Explicitná konverzia", Prava = "manuálne pretypovanie" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "Convert.ToInt32", Prava = "prevod na int" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "CultureInfo(\"en-US\")", Prava = "bodka ako odde?ova?" });
-
-            Otazky.Add(parovaciaOtazka);
         }
     }
 }

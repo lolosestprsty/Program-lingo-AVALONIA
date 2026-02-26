@@ -121,100 +121,12 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
-            // Načítaj dáta z JSON pomocou helper metódy
             var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(7);
 
-            if (otazkyZJson.Count > 0)
+            foreach (var otazka in otazkyZJson)
             {
-                foreach (var otazka in otazkyZJson)
-                {
-                    Otazky.Add(otazka);
-                }
-                return;
+                Otazky.Add(otazka);
             }
-
-            // Fallback: hardcoded otázky
-            // Otázka 1 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Kedy sa používa cyklus for?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Keď nepoznáme počet opakovaní", Index=0 },
-                    new ABCDMoznost{ Text="Keď poznáme presný počet opakovaní", Index=1 },
-                    new ABCDMoznost{ Text="Keď chceme iba raz vykonať program", Index=2 },
-                    new ABCDMoznost{ Text="Keď chceme použiť nekonečný cyklus", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 2 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Aká je správna syntax cyklu for?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="for { ZACIATOK; PODMIENKA; KROK }", Index=0 },
-                    new ABCDMoznost{ Text="for (ZACIATOK; PODMIENKA; KROK) { ... }", Index=1 },
-                    new ABCDMoznost{ Text="for ZACIATOK PODMIENKA KROK { ... }", Index=2 },
-                    new ABCDMoznost{ Text="for (PODMIENKA) { ... }", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 3 - ABCD (s kódom)
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Aký bude výstup?\n\nfor(int i=0;i<=5;i=i+2){\nWriteLine(i);\n}",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="0 1 2 3 4 5", Index=0 },
-                    new ABCDMoznost{ Text="0 2 4", Index=1 },
-                    new ABCDMoznost{ Text="2 4 6", Index=2 },
-                    new ABCDMoznost{ Text="0 2 4 6", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 4 - Vstupná
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "V cykle for sa premenná cyklu zvyčajne označuje písmenom ____.",
-                SpravnaOdpoved = "i"
-            });
-
-            // Otázka 5 - Vstupná
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "Aby sa cyklus for opakoval klesajúco, krok nastavíme na ____.",
-                SpravnaOdpoved = "i--"
-            });
-
-            // Otázka 6 - Párovacia
-            var parovaciaOtazka = new ParovaciaOtazka
-            {
-                OtazkaText = "Spojte časti cyklu for s ich významom"
-            };
-
-            // Ľavý stĺpec
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "ZACIATOK", Index = 0, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "PODMIENKA", Index = 1, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "KROK", Index = 2, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "Premenná cyklu", Index = 3, IsLeft = true });
-
-            // Pravý stĺpec (premiešané poradie)
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "podmienka, kým sa cyklus opakuje", Index = 0, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "ako sa mení premenná po každom opakovaní", Index = 1, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "premenná, ktorá sa mení počas cyklu", Index = 2, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "vytvorenie a inicializácia premennej cyklu", Index = 3, IsLeft = false });
-
-            // Správne páry
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "ZACIATOK", Prava = "vytvorenie a inicializácia premennej cyklu" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "PODMIENKA", Prava = "podmienka, kým sa cyklus opakuje" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "KROK", Prava = "ako sa mení premenná po každom opakovaní" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "Premenná cyklu", Prava = "premenná, ktorá sa mení počas cyklu" });
-
-            Otazky.Add(parovaciaOtazka);
         }
     }
 }

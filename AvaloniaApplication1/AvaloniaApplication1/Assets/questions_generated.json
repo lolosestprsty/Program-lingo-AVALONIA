@@ -1,0 +1,318 @@
+﻿{
+    "levels":  [
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Length",
+                                             "type":  "Input",
+                                             "text":  "Doplň názov vlastnosti, ktorá vracia počet prvkov poľa:\\n\\npole.__________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "IndexOutOfRangeException",
+                                             "type":  "Input",
+                                             "text":  "Ak sa pokúsime použiť index mimo rozsahu poľa, vznikne chyba typu: __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj správne dvojice"
+                                         }
+                                     ],
+                       "name":  "Polia",
+                       "levelNumber":  10
+                   },
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "GetLength",
+                                             "type":  "Input",
+                                             "text":  "Doplň metódu na zistenie počtu stĺpcov:\\n\\npole.________(1);"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Next",
+                                             "type":  "Input",
+                                             "text":  "Doplň inicializáciu náhodného čísla do poľa:\\n\\npole[i,j] = random.________(100);"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj funkcie s ich významom"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj pojmy s ich významom"
+                                         }
+                                     ],
+                       "name":  "Funkcie",
+                       "levelNumber":  11
+                   },
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "struct",
+                                             "type":  "Input",
+                                             "text":  "Doplň správne kľúčové slovo:\\n\\n________ Ziak\\n{\\n    public string meno;\\n    public int vek;\\n}"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Ziak",
+                                             "type":  "Input",
+                                             "text":  "Doplň vytvorenie premennej typu Ziak:\\n\\nZiak z1 = new ________();"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "meno",
+                                             "type":  "Input",
+                                             "text":  "Doplň chýbajúcu časť (prístup k členu štruktúry):\\n\\nZiak z1 = new Ziak();\\nz1._______ = \\"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj pojem s jeho významom"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj kód s významom"
+                                         }
+                                     ],
+                       "name":  "Struktury",
+                       "levelNumber":  12
+                   },
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Append",
+                                             "type":  "Input",
+                                             "text":  "Doplň správny FileMode (ak súbor existuje, doplní obsah na koniec):\\n\\nFileStream file = new FileStream(\\"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "StreamReader",
+                                             "type":  "Input",
+                                             "text":  "Doplň názov triedy na čítanie textu zo súboru:\\n\\nFileStream file = new FileStream(\\"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj FileMode s jeho významom"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj triedu s jej funkciou"
+                                         }
+                                     ],
+                       "name":  "Rekurzia",
+                       "levelNumber":  13
+                   },
+                   {
+                       "difficulty":  "easy",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  ";",
+                                             "type":  "Input",
+                                             "text":  "Každý riadok kódu ukončujeme znakom _______"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Console.ReadLine()",
+                                             "type":  "Input",
+                                             "text":  "Na načítanie vstupu z klávesnice používame metódu __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "Convert.ToInt32",
+                                             "type":  "Input",
+                                             "text":  "Prevod vstupu na celé číslo urobíme pomocou __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "char",
+                                             "type":  "Input",
+                                             "text":  "Dátový typ pre jedno písmeno alebo znak je __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj dvojice - Dátové typy a ich významy"
+                                         }
+                                     ],
+                       "name":  "Datove typy",
+                       "levelNumber":  3
+                   },
+                   {
+                       "difficulty":  "easy",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "okr�hlych",
+                                             "type":  "Input",
+                                             "text":  "Manu�lne pretypovanie zapisujeme pomocou __________ z�tvoriek."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "�dajov",
+                                             "type":  "Input",
+                                             "text":  "Pri explicitnej konverzii m�e d�js? k strate __________."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "bodka",
+                                             "type":  "Input",
+                                             "text":  "V zdrojovom k�de sa ako odde?ova? desatinn�ch miest v�dy pou��va __________."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj spr�vne dvojice"
+                                         }
+                                     ],
+                       "name":  "Konverzie",
+                       "levelNumber":  4
+                   },
+                   {
+                       "difficulty":  "medium",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "==",
+                                             "type":  "Input",
+                                             "text":  "Operátor na porovnanie rovnosti je _______"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "||",
+                                             "type":  "Input",
+                                             "text":  "Operátor OR zapisujeme ako _______"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "else",
+                                             "type":  "Input",
+                                             "text":  "Vetva, ktorá sa vykoná ak podmienka nie je splnená, sa nazýva _______"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj správne dvojice"
+                                         }
+                                     ],
+                       "name":  "Podmienky",
+                       "levelNumber":  5
+                   },
+                   {
+                       "difficulty":  "medium",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "break",
+                                             "type":  "Input",
+                                             "text":  "Každá vetva case musí byť ukončená príkazom __________."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "default",
+                                             "type":  "Input",
+                                             "text":  "Vetva, ktorá sa vykoná, ak nenastane žiadna možnosť: __________"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj správne pojmy"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj operáciu s významom"
+                                         }
+                                     ],
+                       "name":  "Switch",
+                       "levelNumber":  6
+                   },
+                   {
+                       "difficulty":  "medium",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "i",
+                                             "type":  "Input",
+                                             "text":  "V cykle for sa premenná cyklu zvyčajne označuje písmenom ____."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "i--",
+                                             "type":  "Input",
+                                             "text":  "Aby sa cyklus for opakoval klesajúco, krok nastavíme na ____."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spojte časti cyklu for s ich významom"
+                                         }
+                                     ],
+                       "name":  "Cyklus for",
+                       "levelNumber":  7
+                   },
+                   {
+                       "difficulty":  "medium",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "premenná",
+                                             "type":  "Input",
+                                             "text":  "Nekonečný cyklus pri while môže vzniknúť, ak sa ______________ v podmienke nemení."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "preskočí",
+                                             "type":  "Input",
+                                             "text":  "Príkaz continue spôsobí, že aktuálna iterácia cyklu sa ______________ a cyklus pokračuje ďalšou iteráciou."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spojte typ cyklu s jeho vlastnosťou"
+                                         }
+                                     ],
+                       "name":  "Cyklus while",
+                       "levelNumber":  8
+                   },
+                   {
+                       "difficulty":  "hard",
+                       "questions":  [
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "NextDouble",
+                                             "type":  "Input",
+                                             "text":  "Doplň názov metódy, ktorá generuje desatinné číslo od 0 po menej ako 1:\\n\\nrand.__________();"
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "correctAnswer":  "menšia",
+                                             "type":  "Input",
+                                             "text":  "Horná hranica v metóde Next(min, max) je vždy __________ (menšia / väčšia / rovná)."
+                                         },
+                                         {
+                                             "explanation":  "",
+                                             "type":  "Matching",
+                                             "text":  "Spoj správne dvojice - Metóda a jej rozsah"
+                                         }
+                                     ],
+                       "name":  "Nahodne cisla",
+                       "levelNumber":  9
+                   }
+               ]
+}

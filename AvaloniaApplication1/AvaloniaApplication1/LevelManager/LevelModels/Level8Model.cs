@@ -121,100 +121,12 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
-            // Načítaj dáta z JSON pomocou helper metódy
             var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(8);
 
-            if (otazkyZJson.Count > 0)
+            foreach (var otazka in otazkyZJson)
             {
-                foreach (var otazka in otazkyZJson)
-                {
-                    Otazky.Add(otazka);
-                }
-                return;
+                Otazky.Add(otazka);
             }
-
-            // Fallback: hardcoded otázky
-            // Otázka 1 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Kedy je vhodné použiť cyklus while namiesto for?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Keď poznáme presný počet opakovaní", Index=0 },
-                    new ABCDMoznost{ Text="Keď nepoznáme presný počet opakovaní", Index=1 },
-                    new ABCDMoznost{ Text="Keď chceme vykonať príkaz aspoň raz", Index=2 },
-                    new ABCDMoznost{ Text="Keď chceme vypísať iba jednu hodnotu", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 2 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Čo sa stane pri cykle do…while, ak podmienka na začiatku nie je splnená?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Program sa nevykoná ani raz", Index=0 },
-                    new ABCDMoznost{ Text="Program sa vykoná aspoň raz", Index=1 },
-                    new ABCDMoznost{ Text="Program spôsobí nekonečný cyklus", Index=2 },
-                    new ABCDMoznost{ Text="Program vyhodí chybu", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 3 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Aký je rozdiel medzi príkazmi break a continue?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="break preskočí jednu iteráciu, continue ukončí cyklus", Index=0 },
-                    new ABCDMoznost{ Text="break ukončí cyklus, continue preskočí jednu iteráciu", Index=1 },
-                    new ABCDMoznost{ Text="oba preskakujú jednu iteráciu", Index=2 },
-                    new ABCDMoznost{ Text="oba ukončujú cyklus", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 4 - Vstupná
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "Nekonečný cyklus pri while môže vzniknúť, ak sa ______________ v podmienke nemení.",
-                SpravnaOdpoved = "premenná"
-            });
-
-            // Otázka 5 - Vstupná
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "Príkaz continue spôsobí, že aktuálna iterácia cyklu sa ______________ a cyklus pokračuje ďalšou iteráciou.",
-                SpravnaOdpoved = "preskočí"
-            });
-
-            // Otázka 6 - Párovacia
-            var parovaciaOtazka = new ParovaciaOtazka
-            {
-                OtazkaText = "Spojte typ cyklu s jeho vlastnosťou"
-            };
-
-            // Ľavý stĺpec
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "for", Index = 0, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "while", Index = 1, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "do…while", Index = 2, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "nekonečný cyklus", Index = 3, IsLeft = true });
-
-            // Pravý stĺpec (premiešané poradie)
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "vykoná príkazy len ak je podmienka splnená", Index = 0, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "nemá koniec, ak sa podmienka nemení", Index = 1, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "vykoná príkazy aspoň raz, potom kontroluje podmienku", Index = 2, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "používa sa pri známom počte opakovaní", Index = 3, IsLeft = false });
-
-            // Správne páry
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "for", Prava = "používa sa pri známom počte opakovaní" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "while", Prava = "vykoná príkazy len ak je podmienka splnená" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "do…while", Prava = "vykoná príkazy aspoň raz, potom kontroluje podmienku" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "nekonečný cyklus", Prava = "nemá koniec, ak sa podmienka nemení" });
-
-            Otazky.Add(parovaciaOtazka);
         }
     }
 }
