@@ -62,6 +62,16 @@
             </StackPanel>
         </Border>
         
+        <!-- Credits/Literatura Section -->
+        <StackPanel Spacing="5" MaxWidth="400">
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontSize="14">
+                Výukové materiály a vysvetlivky čerpané z dokumentov:
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontWeight="SemiBold" FontSize="14">
+                Ing. Mária Poláková
+            </TextBlock>
+        </StackPanel>
+        
         <Button Name="ExitButton" 
                 Content="odísť z aplikácie" 
                 Theme="{StaticResource ButtonTheme}"
