@@ -41,26 +41,26 @@
                        "questions":  [
                                          {
                                              "explanation":  "",
-                                             "correctAnswer":  "okr�hlych",
+                                             "correctAnswer":  "okrúhlych",
                                              "type":  "Input",
-                                             "text":  "Manu�lne pretypovanie zapisujeme pomocou __________ z�tvoriek."
+                                             "text":  "Manuálne pretypovanie zapisujeme pomocou __________ zátvoriek."
                                          },
                                          {
                                              "explanation":  "",
-                                             "correctAnswer":  "�dajov",
+                                             "correctAnswer":  "údajov",
                                              "type":  "Input",
-                                             "text":  "Pri explicitnej konverzii m�e d�js? k strate __________."
+                                             "text":  "Pri explicitnej konverzii môže dôjsť k strate __________."
                                          },
                                          {
                                              "explanation":  "",
                                              "correctAnswer":  "bodka",
                                              "type":  "Input",
-                                             "text":  "V zdrojovom k�de sa ako odde?ova? desatinn�ch miest v�dy pou��va __________."
+                                             "text":  "V zdrojovom kóde sa ako oddeľovač desatinných miest vždy používa __________."
                                          },
                                          {
                                              "explanation":  "",
                                              "type":  "Matching",
-                                             "text":  "Spoj spr�vne dvojice"
+                                             "text":  "Spoj správne dvojice"
                                          }
                                      ],
                        "name":  "Konverzie",
