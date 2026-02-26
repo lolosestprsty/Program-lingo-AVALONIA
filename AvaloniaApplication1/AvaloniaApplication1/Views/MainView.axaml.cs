@@ -1,11 +1,7 @@
-﻿using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Input;
-using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
-using Avalonia.Media;
 using AvaloniaApplication1.ViewModels;
-using System;
 
 namespace AvaloniaApplication1.Views
 {
@@ -15,33 +11,22 @@ namespace AvaloniaApplication1.Views
         {
             InitializeComponent();
         }
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
 
         private MainViewModel? VM => DataContext as MainViewModel;
-        // Matches PointerPressed="Levely_Click" in XAML
+
         private void Levely_Click(object? sender, PointerPressedEventArgs e)
         {
             VM?.ShowLevelyOverviewCommand.Execute(null);
-
         }
 
-        // Matches PointerPressed="Vysvetlivky_Click" in XAML
         private void Vysvetlivky_Click(object? sender, PointerPressedEventArgs e)
         {
             VM?.ShowVysvetlivkyOverviewCommand.Execute(null);
         }
 
-        // Matches PointerPressed="Nastavenia_Click" in XAML
         private void Nastavenia_Click(object? sender, PointerPressedEventArgs e)
         {
             VM?.ShowNastaveniaOverviewCommand.Execute(null);
-        }
-
-        private void TextBlock_ActualThemeVariantChanged(object? sender, EventArgs e)
-        {
         }
     }
 }

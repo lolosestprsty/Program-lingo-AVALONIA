@@ -9,10 +9,5 @@ namespace AvaloniaApplication1.LevelManager.Otazky
         {
             InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

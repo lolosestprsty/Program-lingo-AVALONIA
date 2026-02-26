@@ -1,6 +1,5 @@
 using Avalonia.Controls;
 using Avalonia.Input;
-using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using AvaloniaApplication1.LevelManager.Otazky;
 
@@ -13,7 +12,7 @@ public partial class VstupnaOtazkaView : UserControl
 
     public VstupnaOtazkaView()
     {
-        AvaloniaXamlLoader.Load(this);
+        InitializeComponent();
         _answerTextBox = this.FindControl<TextBox>("AnswerTextBox");
         _submitButton = this.FindControl<Button>("SubmitButton");
 
@@ -31,7 +30,6 @@ public partial class VstupnaOtazkaView : UserControl
             {
                 if (string.IsNullOrWhiteSpace(otazka.UserInput))
                 {
-                    System.Console.WriteLine("vypln textove pole");
                     return;
                 }
                 

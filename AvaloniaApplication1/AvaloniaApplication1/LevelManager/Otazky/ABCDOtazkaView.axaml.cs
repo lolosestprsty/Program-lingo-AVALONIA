@@ -7,6 +7,6 @@ public partial class ABCDOtazkaView : UserControl
 {
     public ABCDOtazkaView()
     {
-        AvaloniaXamlLoader.Load(this);
+        InitializeComponent();
     }
 }

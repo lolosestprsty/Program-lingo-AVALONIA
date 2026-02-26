@@ -1,11 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-using Avalonia.Interactivity;
-using System;
-using System.Linq;
 using Avalonia.Controls.Primitives;
-using System.ComponentModel;
+using Avalonia.Interactivity;
+using Avalonia.Markup.Xaml;
+using System;
 
 namespace AvaloniaApplication1.Views
 {
@@ -27,7 +25,6 @@ namespace AvaloniaApplication1.Views
             
             if (_scrollViewer is { } sv && _scrollBar is { } sb)
             {
-                // update scrollbar after layout
                 sv.LayoutUpdated += (s, ev) =>
                 {
                     var extent = sv.Extent.Width;
@@ -36,7 +33,6 @@ namespace AvaloniaApplication1.Views
                     sb.ViewportSize = viewport;
                 };
 
-                // when scrollbar value changes, scroll the viewer
                 sb.PropertyChanged += (s, ev) =>
                 {
                     if (ev.Property == RangeBase.ValueProperty)
@@ -46,12 +42,6 @@ namespace AvaloniaApplication1.Views
                 };
             }
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
-
     }
 }
 

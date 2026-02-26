@@ -1,4 +1,3 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
@@ -9,9 +8,5 @@ public partial class Vysvetlivka7aView : UserControl
     public Vysvetlivka7aView()
     {
         InitializeComponent();
-    }
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
     }
 }

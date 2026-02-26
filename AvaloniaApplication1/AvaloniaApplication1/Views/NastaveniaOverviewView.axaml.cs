@@ -1,11 +1,13 @@
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 using Avalonia;
-using Avalonia.Interactivity;
-using Avalonia.VisualTree;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
-using System;
 using Avalonia.Input;
+using Avalonia.Interactivity;
+using Avalonia.Layout;
+using Avalonia.Markup.Xaml;
+using Avalonia.Media;
+using Avalonia.VisualTree;
 using AvaloniaApplication1.ViewModels;
 
 namespace AvaloniaApplication1.Views
@@ -16,10 +18,6 @@ namespace AvaloniaApplication1.Views
         {
             InitializeComponent();
             this.AttachedToVisualTree += OnAttached;
-        }
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         private void OnAttached(object? sender, VisualTreeAttachmentEventArgs e)
@@ -33,10 +31,8 @@ namespace AvaloniaApplication1.Views
         {
             if (e.Key == Key.Enter)
             {
-                // Get the DataContext (which is NastaveniaOverviewModel)
                 if (DataContext is NastaveniaOverviewModel viewModel)
                 {
-                    // Execute the AdminLoginCommand
                     if (viewModel.AdminLoginCommand.CanExecute(null))
                     {
                         viewModel.AdminLoginCommand.Execute(null);
@@ -51,8 +47,6 @@ namespace AvaloniaApplication1.Views
             if (owner is null)
                 return;
 
-            var tcs = new System.Threading.Tasks.TaskCompletionSource<bool>();
-
             var buttonTheme = Application.Current?.Resources["ButtonTheme"] as Avalonia.Styling.ControlTheme;
 
             var yesBtn = new Button 
@@ -60,16 +54,16 @@ namespace AvaloniaApplication1.Views
                 Content = "Áno", 
                 Width = 90,
                 Theme = buttonTheme,
-                HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
-                VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center
+                HorizontalContentAlignment = HorizontalAlignment.Center,
+                VerticalContentAlignment = VerticalAlignment.Center
             };
             var noBtn = new Button 
             { 
                 Content = "Nie", 
                 Width = 90,
                 Theme = buttonTheme,
-                HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
-                VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center
+                HorizontalContentAlignment = HorizontalAlignment.Center,
+                VerticalContentAlignment = VerticalAlignment.Center
             };
 
             var dlg = new Window
@@ -88,13 +82,13 @@ namespace AvaloniaApplication1.Views
                         { 
                             Text = "Naozaj chcete opusti? aplikáciu?", 
                             Margin = new Thickness(0,0,0,12),
-                            TextAlignment = Avalonia.Media.TextAlignment.Center,
-                            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
+                            TextAlignment = TextAlignment.Center,
+                            HorizontalAlignment = HorizontalAlignment.Center
                         },
                         new StackPanel
                         {
-                            Orientation = Avalonia.Layout.Orientation.Horizontal,
-                            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+                            Orientation = Orientation.Horizontal,
+                            HorizontalAlignment = HorizontalAlignment.Center,
                             Spacing = 10,
                             Children = { yesBtn, noBtn }
                         }
@@ -102,17 +96,17 @@ namespace AvaloniaApplication1.Views
                 }
             };
 
+            var tcs = new System.Threading.Tasks.TaskCompletionSource<bool>();
             yesBtn.Click += (_, __) => { tcs.TrySetResult(true); dlg.Close(); };
             noBtn.Click += (_, __) => { tcs.TrySetResult(false); dlg.Close(); };
 
             await dlg.ShowDialog(owner);
             var result = await tcs.Task;
-            if (result)
+            
+            if (result && Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-                    desktop.Shutdown();
+                desktop.Shutdown();
             }
         }
     }
-    
 }
