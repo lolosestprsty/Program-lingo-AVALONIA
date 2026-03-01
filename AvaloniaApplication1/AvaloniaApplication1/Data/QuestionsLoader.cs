@@ -61,6 +61,24 @@ public class QuestionData
 
     [JsonPropertyName("correctAnswer")]
     public string? CorrectAnswer { get; set; }
+
+    [JsonPropertyName("leftColumn")]
+    public List<string>? LeftColumn { get; set; }
+
+    [JsonPropertyName("rightColumn")]
+    public List<string>? RightColumn { get; set; }
+
+    [JsonPropertyName("correctPairs")]
+    public List<PairData>? CorrectPairs { get; set; }
+}
+
+public class PairData
+{
+    [JsonPropertyName("left")]
+    public string Left { get; set; } = string.Empty;
+
+    [JsonPropertyName("right")]
+    public string Right { get; set; } = string.Empty;
 }
 
 public class OptionData

@@ -60,10 +60,49 @@ namespace AvaloniaApplication1.Data
 
                     otazky.Add(vstupnaOtazka);
                 }
-                else if (questionData.Type == "Pairing")
+                else if (questionData.Type == "Pairing" && 
+                         questionData.LeftColumn != null && 
+                         questionData.RightColumn != null && 
+                         questionData.CorrectPairs != null)
                 {
-                    // TODO: Implement ParovaciaOtazka conversion when needed
-                    // This would require adding pairing data to JSON structure
+                    var parovaciaOtazka = new ParovaciaOtazka
+                    {
+                        OtazkaText = questionData.Text
+                    };
+
+                    // Pridaj ?avý st?pec
+                    for (int i = 0; i < questionData.LeftColumn.Count; i++)
+                    {
+                        parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka
+                        {
+                            Text = questionData.LeftColumn[i],
+                            Index = i,
+                            IsLeft = true
+                        });
+                    }
+
+                    // Pridaj pravý st?pec
+                    for (int i = 0; i < questionData.RightColumn.Count; i++)
+                    {
+                        parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka
+                        {
+                            Text = questionData.RightColumn[i],
+                            Index = i,
+                            IsLeft = false
+                        });
+                    }
+
+                    // Pridaj správne páry
+                    foreach (var pair in questionData.CorrectPairs)
+                    {
+                        parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka
+                        {
+                            Lava = pair.Left,
+                            Prava = pair.Right
+                        });
+                    }
+
+                    otazky.Add(parovaciaOtazka);
                 }
             }
 
