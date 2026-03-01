@@ -121,12 +121,100 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
+            // Načítaj dáta z JSON pomocou helper metódy
             var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(10);
 
-            foreach (var otazka in otazkyZJson)
+            if (otazkyZJson.Count > 0)
             {
-                Otazky.Add(otazka);
+                foreach (var otazka in otazkyZJson)
+                {
+                    Otazky.Add(otazka);
+                }
+                return;
             }
+
+            // Fallback: hardcoded otázky
+            // Otázka 1 - ABCD
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Aký index má prvý prvok poľa v C#?",
+                Moznosti = new()
+                {
+                    new ABCDMoznost{ Text="1", Index=0 },
+                    new ABCDMoznost{ Text="-1", Index=1 },
+                    new ABCDMoznost{ Text="0", Index=2 },
+                    new ABCDMoznost{ Text="Závisí od veľkosti poľa", Index=3 },
+                },
+                SpravnaMoznostIndex = 2
+            });
+
+            // Otázka 2 - ABCD (s kódom)
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Čo vypíše tento kód?\n\nint[] cisla = {10, 20, 30};\nWriteLine(cisla[1]);",
+                Moznosti = new()
+                {
+                    new ABCDMoznost{ Text="10", Index=0 },
+                    new ABCDMoznost{ Text="20", Index=1 },
+                    new ABCDMoznost{ Text="30", Index=2 },
+                    new ABCDMoznost{ Text="Chybu", Index=3 },
+                },
+                SpravnaMoznostIndex = 1
+            });
+
+            // Otázka 3 - ABCD (foreach)
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Čo je hlavný rozdiel medzi for a foreach?",
+                Moznosti = new()
+                {
+                    new ABCDMoznost{ Text="foreach je rýchlejší", Index=0 },
+                    new ABCDMoznost{ Text="foreach nemôže meniť index", Index=1 },
+                    new ABCDMoznost{ Text="foreach sa používa na prechádzanie kolekcií bez indexu", Index=2 },
+                    new ABCDMoznost{ Text="neexistuje rozdiel", Index=3 },
+                },
+                SpravnaMoznostIndex = 2
+            });
+
+            // Otázka 4 - Vstupná
+            Otazky.Add(new VstupnaOtazka
+            {
+                OtazkaText = "Doplň názov vlastnosti, ktorá vracia počet prvkov poľa:\n\npole.__________",
+                SpravnaOdpoved = "Length"
+            });
+
+            // Otázka 5 - Vstupná
+            Otazky.Add(new VstupnaOtazka
+            {
+                OtazkaText = "Ak sa pokúsime použiť index mimo rozsahu poľa, vznikne chyba typu: __________",
+                SpravnaOdpoved = "IndexOutOfRangeException"
+            });
+
+            // Otázka 6 - Párovacia
+            var parovaciaOtazka = new ParovaciaOtazka
+            {
+                OtazkaText = "Spoj správne dvojice"
+            };
+
+            // Ľavý stĺpec
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "index", Index = 0, IsLeft = true });
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "Length", Index = 1, IsLeft = true });
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "Array.Sort()", Index = 2, IsLeft = true });
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "foreach", Index = 3, IsLeft = true });
+
+            // Pravý stĺpec (premiešané poradie)
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "prechádzanie prvkov", Index = 0, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "poradie prvku", Index = 1, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "zoradenie poľa", Index = 2, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "počet prvkov", Index = 3, IsLeft = false });
+
+            // Správne páry
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "index", Prava = "poradie prvku" });
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "Length", Prava = "počet prvkov" });
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "Array.Sort()", Prava = "zoradenie poľa" });
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "foreach", Prava = "prechádzanie prvkov" });
+
+            Otazky.Add(parovaciaOtazka);
         }
     }
 }

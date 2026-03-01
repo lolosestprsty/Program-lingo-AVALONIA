@@ -121,12 +121,100 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
+            // Načítaj dáta z JSON pomocou helper metódy
             var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(9);
 
-            foreach (var otazka in otazkyZJson)
+            if (otazkyZJson.Count > 0)
             {
-                Otazky.Add(otazka);
+                foreach (var otazka in otazkyZJson)
+                {
+                    Otazky.Add(otazka);
+                }
+                return;
             }
+
+            // Fallback: hardcoded otázky
+            // Otázka 1 - ABCD
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Na čo slúži trieda Random?",
+                Moznosti = new()
+                {
+                    new ABCDMoznost{ Text="Na opakovanie cyklu", Index=0 },
+                    new ABCDMoznost{ Text="Na generovanie náhodných čísel", Index=1 },
+                    new ABCDMoznost{ Text="Na ukladanie údajov", Index=2 },
+                    new ABCDMoznost{ Text="Na vytváranie tried", Index=3 },
+                },
+                SpravnaMoznostIndex = 1
+            });
+
+            // Otázka 2 - ABCD
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Čo môže vrátiť výraz:\n\nrand.Next(1, 6);",
+                Moznosti = new()
+                {
+                    new ABCDMoznost{ Text="1 až 6", Index=0 },
+                    new ABCDMoznost{ Text="1 až 5", Index=1 },
+                    new ABCDMoznost{ Text="0 až 6", Index=2 },
+                    new ABCDMoznost{ Text="0 až 5", Index=3 },
+                },
+                SpravnaMoznostIndex = 1
+            });
+
+            // Otázka 3 - ABCD (logická)
+            Otazky.Add(new ABCDOtazka
+            {
+                OtazkaText = "Prečo nie je vhodné vytvárať new Random() v každom cykle?",
+                Moznosti = new()
+                {
+                    new ABCDMoznost{ Text="Spôsobí chybu kompilácie", Index=0 },
+                    new ABCDMoznost{ Text="Generuje rovnaké čísla", Index=1 },
+                    new ABCDMoznost{ Text="Spomaľuje počítač", Index=2 },
+                    new ABCDMoznost{ Text="Neexistuje dôvod", Index=3 },
+                },
+                SpravnaMoznostIndex = 1
+            });
+
+            // Otázka 4 - Vstupná
+            Otazky.Add(new VstupnaOtazka
+            {
+                OtazkaText = "Doplň názov metódy, ktorá generuje desatinné číslo od 0 po menej ako 1:\n\nrand.__________();",
+                SpravnaOdpoved = "NextDouble"
+            });
+
+            // Otázka 5 - Vstupná
+            Otazky.Add(new VstupnaOtazka
+            {
+                OtazkaText = "Horná hranica v metóde Next(min, max) je vždy __________ (menšia / väčšia / rovná).",
+                SpravnaOdpoved = "menšia"
+            });
+
+            // Otázka 6 - Párovacia
+            var parovaciaOtazka = new ParovaciaOtazka
+            {
+                OtazkaText = "Spoj správne dvojice - Metóda a jej rozsah"
+            };
+
+            // Ľavý stĺpec
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "Next()", Index = 0, IsLeft = true });
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "Next(100)", Index = 1, IsLeft = true });
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "Next(10,100)", Index = 2, IsLeft = true });
+            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "NextDouble()", Index = 3, IsLeft = true });
+
+            // Pravý stĺpec (premiešané poradie)
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "10 – 99", Index = 0, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "0.0 – menej ako 1.0", Index = 1, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "0 – 99", Index = 2, IsLeft = false });
+            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "0 až int.MaxValue", Index = 3, IsLeft = false });
+
+            // Správne páry
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "Next()", Prava = "0 až int.MaxValue" });
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "Next(100)", Prava = "0 – 99" });
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "Next(10,100)", Prava = "10 – 99" });
+            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "NextDouble()", Prava = "0.0 – menej ako 1.0" });
+
+            Otazky.Add(parovaciaOtazka);
         }
     }
 }
