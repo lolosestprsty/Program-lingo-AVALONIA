@@ -109,131 +109,19 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
-            // Načítaj dáta z JSON pomocou helper metódy
+            // Načítaj dáta z JSON
             var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(2);
 
-            if (otazkyZJson.Count > 0)
+            foreach (var otazka in otazkyZJson)
             {
-                // Pridaj otázky do kolekcie
-                foreach (var otazka in otazkyZJson)
-                {
-                    Otazky.Add(otazka);
-                }
-                return;
+                Otazky.Add(otazka);
             }
 
-            // Fallback: hardcoded otázky
-            // Otázka 1
-            Otazky.Add(new ABCDOtazka
+            // Ak sa nenačítali žiadne otázky z databázy, môže to znamenať problém
+            if (Otazky.Count == 0)
             {
-                OtazkaText = "Čím sa ukončuje každý riadok kódu v jazyku C#?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Bodkou", Index=0 },
-                    new ABCDMoznost{ Text="Dvojbodkou", Index=1 },
-                    new ABCDMoznost{ Text="Bodkočiarkou", Index=2 },
-                    new ABCDMoznost{ Text="Čiarkou", Index=3 },
-                },
-                SpravnaMoznostIndex = 2
-            });
-
-            // Otázka 2
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Na čo slúžia zložené zátvorky {} v jazyku C#?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Na oddelenie parametrov", Index=0 },
-                    new ABCDMoznost{ Text="Na označenie bloku kódu", Index=1 },
-                    new ABCDMoznost{ Text="Na ukončenie programu", Index=2 },
-                    new ABCDMoznost{ Text="Na zapisovanie komentárov", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 3
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Čo znamená zápis Console.WriteLine(\"Hello\");",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Vytvorenie premennej", Index=0 },
-                    new ABCDMoznost{ Text="Výpis textu do konzoly a prechod na nový riadok", Index=1 },
-                    new ABCDMoznost{ Text="Načítanie vstupu", Index=2 },
-                    new ABCDMoznost{ Text="Ukončenie programu", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 4
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Čo robí bodka medzi Console a WriteLine?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Oddeľuje dva riadky kódu", Index=0 },
-                    new ABCDMoznost{ Text="Spája dva texty", Index=1 },
-                    new ABCDMoznost{ Text="Umožňuje prístup k metóde triedy", Index=2 },
-                    new ABCDMoznost{ Text="Ukončuje blok kódu", Index=3 },
-                },
-                SpravnaMoznostIndex = 2
-            });
-
-            // Otázka 5
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Aký je rozdiel medzi Write() a WriteLine()?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Nie je žiadny rozdiel", Index=0 },
-                    new ABCDMoznost{ Text="WriteLine vypíše text bez odriadkovania", Index=1 },
-                    new ABCDMoznost{ Text="Write nevytvorí nový riadok, WriteLine áno", Index=2 },
-                    new ABCDMoznost{ Text="Write slúži na vstup", Index=3 },
-                },
-                SpravnaMoznostIndex = 2
-            });
-
-            // Otázka 6
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Ako zapisujeme jednoriadkový komentár?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="/* komentár */", Index=0 },
-                    new ABCDMoznost{ Text="// komentár", Index=1 },
-                    new ABCDMoznost{ Text="# komentár", Index=2 },
-                    new ABCDMoznost{ Text="-- komentár", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 7
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Čo je premenná?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Funkcia na výpis", Index=0 },
-                    new ABCDMoznost{ Text="Pomenované miesto v pamäti", Index=1 },
-                    new ABCDMoznost{ Text="Typ komentára", Index=2 },
-                    new ABCDMoznost{ Text="Operátor", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 8
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Ktorý dátový typ slúži na uloženie textu?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="int", Index=0 },
-                    new ABCDMoznost{ Text="double", Index=1 },
-                    new ABCDMoznost{ Text="string", Index=2 },
-                    new ABCDMoznost{ Text="char", Index=3 },
-                },
-                SpravnaMoznostIndex = 2
-            });
+                Console.WriteLine("WARNING: Level 2 - žiadne otázky neboli načítané z databázy!");
+            }
         }
     }
 }

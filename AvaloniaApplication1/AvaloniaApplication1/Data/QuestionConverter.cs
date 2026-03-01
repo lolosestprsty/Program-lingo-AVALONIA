@@ -1,12 +1,20 @@
 using AvaloniaApplication1.LevelManager.Otazky;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using AvaloniaApplication1.LevelManager.Otazky;
 
 namespace AvaloniaApplication1.Data
 {
+    // TEMPORARY TESTING MODE: Hardcoded fallbacks are disabled in all Level models
+    // to verify which questions are properly stored in the JSON database.
+    // If a level has no questions, it will appear empty in the app.
+    // This helps identify which levels need their questions added to questions.json
     public static class QuestionConverter
     {
+        private static Random _random = new Random();
+
         public static ObservableCollection<OtazkaBase> ConvertToOtazky(int levelNumber)
         {
             var otazky = new ObservableCollection<OtazkaBase>();
@@ -23,7 +31,10 @@ namespace AvaloniaApplication1.Data
             // Konvertuj QuestionData na OtazkaBase objekty
             foreach (var questionData in levelData.Questions)
             {
-                if (questionData.Type == "ABCD" && questionData.Options != null)
+                // Podporuj obe verzie názvov typov (anglické aj slovenské)
+                var questionType = questionData.Type.ToLower();
+                
+                if (questionType == "abcd" && questionData.Options != null)
                 {
                     var abcdOtazka = new ABCDOtazka
                     {
@@ -50,7 +61,8 @@ namespace AvaloniaApplication1.Data
 
                     otazky.Add(abcdOtazka);
                 }
-                else if (questionData.Type == "Input" && !string.IsNullOrEmpty(questionData.CorrectAnswer))
+                else if ((questionType == "input" || questionType == "vstupna") && 
+                         !string.IsNullOrEmpty(questionData.CorrectAnswer))
                 {
                     var vstupnaOtazka = new VstupnaOtazka
                     {
@@ -60,7 +72,65 @@ namespace AvaloniaApplication1.Data
 
                     otazky.Add(vstupnaOtazka);
                 }
-                else if (questionData.Type == "Pairing" && 
+                else if ((questionType == "pairing" || questionType == "parovacia") && 
+                         questionData.Pairs != null)
+                {
+                    var parovaciaOtazka = new ParovaciaOtazka
+                    {
+                        OtazkaText = questionData.Text
+                    };
+
+                    // Extrahuj ?avý a pravý st?pec z párov
+                    var leftItems = new List<string>();
+                    var rightItems = new List<string>();
+                    
+                    foreach (var pair in questionData.Pairs)
+                    {
+                        if (!leftItems.Contains(pair.Left))
+                            leftItems.Add(pair.Left);
+                        if (!rightItems.Contains(pair.Right))
+                            rightItems.Add(pair.Right);
+                    }
+
+                    // Pridaj ?avý st?pec
+                    for (int i = 0; i < leftItems.Count; i++)
+                    {
+                        parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka
+                        {
+                            Text = leftItems[i],
+                            Index = i,
+                            IsLeft = true
+                        });
+                    }
+
+                    // Premiešaj pravý st?pec, aby odpovede neboli v rovnakom poradí
+                    var shuffledRightItems = rightItems.OrderBy(x => _random.Next()).ToList();
+
+                    // Pridaj pravý st?pec (premiešaný)
+                    for (int i = 0; i < shuffledRightItems.Count; i++)
+                    {
+                        parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka
+                        {
+                            Text = shuffledRightItems[i],
+                            Index = i,
+                            IsLeft = false
+                        });
+                    }
+
+                    // Pridaj správne páry
+                    foreach (var pair in questionData.Pairs)
+                    {
+                        parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka
+                        {
+                            Lava = pair.Left,
+                            Prava = pair.Right
+                        });
+                    }
+
+                    otazky.Add(parovaciaOtazka);
+                }
+                // Starý formát s explicitnými st?pcami (pre spätnú kompatibilitu)
+                else if ((questionType == "pairing" || questionType == "parovacia") && 
                          questionData.LeftColumn != null && 
                          questionData.RightColumn != null && 
                          questionData.CorrectPairs != null)
@@ -81,12 +151,15 @@ namespace AvaloniaApplication1.Data
                         });
                     }
 
-                    // Pridaj pravý st?pec
-                    for (int i = 0; i < questionData.RightColumn.Count; i++)
+                    // Premiešaj pravý st?pec, aby odpovede neboli v rovnakom poradí
+                    var shuffledRightColumn = questionData.RightColumn.OrderBy(x => _random.Next()).ToList();
+
+                    // Pridaj pravý st?pec (premiešaný)
+                    for (int i = 0; i < shuffledRightColumn.Count; i++)
                     {
                         parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka
                         {
-                            Text = questionData.RightColumn[i],
+                            Text = shuffledRightColumn[i],
                             Index = i,
                             IsLeft = false
                         });

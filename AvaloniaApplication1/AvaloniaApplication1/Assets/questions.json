@@ -237,6 +237,2038 @@
                     ]
                 }
             ]
+        },
+        {
+            "levelNumber": 2,
+            "name": "Základná syntax C#",
+            "difficulty": "easy",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Čím sa ukončuje každý riadok kódu v jazyku C#?",
+                    "explanation": "Každý príkaz v C# sa ukončuje bodkočiarkou.",
+                    "options": [
+                        {
+                            "id": 27,
+                            "question_id": 8,
+                            "option_text": "Bodkou",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 28,
+                            "question_id": 8,
+                            "option_text": "Dvojbodkou",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 29,
+                            "question_id": 8,
+                            "option_text": "Bodkočiarkou",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 30,
+                            "question_id": 8,
+                            "option_text": "Čiarkou",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Na čo slúžia zložené zátvorky {} v jazyku C#?",
+                    "explanation": "Zložené zátvorky označujú začiatok a koniec bloku kódu.",
+                    "options": [
+                        {
+                            "id": 31,
+                            "question_id": 9,
+                            "option_text": "Na oddelenie parametrov",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 32,
+                            "question_id": 9,
+                            "option_text": "Na označenie bloku kódu",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 33,
+                            "question_id": 9,
+                            "option_text": "Na ukončenie programu",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 34,
+                            "question_id": 9,
+                            "option_text": "Na zapisovanie komentárov",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo znamená zápis Console.WriteLine(\"Hello\");",
+                    "explanation": "Console.WriteLine vypíše text do konzoly a automaticky prejde na nový riadok.",
+                    "options": [
+                        {
+                            "id": 35,
+                            "question_id": 10,
+                            "option_text": "Vytvorenie premennej",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 36,
+                            "question_id": 10,
+                            "option_text": "Výpis textu do konzoly a prechod na nový riadok",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 37,
+                            "question_id": 10,
+                            "option_text": "Načítanie vstupu",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 38,
+                            "question_id": 10,
+                            "option_text": "Ukončenie programu",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo robí bodka medzi Console a WriteLine?",
+                    "explanation": "Bodka umožňuje prístup k metódam a vlastnostiam triedy.",
+                    "options": [
+                        {
+                            "id": 39,
+                            "question_id": 11,
+                            "option_text": "Oddeľuje dva riadky kódu",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 40,
+                            "question_id": 11,
+                            "option_text": "Spája dva texty",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 41,
+                            "question_id": 11,
+                            "option_text": "Umožňuje prístup k metóde triedy",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 42,
+                            "question_id": 11,
+                            "option_text": "Ukončuje blok kódu",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Aký je rozdiel medzi Write() a WriteLine()?",
+                    "explanation": "Write vypíše text bez prechodu na nový riadok, WriteLine pridá nový riadok.",
+                    "options": [
+                        {
+                            "id": 43,
+                            "question_id": 12,
+                            "option_text": "Nie je žiadny rozdiel",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 44,
+                            "question_id": 12,
+                            "option_text": "WriteLine vypíše text bez odriadkovania",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 45,
+                            "question_id": 12,
+                            "option_text": "Write nevytvorí nový riadok, WriteLine áno",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 46,
+                            "question_id": 12,
+                            "option_text": "Write slúži na vstup",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Ako zapisujeme jednoriadkový komentár?",
+                    "explanation": "Jednoriadkový komentár v C# sa píše pomocou //",
+                    "options": [
+                        {
+                            "id": 47,
+                            "question_id": 13,
+                            "option_text": "/* komentár */",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 48,
+                            "question_id": 13,
+                            "option_text": "// komentár",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 49,
+                            "question_id": 13,
+                            "option_text": "# komentár",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 50,
+                            "question_id": 13,
+                            "option_text": "-- komentár",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo je premenná?",
+                    "explanation": "Premenná je pomenované miesto v pamäti, kde sa ukladajú dáta.",
+                    "options": [
+                        {
+                            "id": 51,
+                            "question_id": 14,
+                            "option_text": "Funkcia na výpis",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 52,
+                            "question_id": 14,
+                            "option_text": "Pomenované miesto v pamäti",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 53,
+                            "question_id": 14,
+                            "option_text": "Typ komentára",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 54,
+                            "question_id": 14,
+                            "option_text": "Operátor",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Ktorý dátový typ slúži na uloženie textu?",
+                    "explanation": "Dátový typ string sa používa na ukladanie textových reťazcov.",
+                    "options": [
+                        {
+                            "id": 55,
+                            "question_id": 15,
+                            "option_text": "int",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 56,
+                            "question_id": 15,
+                            "option_text": "double",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 57,
+                            "question_id": 15,
+                            "option_text": "string",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 58,
+                            "question_id": 15,
+                            "option_text": "char",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 3,
+            "name": "Dátové typy a konverzie",
+            "difficulty": "easy",
+            "questions": [
+                {
+                    "type": "Vstupna",
+                    "text": "Každý riadok kódu ukončujeme znakom _______",
+                    "explanation": "V C# každý príkaz končí bodkočiarkou (;).",
+                    "correctAnswer": ";"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Na načítanie vstupu z klávesnice používame metódu __________",
+                    "explanation": "Console.ReadLine() slúži na načítanie textového vstupu od používateľa.",
+                    "correctAnswer": "Console.ReadLine()"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Prevod vstupu na celé číslo urobíme pomocou __________",
+                    "explanation": "Convert.ToInt32 prevádza text na celé číslo typu int.",
+                    "correctAnswer": "Convert.ToInt32"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Dátový typ pre jedno písmeno alebo znak je __________",
+                    "explanation": "Dátový typ char slúži na ukladanie jedného znaku.",
+                    "correctAnswer": "char"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj dvojice - Dátové typy a ich významy",
+                    "explanation": "Každý dátový typ má svoj špecifický účel.",
+                    "pairs": [
+                        {
+                            "left": "int",
+                            "right": "celé číslo"
+                        },
+                        {
+                            "left": "double",
+                            "right": "desatinné číslo"
+                        },
+                        {
+                            "left": "char",
+                            "right": "jeden znak"
+                        },
+                        {
+                            "left": "string",
+                            "right": "text"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 4,
+            "name": "Konverzie typov",
+            "difficulty": "medium",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Čo je implicitná konverzia?",
+                    "explanation": "Implicitná konverzia prebieha automaticky bez straty dát.",
+                    "options": [
+                        {
+                            "id": 59,
+                            "question_id": 16,
+                            "option_text": "Manuálne pretypovanie",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 60,
+                            "question_id": 16,
+                            "option_text": "Automatická konverzia bez straty údajov",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 61,
+                            "question_id": 16,
+                            "option_text": "Prevod stringu na bool",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 62,
+                            "question_id": 16,
+                            "option_text": "Chyba programu",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo sa stane pri (int)3.14?",
+                    "explanation": "Explicitná konverzia odsekne desatinnú časť, výsledok je 3.",
+                    "options": [
+                        {
+                            "id": 63,
+                            "question_id": 17,
+                            "option_text": "Výsledok je 3.14",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 64,
+                            "question_id": 17,
+                            "option_text": "Výsledok je 4",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 65,
+                            "question_id": 17,
+                            "option_text": "Výsledok je 3",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 66,
+                            "question_id": 17,
+                            "option_text": "Chyba",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Ktorý príkaz prevedie int na string?",
+                    "explanation": "Convert.ToString() prevedie ľubovoľnú hodnotu na textový reťazec.",
+                    "options": [
+                        {
+                            "id": 67,
+                            "question_id": 18,
+                            "option_text": "Convert.ToDouble()",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 68,
+                            "question_id": 18,
+                            "option_text": "Convert.ToString()",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 69,
+                            "question_id": 18,
+                            "option_text": "Convert.ToBool()",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 70,
+                            "question_id": 18,
+                            "option_text": "Convert.Int()",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Prečo používame CultureInfo(\"en-US\")?",
+                    "explanation": "CultureInfo nastavuje kultúrne konvencie, vrátane použitia bodky ako oddeľovača desatinných miest.",
+                    "options": [
+                        {
+                            "id": 71,
+                            "question_id": 19,
+                            "option_text": "Na zrýchlenie programu",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 72,
+                            "question_id": 19,
+                            "option_text": "Na zmenu jazyka aplikácie",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 73,
+                            "question_id": 19,
+                            "option_text": "Na nastavenie bodky ako oddeľovača desatinných miest",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 74,
+                            "question_id": 19,
+                            "option_text": "Na výpis dátumu",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Manuálne pretypovanie zapisujeme pomocou __________ zátvoriek.",
+                    "explanation": "Explicitné pretypovanie sa zapisuje pomocou okrúhlych zátvoriek: (typ)hodnota.",
+                    "correctAnswer": "okrúhlych"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Pri explicitnej konverzii môže dôjsť k strate __________.",
+                    "explanation": "Pri explicitnej konverzii môže dôjsť k strate údajov, napr. pri prevode double na int.",
+                    "correctAnswer": "údajov"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "V zdrojovom kóde sa ako oddeľovač desatinných miest vždy používa __________.",
+                    "explanation": "V C# kóde sa vždy používa bodka ako oddeľovač desatinných miest.",
+                    "correctAnswer": "bodka"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj správne dvojice",
+                    "explanation": "Rôzne spôsoby konverzie majú rôzne vlastnosti.",
+                    "pairs": [
+                        {
+                            "left": "Implicitná konverzia",
+                            "right": "bez straty údajov"
+                        },
+                        {
+                            "left": "Explicitná konverzia",
+                            "right": "manuálne pretypovanie"
+                        },
+                        {
+                            "left": "Convert.ToInt32",
+                            "right": "prevod na int"
+                        },
+                        {
+                            "left": "CultureInfo(\"en-US\")",
+                            "right": "bodka ako oddeľovač"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 5,
+            "name": "Podmienky",
+            "difficulty": "medium",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Na čo slúži príkaz if?",
+                    "explanation": "Príkaz if umožňuje rozhodovanie podľa splnenia podmienky.",
+                    "options": [
+                        {
+                            "id": 75,
+                            "question_id": 20,
+                            "option_text": "Na opakovanie cyklu",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 76,
+                            "question_id": 20,
+                            "option_text": "Na rozhodovanie podľa podmienky",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 77,
+                            "question_id": 20,
+                            "option_text": "Na vytvorenie premennej",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 78,
+                            "question_id": 20,
+                            "option_text": "Na ukončenie programu",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Aký je rozdiel medzi = a == ?",
+                    "explanation": "= priraďuje hodnotu, == porovnáva dve hodnoty.",
+                    "options": [
+                        {
+                            "id": 79,
+                            "question_id": 21,
+                            "option_text": "Nie je žiadny rozdiel",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 80,
+                            "question_id": 21,
+                            "option_text": "= porovnáva, == priraďuje",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 81,
+                            "question_id": 21,
+                            "option_text": "= priraďuje hodnotu, == porovnáva",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 82,
+                            "question_id": 21,
+                            "option_text": "Oba ukončujú príkaz",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo znamená operátor && ?",
+                    "explanation": "Operátor && (AND) vyžaduje, aby boli splnené obe podmienky.",
+                    "options": [
+                        {
+                            "id": 83,
+                            "question_id": 22,
+                            "option_text": "Aspoň jedna podmienka platí",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 84,
+                            "question_id": 22,
+                            "option_text": "Obe podmienky musia platiť",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 85,
+                            "question_id": 22,
+                            "option_text": "Negácia podmienky",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 86,
+                            "question_id": 22,
+                            "option_text": "Sčítanie",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Koľko vetiev else môže byť v jednej podmienke?",
+                    "explanation": "V jednej podmienke môže byť maximálne jedna vetva else.",
+                    "options": [
+                        {
+                            "id": 87,
+                            "question_id": 23,
+                            "option_text": "Neobmedzene",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 88,
+                            "question_id": 23,
+                            "option_text": "2",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 89,
+                            "question_id": 23,
+                            "option_text": "1",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 90,
+                            "question_id": 23,
+                            "option_text": "0",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Operátor na porovnanie rovnosti je _______",
+                    "explanation": "Operátor == sa používa na porovnanie dvoch hodnôt.",
+                    "correctAnswer": "=="
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Operátor OR zapisujeme ako _______",
+                    "explanation": "Operátor || (OR) kontroluje, či je splnená aspoň jedna podmienka.",
+                    "correctAnswer": "||"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Vetva, ktorá sa vykoná ak podmienka nie je splnená, sa nazýva _______",
+                    "explanation": "Vetva else sa vykoná, keď podmienka v if nie je splnená.",
+                    "correctAnswer": "else"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj správne dvojice",
+                    "explanation": "Rôzne príkazy majú rôzne účely v podmienkach.",
+                    "pairs": [
+                        {
+                            "left": "if",
+                            "right": "základná podmienka"
+                        },
+                        {
+                            "left": "else",
+                            "right": "vykoná sa ak podmienka neplatí"
+                        },
+                        {
+                            "left": "else if",
+                            "right": "ďalšia možnosť rozhodovania"
+                        },
+                        {
+                            "left": "&&",
+                            "right": "AND operátor"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 6,
+            "name": "Switch príkaz",
+            "difficulty": "medium",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Na čo slúži príkaz switch v jazyku C#?",
+                    "explanation": "Switch umožňuje výber z viacerých možností podľa hodnoty premennej.",
+                    "options": [
+                        {
+                            "id": 91,
+                            "question_id": 24,
+                            "option_text": "Na opakovanie cyklu",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 92,
+                            "question_id": 24,
+                            "option_text": "Na výber z viacerých možností podľa hodnoty premennej",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 93,
+                            "question_id": 24,
+                            "option_text": "Na deklaráciu premennej",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 94,
+                            "question_id": 24,
+                            "option_text": "Na vytváranie tried",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Ktorý príkaz ukončuje vetvu case?",
+                    "explanation": "Príkaz break ukončuje vetvu case v switchi.",
+                    "options": [
+                        {
+                            "id": 95,
+                            "question_id": 25,
+                            "option_text": "stop",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 96,
+                            "question_id": 25,
+                            "option_text": "return",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 97,
+                            "question_id": 25,
+                            "option_text": "break",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 98,
+                            "question_id": 25,
+                            "option_text": "end",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo sa vykoná, ak žiadny case nezodpovedá hodnote premennej?",
+                    "explanation": "Ak žiadny case neplatí, vykoná sa vetva default.",
+                    "options": [
+                        {
+                            "id": 99,
+                            "question_id": 26,
+                            "option_text": "Program sa ukončí",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 100,
+                            "question_id": 26,
+                            "option_text": "Vykoná sa prvý case",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 101,
+                            "question_id": 26,
+                            "option_text": "Vykoná sa vetva default",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 102,
+                            "question_id": 26,
+                            "option_text": "Nič sa nestane",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo vypíše tento kód?\n\nint x = 3;\nswitch(x) {\ncase 1: WriteLine(\"A\"); break;\ncase 3: WriteLine(\"B\"); break;\ncase 5: WriteLine(\"C\"); break;\ndefault: WriteLine(\"D\"); break;\n}",
+                    "explanation": "Premenná x má hodnotu 3, takže sa vykoná case 3 a vypíše sa B.",
+                    "options": [
+                        {
+                            "id": 103,
+                            "question_id": 27,
+                            "option_text": "A",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 104,
+                            "question_id": 27,
+                            "option_text": "B",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 105,
+                            "question_id": 27,
+                            "option_text": "C",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 106,
+                            "question_id": 27,
+                            "option_text": "D",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Každá vetva case musí byť ukončená príkazom __________.",
+                    "explanation": "Príkaz break ukončuje každú vetvu case.",
+                    "correctAnswer": "break"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Vetva, ktorá sa vykoná, ak nenastane žiadna možnosť: __________",
+                    "explanation": "Vetva default sa vykoná, keď žiadny case neodpovedá hodnote.",
+                    "correctAnswer": "default"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj správne pojmy",
+                    "explanation": "Každý prvok switchu má svoj špecifický účel.",
+                    "pairs": [
+                        {
+                            "left": "switch",
+                            "right": "výber z viacerých možností"
+                        },
+                        {
+                            "left": "case",
+                            "right": "konkrétna hodnota"
+                        },
+                        {
+                            "left": "break",
+                            "right": "ukončenie vetvy"
+                        },
+                        {
+                            "left": "default",
+                            "right": "vykoná sa pri nezhode"
+                        }
+                    ]
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj operáciu s významom",
+                    "explanation": "Switch príkaz má viaceré komponenty s rôznymi funkciami.",
+                    "pairs": [
+                        {
+                            "left": "case",
+                            "right": "vetva pre konkrétnu hodnotu"
+                        },
+                        {
+                            "left": "break",
+                            "right": "ukončí vykonávanie case"
+                        },
+                        {
+                            "left": "default",
+                            "right": "vykoná sa ak žiadny case neplatí"
+                        },
+                        {
+                            "left": "switch",
+                            "right": "rozhodovanie podľa hodnoty"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 7,
+            "name": "Cyklus for",
+            "difficulty": "medium",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Kedy sa používa cyklus for?",
+                    "explanation": "Cyklus for sa používa, keď vopred poznáme počet opakovaní.",
+                    "options": [
+                        {
+                            "id": 107,
+                            "question_id": 28,
+                            "option_text": "Keď nepoznáme počet opakovaní",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 108,
+                            "question_id": 28,
+                            "option_text": "Keď poznáme presný počet opakovaní",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 109,
+                            "question_id": 28,
+                            "option_text": "Keď chceme iba raz vykonať program",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 110,
+                            "question_id": 28,
+                            "option_text": "Keď chceme použiť nekonečný cyklus",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Aká je správna syntax cyklu for?",
+                    "explanation": "Správna syntax je for (začiatok; podmienka; krok) { ... }",
+                    "options": [
+                        {
+                            "id": 111,
+                            "question_id": 29,
+                            "option_text": "for { ZACIATOK; PODMIENKA; KROK }",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 112,
+                            "question_id": 29,
+                            "option_text": "for (ZACIATOK; PODMIENKA; KROK) { ... }",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 113,
+                            "question_id": 29,
+                            "option_text": "for ZACIATOK PODMIENKA KROK { ... }",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 114,
+                            "question_id": 29,
+                            "option_text": "for (PODMIENKA) { ... }",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Aký bude výstup?\n\nfor(int i=0;i<=5;i=i+2){\nWriteLine(i);\n}",
+                    "explanation": "Cyklus začína na 0, zvyšuje sa o 2, takže vypíše 0, 2, 4.",
+                    "options": [
+                        {
+                            "id": 115,
+                            "question_id": 30,
+                            "option_text": "0 1 2 3 4 5",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 116,
+                            "question_id": 30,
+                            "option_text": "0 2 4",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 117,
+                            "question_id": 30,
+                            "option_text": "2 4 6",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 118,
+                            "question_id": 30,
+                            "option_text": "0 2 4 6",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "V cykle for sa premenná cyklu zvyčajne označuje písmenom ____.",
+                    "explanation": "Konvenčne sa používa písmeno i ako premenná cyklu.",
+                    "correctAnswer": "i"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Aby sa cyklus for opakoval klesajúco, krok nastavíme na ____.",
+                    "explanation": "i-- dekrementuje premennú cyklu, čím sa cyklus vykonáva klesajúco.",
+                    "correctAnswer": "i--"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spojte časti cyklu for s ich významom",
+                    "explanation": "Každá časť cyklu for má svoj špecifický účel.",
+                    "pairs": [
+                        {
+                            "left": "ZACIATOK",
+                            "right": "vytvorenie a inicializácia premennej cyklu"
+                        },
+                        {
+                            "left": "PODMIENKA",
+                            "right": "podmienka, kým sa cyklus opakuje"
+                        },
+                        {
+                            "left": "KROK",
+                            "right": "ako sa mení premenná po každom opakovaní"
+                        },
+                        {
+                            "left": "Premenná cyklu",
+                            "right": "premenná, ktorá sa mení počas cyklu"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 8,
+            "name": "Cykly while a do-while",
+            "difficulty": "medium",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Kedy je vhodné použiť cyklus while namiesto for?",
+                    "explanation": "While sa používa, keď nepoznáme presný počet opakovaní.",
+                    "options": [
+                        {
+                            "id": 119,
+                            "question_id": 31,
+                            "option_text": "Keď poznáme presný počet opakovaní",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 120,
+                            "question_id": 31,
+                            "option_text": "Keď nepoznáme presný počet opakovaní",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 121,
+                            "question_id": 31,
+                            "option_text": "Keď chceme vykonať príkaz aspoň raz",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 122,
+                            "question_id": 31,
+                            "option_text": "Keď chceme vypísať iba jednu hodnotu",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo sa stane pri cykle do…while, ak podmienka na začiatku nie je splnená?",
+                    "explanation": "Do-while sa vykoná aspoň raz, lebo podmienka sa kontroluje až na konci.",
+                    "options": [
+                        {
+                            "id": 123,
+                            "question_id": 32,
+                            "option_text": "Program sa nevykoná ani raz",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 124,
+                            "question_id": 32,
+                            "option_text": "Program sa vykoná aspoň raz",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 125,
+                            "question_id": 32,
+                            "option_text": "Program spôsobí nekonečný cyklus",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 126,
+                            "question_id": 32,
+                            "option_text": "Program vyhodí chybu",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Aký je rozdiel medzi príkazmi break a continue?",
+                    "explanation": "Break ukončí celý cyklus, continue preskočí aktuálnu iteráciu.",
+                    "options": [
+                        {
+                            "id": 127,
+                            "question_id": 33,
+                            "option_text": "break preskočí jednu iteráciu, continue ukončí cyklus",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 128,
+                            "question_id": 33,
+                            "option_text": "break ukončí cyklus, continue preskočí jednu iteráciu",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 129,
+                            "question_id": 33,
+                            "option_text": "oba preskakujú jednu iteráciu",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 130,
+                            "question_id": 33,
+                            "option_text": "oba ukončujú cyklus",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Nekonečný cyklus pri while môže vzniknúť, ak sa ______________ v podmienke nemení.",
+                    "explanation": "Ak sa premenná v podmienke nemení, cyklus nikdy neskončí.",
+                    "correctAnswer": "premenná"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Príkaz continue spôsobí, že aktuálna iterácia cyklu sa ______________ a cyklus pokračuje ďalšou iteráciou.",
+                    "explanation": "Continue preskočí zvyšok aktuálnej iterácie a pokračuje ďalšou.",
+                    "correctAnswer": "preskočí"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spojte typ cyklu s jeho vlastnosťou",
+                    "explanation": "Každý typ cyklu má špecifické vlastnosti a použitie.",
+                    "pairs": [
+                        {
+                            "left": "for",
+                            "right": "používa sa pri známom počte opakovaní"
+                        },
+                        {
+                            "left": "while",
+                            "right": "vykoná príkazy len ak je podmienka splnená"
+                        },
+                        {
+                            "left": "do…while",
+                            "right": "vykoná príkazy aspoň raz, potom kontroluje podmienku"
+                        },
+                        {
+                            "left": "nekonečný cyklus",
+                            "right": "nemá koniec, ak sa podmienka nemení"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 9,
+            "name": "Náhodné čísla",
+            "difficulty": "medium",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Na čo slúži trieda Random?",
+                    "explanation": "Trieda Random generuje náhodné čísla.",
+                    "options": [
+                        {
+                            "id": 131,
+                            "question_id": 34,
+                            "option_text": "Na opakovanie cyklu",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 132,
+                            "question_id": 34,
+                            "option_text": "Na generovanie náhodných čísel",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 133,
+                            "question_id": 34,
+                            "option_text": "Na ukladanie údajov",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 134,
+                            "question_id": 34,
+                            "option_text": "Na vytváranie tried",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo môže vrátiť výraz:\n\nrand.Next(1, 6);",
+                    "explanation": "Next(1, 6) vracia hodnoty od 1 do 5 (horná hranica je exkluzívna).",
+                    "options": [
+                        {
+                            "id": 135,
+                            "question_id": 35,
+                            "option_text": "1 až 6",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 136,
+                            "question_id": 35,
+                            "option_text": "1 až 5",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 137,
+                            "question_id": 35,
+                            "option_text": "0 až 6",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 138,
+                            "question_id": 35,
+                            "option_text": "0 až 5",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Prečo nie je vhodné vytvárať new Random() v každom cykle?",
+                    "explanation": "Vytváranie novej inštancie Random v rýchlom slede generuje rovnaké čísla.",
+                    "options": [
+                        {
+                            "id": 139,
+                            "question_id": 36,
+                            "option_text": "Spôsobí chybu kompilácie",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 140,
+                            "question_id": 36,
+                            "option_text": "Generuje rovnaké čísla",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 141,
+                            "question_id": 36,
+                            "option_text": "Spomaľuje počítač",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 142,
+                            "question_id": 36,
+                            "option_text": "Neexistuje dôvod",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň názov metódy, ktorá generuje desatinné číslo od 0 po menej ako 1:\n\nrand.__________();",
+                    "explanation": "NextDouble() generuje náhodné desatinné číslo od 0.0 do menej ako 1.0.",
+                    "correctAnswer": "NextDouble"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Horná hranica v metóde Next(min, max) je vždy __________ (menšia / väčšia / rovná).",
+                    "explanation": "Horná hranica je exkluzívna, teda menšia ako zadaná hodnota.",
+                    "correctAnswer": "menšia"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj správne dvojice - Metóda a jej rozsah",
+                    "explanation": "Rôzne preťaženia metódy Next majú rôzne rozsahy hodnôt.",
+                    "pairs": [
+                        {
+                            "left": "Next()",
+                            "right": "0 až int.MaxValue"
+                        },
+                        {
+                            "left": "Next(100)",
+                            "right": "0 – 99"
+                        },
+                        {
+                            "left": "Next(10,100)",
+                            "right": "10 – 99"
+                        },
+                        {
+                            "left": "NextDouble()",
+                            "right": "0.0 – menej ako 1.0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 10,
+            "name": "Polia (Arrays)",
+            "difficulty": "hard",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Aký index má prvý prvok poľa v C#?",
+                    "explanation": "V C# indexovanie začína od 0.",
+                    "options": [
+                        {
+                            "id": 143,
+                            "question_id": 37,
+                            "option_text": "1",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 144,
+                            "question_id": 37,
+                            "option_text": "-1",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 145,
+                            "question_id": 37,
+                            "option_text": "0",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 146,
+                            "question_id": 37,
+                            "option_text": "Závisí od veľkosti poľa",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo vypíše tento kód?\n\nint[] cisla = {10, 20, 30};\nWriteLine(cisla[1]);",
+                    "explanation": "cisla[1] je druhý prvok poľa, teda 20.",
+                    "options": [
+                        {
+                            "id": 147,
+                            "question_id": 38,
+                            "option_text": "10",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 148,
+                            "question_id": 38,
+                            "option_text": "20",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 149,
+                            "question_id": 38,
+                            "option_text": "30",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 150,
+                            "question_id": 38,
+                            "option_text": "Chybu",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo je hlavný rozdiel medzi for a foreach?",
+                    "explanation": "Foreach prechádza všetky prvky bez potreby indexov.",
+                    "options": [
+                        {
+                            "id": 151,
+                            "question_id": 39,
+                            "option_text": "foreach je rýchlejší",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 152,
+                            "question_id": 39,
+                            "option_text": "foreach nemôže meniť index",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 153,
+                            "question_id": 39,
+                            "option_text": "foreach sa používa na prechádzanie kolekcií bez indexu",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 154,
+                            "question_id": 39,
+                            "option_text": "neexistuje rozdiel",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň názov vlastnosti, ktorá vracia počet prvkov poľa:\n\npole.__________",
+                    "explanation": "Vlastnosť Length vracia počet prvkov v poli.",
+                    "correctAnswer": "Length"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Ak sa pokúsime použiť index mimo rozsahu poľa, vznikne chyba typu: __________",
+                    "explanation": "IndexOutOfRangeException sa vyhodí pri použití neplatného indexu.",
+                    "correctAnswer": "IndexOutOfRangeException"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj správne dvojice",
+                    "explanation": "Rôzne nástroje na prácu s poľami majú rôzne funkcie.",
+                    "pairs": [
+                        {
+                            "left": "index",
+                            "right": "poradie prvku"
+                        },
+                        {
+                            "left": "Length",
+                            "right": "počet prvkov"
+                        },
+                        {
+                            "left": "Array.Sort()",
+                            "right": "zoradenie poľa"
+                        },
+                        {
+                            "left": "foreach",
+                            "right": "prechádzanie prvkov"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 11,
+            "name": "Dvojrozmerné polia",
+            "difficulty": "hard",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Čo je dvojrozmerné pole?",
+                    "explanation": "Dvojrozmerné pole je usporiadané do riadkov a stĺpcov.",
+                    "options": [
+                        {
+                            "id": 155,
+                            "question_id": 40,
+                            "option_text": "Premenná, ktorá obsahuje len jedno číslo",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 156,
+                            "question_id": 40,
+                            "option_text": "Pole, ktoré obsahuje iba textové hodnoty",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 157,
+                            "question_id": 40,
+                            "option_text": "Pole usporiadané do riadkov a stĺpcov",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 158,
+                            "question_id": 40,
+                            "option_text": "Zoznam objektov bez indexov",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Ako správne deklarujeme prázdne dvojrozmerné pole 4x3 typu int?",
+                    "explanation": "Správna syntax je int[,] pole = new int[4,3]; - 4 riadky, 3 stĺpce.",
+                    "options": [
+                        {
+                            "id": 159,
+                            "question_id": 41,
+                            "option_text": "int[,] pole = new int[3,4];",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 160,
+                            "question_id": 41,
+                            "option_text": "int[,] pole = new int[4,3];",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 161,
+                            "question_id": 41,
+                            "option_text": "int[] pole = new int[4,3];",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 162,
+                            "question_id": 41,
+                            "option_text": "int[4,3] pole;",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo sa stane, ak použijeme neexistujúci index?",
+                    "explanation": "Použitie neexistujúceho indexu vyhodí IndexOutOfRangeException.",
+                    "options": [
+                        {
+                            "id": 163,
+                            "question_id": 42,
+                            "option_text": "Program sa automaticky opraví",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 164,
+                            "question_id": 42,
+                            "option_text": "Vráti sa hodnota 0",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 165,
+                            "question_id": 42,
+                            "option_text": "Vznikne chyba (IndexOutOfRangeException)",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 166,
+                            "question_id": 42,
+                            "option_text": "Pole sa zväčší",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň metódu na zistenie počtu stĺpcov:\n\npole.________(1);",
+                    "explanation": "GetLength(1) vracia počet stĺpcov (druhá dimenzia).",
+                    "correctAnswer": "GetLength"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň inicializáciu náhodného čísla do poľa:\n\npole[i,j] = random.________(100);",
+                    "explanation": "Next(100) generuje náhodné číslo od 0 do 99.",
+                    "correctAnswer": "Next"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj funkcie s ich významom",
+                    "explanation": "Rôzne metódy a vlastnosti poskytujú informácie o 2D poli.",
+                    "pairs": [
+                        {
+                            "left": "pole.Length",
+                            "right": "Celkový počet prvkov"
+                        },
+                        {
+                            "left": "pole.GetLength(0)",
+                            "right": "Počet riadkov"
+                        },
+                        {
+                            "left": "pole.GetLength(1)",
+                            "right": "Počet stĺpcov"
+                        },
+                        {
+                            "left": "pole[i,j]",
+                            "right": "Prístup ku konkrétnemu prvku"
+                        }
+                    ]
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj pojmy s ich významom",
+                    "explanation": "Základné pojmy pri práci s 2D poľami.",
+                    "pairs": [
+                        {
+                            "left": "2D pole",
+                            "right": "Dáta usporiadané do tabuľky"
+                        },
+                        {
+                            "left": "Index",
+                            "right": "Poradie prvku"
+                        },
+                        {
+                            "left": "Random",
+                            "right": "Generovanie náhodných čísel"
+                        },
+                        {
+                            "left": "foreach",
+                            "right": "Prechod všetkých prvkov"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 12,
+            "name": "Štruktúry (Struct)",
+            "difficulty": "hard",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Čo je štruktúra (struct) v C#?",
+                    "explanation": "Struct je používateľom definovaný dátový typ združujúci viac údajov.",
+                    "options": [
+                        {
+                            "id": 167,
+                            "question_id": 43,
+                            "option_text": "Pole rovnakých hodnôt",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 168,
+                            "question_id": 43,
+                            "option_text": "Používateľom definovaný dátový typ združujúci viac údajov",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 169,
+                            "question_id": 43,
+                            "option_text": "Metóda bez návratovej hodnoty",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 170,
+                            "question_id": 43,
+                            "option_text": "Cyklus na opakovanie príkazov",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Ako pristupujeme k členom štruktúry?",
+                    "explanation": "K členom štruktúry pristupujeme pomocou bodky (.).",
+                    "options": [
+                        {
+                            "id": 171,
+                            "question_id": 44,
+                            "option_text": "Pomocou hranatých zátvoriek []",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 172,
+                            "question_id": 44,
+                            "option_text": "Pomocou operátora ::",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 173,
+                            "question_id": 44,
+                            "option_text": "Pomocou bodky .",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 174,
+                            "question_id": 44,
+                            "option_text": "Pomocou kľúčového slova public",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Kam patrí struct z hľadiska typov?",
+                    "explanation": "Struct je hodnotový typ, na rozdiel od tried, ktoré sú referenčné.",
+                    "options": [
+                        {
+                            "id": 175,
+                            "question_id": 45,
+                            "option_text": "Referenčný typ",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 176,
+                            "question_id": 45,
+                            "option_text": "Hodnotový typ",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 177,
+                            "question_id": 45,
+                            "option_text": "Dynamický typ",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 178,
+                            "question_id": 45,
+                            "option_text": "Neznámy typ",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň správne kľúčové slovo:\n\n________ Ziak\n{\n    public string meno;\n    public int vek;\n}",
+                    "explanation": "Kľúčové slovo struct definuje štruktúru.",
+                    "correctAnswer": "struct"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň vytvorenie premennej typu Ziak:\n\nZiak z1 = new ________();",
+                    "explanation": "Pri vytváraní inštancie použijeme názov štruktúry.",
+                    "correctAnswer": "Ziak"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň chýbajúcu časť (prístup k členu štruktúry):\n\nZiak z1 = new Ziak();\nz1._______ = \"Adam\";",
+                    "explanation": "K členu štruktúry pristupujeme pomocou bodky a názvu člena.",
+                    "correctAnswer": "meno"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj pojem s jeho významom",
+                    "explanation": "Základné pojmy pri práci so štruktúrami.",
+                    "pairs": [
+                        {
+                            "left": "struct",
+                            "right": "Používateľom definovaný dátový typ"
+                        },
+                        {
+                            "left": "člen štruktúry",
+                            "right": "Premenná vo vnútri štruktúry"
+                        },
+                        {
+                            "left": "Ziak[] ziaci",
+                            "right": "Pole prvkov rovnakého typu"
+                        },
+                        {
+                            "left": "ref",
+                            "right": "Odovzdanie premennej referenciou"
+                        }
+                    ]
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj kód s významom",
+                    "explanation": "Príklady práce s poľom štruktúr.",
+                    "pairs": [
+                        {
+                            "left": "ziaci[0].meno",
+                            "right": "Prístup k menu prvého žiaka"
+                        },
+                        {
+                            "left": "Ziak[] ziaci = new Ziak[5];",
+                            "right": "Vytvorenie poľa štruktúr"
+                        },
+                        {
+                            "left": "sucet += ziaci[i].vyska;",
+                            "right": "Sčítanie výšky žiakov"
+                        },
+                        {
+                            "left": "ziaci.Length",
+                            "right": "Počet prvkov v poli"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "levelNumber": 13,
+            "name": "Práca so súbormi",
+            "difficulty": "hard",
+            "questions": [
+                {
+                    "type": "ABCD",
+                    "text": "Na čo slúži using System.IO; ?",
+                    "explanation": "System.IO poskytuje triedy pre vstupno-výstupné operácie so súbormi.",
+                    "options": [
+                        {
+                            "id": 179,
+                            "question_id": 46,
+                            "option_text": "Na prácu s grafikou",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 180,
+                            "question_id": 46,
+                            "option_text": "Na vstupno-výstupné operácie so súbormi",
+                            "option_index": 1,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 181,
+                            "question_id": 46,
+                            "option_text": "Na prácu s databázou",
+                            "option_index": 2,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 182,
+                            "question_id": 46,
+                            "option_text": "Na matematické výpočty",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Čo sa stane pri použití FileMode.Open, ak súbor neexistuje?",
+                    "explanation": "FileMode.Open vyžaduje existujúci súbor, inak vyhodí chybu.",
+                    "options": [
+                        {
+                            "id": 183,
+                            "question_id": 47,
+                            "option_text": "Súbor sa vytvorí",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 184,
+                            "question_id": 47,
+                            "option_text": "Súbor sa prepíše",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 185,
+                            "question_id": 47,
+                            "option_text": "Nastane chyba",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 186,
+                            "question_id": 47,
+                            "option_text": "Súbor sa otvorí v režime append",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "ABCD",
+                    "text": "Ktorá trieda dokáže zapisovať textové reťazce do súboru?",
+                    "explanation": "StreamWriter slúži na zápis textu do súboru.",
+                    "options": [
+                        {
+                            "id": 187,
+                            "question_id": 48,
+                            "option_text": "FileStream",
+                            "option_index": 0,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 188,
+                            "question_id": 48,
+                            "option_text": "StreamReader",
+                            "option_index": 1,
+                            "is_correct": 0
+                        },
+                        {
+                            "id": 189,
+                            "question_id": 48,
+                            "option_text": "StreamWriter",
+                            "option_index": 2,
+                            "is_correct": 1
+                        },
+                        {
+                            "id": 190,
+                            "question_id": 48,
+                            "option_text": "Console",
+                            "option_index": 3,
+                            "is_correct": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň správny FileMode (ak súbor existuje, doplní obsah na koniec):\n\nFileStream file = new FileStream(\"data.txt\", FileMode.________);",
+                    "explanation": "FileMode.Append pridáva obsah na koniec existujúceho súboru.",
+                    "correctAnswer": "Append"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň názov triedy na čítanie textu zo súboru:\n\nFileStream file = new FileStream(\"data.txt\", FileMode.Open);\n________ sr = new ________(file);",
+                    "explanation": "StreamReader sa používa na čítanie textu zo súboru.",
+                    "correctAnswer": "StreamReader"
+                },
+                {
+                    "type": "Vstupna",
+                    "text": "Doplň podmienku ukončenia čítania (keď je koniec súboru):\n\nstring riadok = \"\";\nwhile (riadok != ______)\n{\n    riadok = sr.ReadLine();\n}",
+                    "explanation": "ReadLine() vracia null, keď dosiahne koniec súboru.",
+                    "correctAnswer": "null"
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj FileMode s jeho významom",
+                    "explanation": "Rôzne FileMode hodnoty majú rôzne správanie.",
+                    "pairs": [
+                        {
+                            "left": "Create",
+                            "right": "Vytvorí nový alebo prepíše existujúci"
+                        },
+                        {
+                            "left": "CreateNew",
+                            "right": "Vytvorí nový súbor, ak existuje → chyba"
+                        },
+                        {
+                            "left": "Open",
+                            "right": "Otvorí existujúci súbor, inak chyba"
+                        },
+                        {
+                            "left": "Append",
+                            "right": "Doplní obsah na koniec súboru"
+                        }
+                    ]
+                },
+                {
+                    "type": "Parovacia",
+                    "text": "Spoj triedu s jej funkciou",
+                    "explanation": "Triedy pre prácu so súbormi majú špecifické účely.",
+                    "pairs": [
+                        {
+                            "left": "FileStream",
+                            "right": "Nastavuje prístup k súboru (pracuje s bajtmi)"
+                        },
+                        {
+                            "left": "StreamReader",
+                            "right": "Číta text zo súboru"
+                        },
+                        {
+                            "left": "StreamWriter",
+                            "right": "Zapisuje text do súboru"
+                        },
+                        {
+                            "left": "ReadLine()",
+                            "right": "Načíta jeden riadok textu"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

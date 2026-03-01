@@ -122,121 +122,19 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
-            // Načítaj dáta z JSON pomocou helper metódy
+            // Načítaj dáta z JSON
             var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(5);
 
-            if (otazkyZJson.Count > 0)
+            foreach (var otazka in otazkyZJson)
             {
-                foreach (var otazka in otazkyZJson)
-                {
-                    Otazky.Add(otazka);
-                }
-                return;
+                Otazky.Add(otazka);
             }
 
-            // Fallback: hardcoded otázky
-            // Otázka 1 - ABCD
-            Otazky.Add(new ABCDOtazka
+            // Ak sa nenačítali žiadne otázky z databázy, môže to znamenať problém
+            if (Otazky.Count == 0)
             {
-                OtazkaText = "Na čo slúži príkaz if?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Na opakovanie cyklu", Index=0 },
-                    new ABCDMoznost{ Text="Na rozhodovanie podľa podmienky", Index=1 },
-                    new ABCDMoznost{ Text="Na vytvorenie premennej", Index=2 },
-                    new ABCDMoznost{ Text="Na ukončenie programu", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 2 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Aký je rozdiel medzi = a == ?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Nie je žiadny rozdiel", Index=0 },
-                    new ABCDMoznost{ Text="= porovnáva, == priraďuje", Index=1 },
-                    new ABCDMoznost{ Text="= priraďuje hodnotu, == porovnáva", Index=2 },
-                    new ABCDMoznost{ Text="Oba ukončujú príkaz", Index=3 },
-                },
-                SpravnaMoznostIndex = 2
-            });
-
-            // Otázka 3 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Čo znamená operátor && ?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Aspoň jedna podmienka platí", Index=0 },
-                    new ABCDMoznost{ Text="Obe podmienky musia platiť", Index=1 },
-                    new ABCDMoznost{ Text="Negácia podmienky", Index=2 },
-                    new ABCDMoznost{ Text="Sčítanie", Index=3 },
-                },
-                SpravnaMoznostIndex = 1
-            });
-
-            // Otázka 4 - ABCD
-            Otazky.Add(new ABCDOtazka
-            {
-                OtazkaText = "Koľko vetiev else môže byť v jednej podmienke?",
-                Moznosti = new()
-                {
-                    new ABCDMoznost{ Text="Neobmedzene", Index=0 },
-                    new ABCDMoznost{ Text="2", Index=1 },
-                    new ABCDMoznost{ Text="1", Index=2 },
-                    new ABCDMoznost{ Text="0", Index=3 },
-                },
-                SpravnaMoznostIndex = 2
-            });
-
-            // Otázka 5 - Vstupná
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "Operátor na porovnanie rovnosti je _______",
-                SpravnaOdpoved = "=="
-            });
-
-            // Otázka 6 - Vstupná
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "Operátor OR zapisujeme ako _______",
-                SpravnaOdpoved = "||"
-            });
-
-            // Otázka 7 - Vstupná
-            Otazky.Add(new VstupnaOtazka
-            {
-                OtazkaText = "Vetva, ktorá sa vykoná ak podmienka nie je splnená, sa nazýva _______",
-                SpravnaOdpoved = "else"
-            });
-
-            // Otázka 8 - Párovacia
-            var parovaciaOtazka = new ParovaciaOtazka
-            {
-                OtazkaText = "Spoj správne dvojice"
-            };
-
-            // Ľavý stĺpec
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "if", Index = 0, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "else", Index = 1, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "else if", Index = 2, IsLeft = true });
-            parovaciaOtazka.LavyStlpec.Add(new ParovaciaPolozka { Text = "&&", Index = 3, IsLeft = true });
-
-            // Pravý stĺpec (premiešané poradie)
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "AND operátor", Index = 0, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "základná podmienka", Index = 1, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "vykoná sa ak podmienka neplatí", Index = 2, IsLeft = false });
-            parovaciaOtazka.PravyStlpec.Add(new ParovaciaPolozka { Text = "ďalšia možnosť rozhodovania", Index = 3, IsLeft = false });
-
-            // Správne páry
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "if", Prava = "základná podmienka" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "else", Prava = "vykoná sa ak podmienka neplatí" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "else if", Prava = "ďalšia možnosť rozhodovania" });
-            parovaciaOtazka.SpravnePary.Add(new ParovaciaPolicka { Lava = "&&", Prava = "AND operátor" });
-
-            Otazky.Add(parovaciaOtazka);
+                Console.WriteLine("WARNING: Level 5 - žiadne otázky neboli načítané z databázy!");
+            }
         }
     }
 }
