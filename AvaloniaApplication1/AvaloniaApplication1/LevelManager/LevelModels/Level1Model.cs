@@ -79,6 +79,8 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                     var next = Otazky[_index];
                     ResetQuestionFlags(next);
                     AktualnaOtazka = next;
+                    // hide 'Dalej' because next is displayed
+                    ShowDalej = false;
                 }
                 else
                 {

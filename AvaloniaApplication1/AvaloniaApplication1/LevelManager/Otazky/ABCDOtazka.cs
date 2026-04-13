@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.Input;
+using System.Text;
+using System.Globalization;
 
 namespace AvaloniaApplication1.LevelManager.Otazky;
 
@@ -16,9 +18,21 @@ public partial class ABCDOtazka : OtazkaBase
     public bool ShowCorrectAnswerFlag { get => _showCorrectAnswerFlag; set => SetProperty(ref _showCorrectAnswerFlag, value); }
 
     private string _spravnaMoznostText = string.Empty;
-    public string SpravnaMoznostText { get => _spravnaMoznostText; set => SetProperty(ref _spravnaMoznostText, value); }
+    public string SpravnaMoznostText
+    {
+        get => _spravnaMoznostText;
+        set
+        {
+            if (SetProperty(ref _spravnaMoznostText, value))
+            {
+                // notify dependent computed property
+                OnPropertyChanged(nameof(SpravnaMoznostTextNoDiacritics));
+            }
+        }
+    }
 
-    public string SpravnaMoznostLabel => string.IsNullOrWhiteSpace(SpravnaMoznostText) ? string.Empty : $"Správna odpoveď: {SpravnaMoznostText}";
+    // computed property: correct answer without diacritics
+    public string SpravnaMoznostTextNoDiacritics => RemoveDiacritics(SpravnaMoznostText ?? string.Empty);
 
     public override bool SkontrolujOdpoved(object odpoved)
     {
@@ -35,5 +49,20 @@ public partial class ABCDOtazka : OtazkaBase
         SpravnaMoznostText = correctText;
 
         return correct;
+    }
+
+    private static string RemoveDiacritics(string text)
+    {
+        if (string.IsNullOrEmpty(text))
+            return string.Empty;
+
+        var normalized = text.Normalize(NormalizationForm.FormD);
+        var sb = new StringBuilder();
+        foreach (var ch in normalized)
+        {
+            if (CharUnicodeInfo.GetUnicodeCategory(ch) != UnicodeCategory.NonSpacingMark)
+                sb.Append(ch);
+        }
+        return sb.ToString().Normalize(NormalizationForm.FormC);
     }
 }
