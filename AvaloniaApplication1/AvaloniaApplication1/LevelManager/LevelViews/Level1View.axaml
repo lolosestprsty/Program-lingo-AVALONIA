@@ -62,5 +62,9 @@
             </StackPanel>
         </Border>
     </Border>
+    <!-- Next button visible when awaiting user to continue after answer (center bottom) -->
+    <Border Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,10" IsVisible="{Binding ShowDalej}">
+        <Button Content="Pokračovať" Command="{Binding DalsiaCommand}" Width="160" Theme="{StaticResource ButtonTheme}" />
+    </Border>
   </Grid>
 </UserControl>

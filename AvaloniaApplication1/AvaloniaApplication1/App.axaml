@@ -30,6 +30,7 @@
         <conv:BoolToBorderBrushConverter x:Key="BoolToBorderBrushConverter" />
         <conv:BoolToBorderThicknessConverter x:Key="BoolToBorderThicknessConverter" />
         <conv:BoolToCornerRadiusConverter x:Key="BoolToCornerRadiusConverter" />
+        <conv:InverseBoolConverter x:Key="InverseBoolConverter" />
    
         <!-- Style for buttons -->
         <ControlTheme x:Key="ButtonTheme" TargetType="Button">

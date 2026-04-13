@@ -38,7 +38,7 @@
                        PointerPressed="Vysvetlivka8_Click" Cursor="Hand"/>
             <TextBlock Text="09 Pole" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka9_Click" Cursor="Hand"/>
-            <TextBlock Text="10 Dvojroymerne pole" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
+            <TextBlock Text="10 Dvojrozmerne pole" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka10_Click" Cursor="Hand"/>
             <TextBlock Text="11 Metody" FontSize="16" FontWeight="Bold" Foreground="White" Margin="14,14,10,5" 
                        PointerPressed="Vysvetlivka11_Click" Cursor="Hand"/>

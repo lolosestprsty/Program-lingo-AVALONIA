@@ -31,7 +31,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
             _index = 0;
             _correctCount = 0;
 
-            //definovanie commandu
+            // define command: evaluate answer but wait for user to click "Dalej" to continue
             OdpovedCommand = new RelayCommand<object>(odpoved =>
             {
                 if (AktualnaOtazka is null)
@@ -56,18 +56,35 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 // update progress (based on how many questions were answered so far)
                 Progres = (int)((double)_answeredCount / _initialCount * 100);
 
-                // move to next question
-                _index++;
+                // ensure 'Dalej' button only when incorrect
+                ShowDalej = !spravna;
 
-                if (_index >= Otazky.Count)
+                // if correct -> auto-advance to next question
+                if (spravna)
                 {
-                    // finished - show summary
-                    CorrectCount = _correctCount;
-                    IsFinished = true;
-                    return;
-                }
+                    // already counted earlier, do not increment again
+                    // advance immediately
+                    AwaitingNext = false;
+                    _index++;
 
-                AktualnaOtazka = Otazky[_index];
+                    if (_index >= Otazky.Count)
+                    {
+                        // finished - show summary
+                        CorrectCount = _correctCount;
+                        IsFinished = true;
+                        return;
+                    }
+
+                    // move to next without showing 'Dalej'
+                    var next = Otazky[_index];
+                    ResetQuestionFlags(next);
+                    AktualnaOtazka = next;
+                }
+                else
+                {
+                    // wait for user to press 'Dalej' before advancing
+                    AwaitingNext = true;
+                }
             });
 
             //command ku kazdej otazke (set the command on question instances so views that use it directly can call it)
@@ -107,6 +124,61 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         [ObservableProperty]
         private bool isFinished;
+
+        private bool _awaitingNext;
+        public bool AwaitingNext { get => _awaitingNext; set => SetProperty(ref _awaitingNext, value); }
+
+        private bool _showDalej;
+        public bool ShowDalej { get => _showDalej; set => SetProperty(ref _showDalej, value); }
+
+        public IRelayCommand DalsiaCommand =>
+            new RelayCommand(() =>
+            {
+                // advance to next question after user clicked 'Dalej'
+                AwaitingNext = false;
+
+                _index++;
+
+                if (_index >= Otazky.Count)
+                {
+                    // finished - show summary
+                    CorrectCount = _correctCount;
+                    IsFinished = true;
+                    return;
+                }
+                if (_index >= Otazky.Count)
+                {
+                    // finished - show summary
+                    CorrectCount = _correctCount;
+                    IsFinished = true;
+                    return;
+                }
+
+                var next = Otazky[_index];
+                ResetQuestionFlags(next);
+                AktualnaOtazka = next;
+            });
+
+        private void ResetQuestionFlags(OtazkaBase q)
+        {
+            // clear answer visibility flags when moving to a next question
+            if (q is ABCDOtazka a)
+            {
+                a.ShowCorrectAnswerFlag = false;
+                // reset the displayed correct answer text
+                a.SpravnaMoznostText = string.Empty;
+            }
+            else if (q is VstupnaOtazka v)
+            {
+                // nothing to reset on input-based question for now
+            }
+            else if (q is ParovaciaOtazka p)
+            {
+                // reset parovacia items
+                foreach (var it in p.LavyStlpec) { it.IsMatched = false; it.IsSelected = false; it.IsEnabled = true; }
+                foreach (var it in p.PravyStlpec) { it.IsMatched = false; it.IsSelected = false; it.IsEnabled = true; }
+            }
+        }
 
         public int TotalQuestions => _initialCount;
 
