@@ -19,6 +19,8 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         private int _index = 0;
         private int _correctCount = 0;
         private int _answeredCount = 0;
+        private bool _awaitingNext;
+        private bool _showDalej;
 
         public Level11Model(MainViewModel main)
         {
@@ -26,6 +28,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
             NacitajOtazky();
 
+            _index = 0;
             _initialCount = Otazky.Count;
 
             OdpovedCommand = new RelayCommand<object>(odpoved =>
@@ -33,6 +36,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 if (AktualnaOtazka is null)
                     return;
 
+                ShowDalej = false;
                 // Validate empty input for VstupnaOtazka
                 if (AktualnaOtazka is VstupnaOtazka && odpoved is string textInput && string.IsNullOrWhiteSpace(textInput))
                 {
@@ -46,7 +50,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 if (spravna)
                 {
-                    _correctCount++;
+                    CorrectCount = CorrectCount + 1;
                     ProgressColor = Brushes.Green;
                 }
                 else
@@ -60,7 +64,6 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 if (_index >= Otazky.Count)
                 {
-                    CorrectCount = _correctCount;
                     IsFinished = true;
                     return;
                 }
@@ -97,6 +100,51 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         [ObservableProperty] private IBrush progressColor = Brushes.Green;
         [ObservableProperty] private int correctCount;
         [ObservableProperty] private bool isFinished;
+        // properties for controlling 'Dalej' button and awaiting state
+        public bool AwaitingNext { get => _awaitingNext; set => SetProperty(ref _awaitingNext, value); }
+
+        public bool ShowDalej { get => _showDalej; set => SetProperty(ref _showDalej, value); }
+
+        public IRelayCommand DalsiaCommand =>
+            new RelayCommand(() =>
+            {
+                // advance to next question after user clicked 'Dalej'
+                AwaitingNext = false;
+
+                _index++;
+
+                if (_index >= Otazky.Count)
+                {
+                    CorrectCount = _correctCount;
+                    IsFinished = true;
+                    return;
+                }
+
+                var next = Otazky[_index];
+                ResetQuestionFlags(next);
+                AktualnaOtazka = next;
+            });
+
+        private void ResetQuestionFlags(OtazkaBase q)
+        {
+            // clear answer visibility flags when moving to a next question
+            if (q is ABCDOtazka a)
+            {
+                a.ShowCorrectAnswerFlag = false;
+                // reset the displayed correct answer text
+                a.SpravnaMoznostText = string.Empty;
+            }
+            else if (q is VstupnaOtazka v)
+            {
+                v.ShowCorrectAnswerFlag = false;
+            }
+            else if (q is ParovaciaOtazka p)
+            {
+                // reset parovacia items
+                foreach (var it in p.LavyStlpec) { it.IsMatched = false; it.IsSelected = false; it.IsEnabled = true; }
+                foreach (var it in p.PravyStlpec) { it.IsMatched = false; it.IsSelected = false; it.IsEnabled = true; }
+            }
+        }
 
         public int TotalQuestions => _initialCount;
 

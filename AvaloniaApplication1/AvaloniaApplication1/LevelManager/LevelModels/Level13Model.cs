@@ -30,7 +30,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
             OdpovedCommand = new RelayCommand<object>(odpoved =>
             {
-                if (AktualnaOtazka is null)
+                if (AktualnaOtazka is null || AwaitingNext)
                     return;
 
                 // Validate empty input for VstupnaOtazka
@@ -46,7 +46,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 if (spravna)
                 {
-                    _correctCount++;
+                    CorrectCount++;
                     ProgressColor = Brushes.Green;
                 }
                 else
@@ -60,7 +60,6 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 if (_index >= Otazky.Count)
                 {
-                    CorrectCount = _correctCount;
                     IsFinished = true;
                     return;
                 }
@@ -97,6 +96,49 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         [ObservableProperty] private IBrush progressColor = Brushes.Green;
         [ObservableProperty] private int correctCount;
         [ObservableProperty] private bool isFinished;
+        [ObservableProperty] private bool showDalej;
+        [ObservableProperty] private bool awaitingNext;
+
+        public IRelayCommand DalsiaCommand =>
+            new RelayCommand(() =>
+            {
+                // advance to next question after user clicked 'Dalej'
+                AwaitingNext = false;
+
+                _index++;
+
+                if (_index >= Otazky.Count)
+                {
+                    CorrectCount = _correctCount;
+                    IsFinished = true;
+                    return;
+                }
+
+                var next = Otazky[_index];
+                ResetQuestionFlags(next);
+                AktualnaOtazka = next;
+            });
+
+        private void ResetQuestionFlags(OtazkaBase q)
+        {
+            // clear answer visibility flags when moving to a next question
+            if (q is ABCDOtazka a)
+            {
+                a.ShowCorrectAnswerFlag = false;
+                // reset the displayed correct answer text
+                a.SpravnaMoznostText = string.Empty;
+            }
+            else if (q is VstupnaOtazka v)
+            {
+                v.ShowCorrectAnswerFlag = false;
+            }
+            else if (q is ParovaciaOtazka p)
+            {
+                // reset parovacia items
+                foreach (var it in p.LavyStlpec) { it.IsMatched = false; it.IsSelected = false; it.IsEnabled = true; }
+                foreach (var it in p.PravyStlpec) { it.IsMatched = false; it.IsSelected = false; it.IsEnabled = true; }
+            }
+        }
 
         public int TotalQuestions => _initialCount;
 
