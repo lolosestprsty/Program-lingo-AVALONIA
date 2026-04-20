@@ -65,8 +65,8 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 // update progress (based on how many questions were answered so far)
                 Progres = (int)((double)_answeredCount / _initialCount * 100);
 
-                // ensure 'Dalej' button only when incorrect
-                ShowDalej = !spravna;
+                // ensure 'Dalej' button only when incorrect (but not for ParovaciaOtazka)
+                ShowDalej = !spravna && !(AktualnaOtazka is ParovaciaOtazka);
 
                 // if correct -> auto-advance to next question
                 if (spravna)
@@ -92,8 +92,25 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 }
                 else
                 {
-                    // wait for user to press 'Dalej' before advancing
-                    AwaitingNext = true;
+                    // wait for user to press 'Dalej' before advancing (except ParovaciaOtazka)
+                    AwaitingNext = !(AktualnaOtazka is ParovaciaOtazka);
+
+                    // for ParovaciaOtazka, auto-advance even on wrong answer
+                    if (AktualnaOtazka is ParovaciaOtazka)
+                    {
+                        _index++;
+
+                        if (_index >= Otazky.Count)
+                        {
+                            CorrectCount = _correctCount;
+                            IsFinished = true;
+                            return;
+                        }
+
+                        var next = Otazky[_index];
+                        ResetQuestionFlags(next);
+                        AktualnaOtazka = next;
+                    }
                 }
             });
 
