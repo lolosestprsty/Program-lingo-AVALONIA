@@ -30,7 +30,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
             OdpovedCommand = new RelayCommand<object>(odpoved =>
             {
-                if (AktualnaOtazka is null || AwaitingNext)
+                if (AktualnaOtazka is null)
                     return;
 
                 // Validate empty input for VstupnaOtazka
@@ -42,29 +42,53 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 bool spravna = AktualnaOtazka.SkontrolujOdpoved(odpoved);
 
+                // count every answered question
                 _answeredCount++;
 
                 if (spravna)
                 {
-                    CorrectCount++;
+                    _correctCount++;
                     ProgressColor = Brushes.Green;
                 }
                 else
                 {
+                    // mark progress color red for wrong answer
                     ProgressColor = Brushes.Red;
                 }
 
+                // update progress (based on how many questions were answered so far)
                 Progres = (int)((double)_answeredCount / _initialCount * 100);
 
-                _index++;
+                // ensure 'Dalej' button only when incorrect
+                ShowDalej = !spravna;
 
-                if (_index >= Otazky.Count)
+                // if correct -> auto-advance to next question
+                if (spravna)
                 {
-                    IsFinished = true;
-                    return;
-                }
+                    // advance immediately
+                    AwaitingNext = false;
+                    _index++;
 
-                AktualnaOtazka = Otazky[_index];
+                    if (_index >= Otazky.Count)
+                    {
+                        // finished - show summary
+                        CorrectCount = _correctCount;
+                        IsFinished = true;
+                        return;
+                    }
+
+                    // move to next without showing 'Dalej'
+                    var next = Otazky[_index];
+                    ResetQuestionFlags(next);
+                    AktualnaOtazka = next;
+                    // hide 'Dalej' because next is displayed
+                    ShowDalej = false;
+                }
+                else
+                {
+                    // wait for user to press 'Dalej' before advancing
+                    AwaitingNext = true;
+                }
             });
 
             foreach (var otazka in Otazky)
@@ -104,6 +128,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
             {
                 // advance to next question after user clicked 'Dalej'
                 AwaitingNext = false;
+                ShowDalej = false;
 
                 _index++;
 

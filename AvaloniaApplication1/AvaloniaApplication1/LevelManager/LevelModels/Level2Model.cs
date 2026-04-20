@@ -37,6 +37,13 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 if (AktualnaOtazka is null)
                     return;
 
+                // Validate empty input for VstupnaOtazka
+                if (AktualnaOtazka is VstupnaOtazka && odpoved is string textInput && string.IsNullOrWhiteSpace(textInput))
+                {
+                    Console.WriteLine("vypln textove pole");
+                    return;
+                }
+
                 bool spravna = AktualnaOtazka.SkontrolujOdpoved(odpoved);
 
                 // count every answered question
@@ -44,7 +51,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 if (spravna)
                 {
-                    CorrectCount++;
+                    _correctCount++;
                     ProgressColor = Brushes.Green;
                 }
                 else
@@ -62,7 +69,6 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 // if correct -> auto-advance to next question
                 if (spravna)
                 {
-                    // already counted earlier, do not increment again
                     // advance immediately
                     AwaitingNext = false;
                     _index++;
@@ -70,6 +76,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                     if (_index >= Otazky.Count)
                     {
                         // finished - show summary
+                        CorrectCount = _correctCount;
                         IsFinished = true;
                         return;
                     }
@@ -112,23 +119,19 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         [ObservableProperty] private IBrush progressColor = Brushes.Green;
         [ObservableProperty] private int correctCount;
         [ObservableProperty] private bool isFinished;
-        [ObservableProperty] private bool showDalej;
-        [ObservableProperty] private bool awaitingNext;
+
+        public bool AwaitingNext { get => _awaitingNext; set => SetProperty(ref _awaitingNext, value); }
+        public bool ShowDalej { get => _showDalej; set => SetProperty(ref _showDalej, value); }
 
         public IRelayCommand DalsiaCommand =>
             new RelayCommand(() =>
             {
                 // advance to next question after user clicked 'Dalej'
                 AwaitingNext = false;
+                ShowDalej = false;
 
                 _index++;
 
-                if (_index >= Otazky.Count)
-                {
-                    CorrectCount = _correctCount;
-                    IsFinished = true;
-                    return;
-                }
                 if (_index >= Otazky.Count)
                 {
                     CorrectCount = _correctCount;

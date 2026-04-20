@@ -138,16 +138,10 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
             {
                 // advance to next question after user clicked 'Dalej'
                 AwaitingNext = false;
+                ShowDalej = false;
 
                 _index++;
 
-                if (_index >= Otazky.Count)
-                {
-                    // finished - show summary
-                    CorrectCount = _correctCount;
-                    IsFinished = true;
-                    return;
-                }
                 if (_index >= Otazky.Count)
                 {
                     // finished - show summary

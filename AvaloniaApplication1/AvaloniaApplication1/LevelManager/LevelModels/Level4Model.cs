@@ -53,7 +53,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 if (spravna)
                 {
-                    CorrectCount++;
+                    _correctCount++;
                     ProgressColor = Brushes.Green;
                 }
                 else
@@ -71,7 +71,6 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 // if correct -> auto-advance to next question
                 if (spravna)
                 {
-                    // already counted earlier, do not increment again
                     // advance immediately
                     AwaitingNext = false;
                     _index++;
@@ -79,6 +78,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                     if (_index >= Otazky.Count)
                     {
                         // finished - show summary
+                        CorrectCount = _correctCount;
                         IsFinished = true;
                         return;
                     }
@@ -137,15 +137,10 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
             {
                 // advance to next question after user clicked 'Dalej'
                 AwaitingNext = false;
+                ShowDalej = false;
 
                 _index++;
 
-                if (_index >= Otazky.Count)
-                {
-                    CorrectCount = _correctCount;
-                    IsFinished = true;
-                    return;
-                }
                 if (_index >= Otazky.Count)
                 {
                     CorrectCount = _correctCount;
