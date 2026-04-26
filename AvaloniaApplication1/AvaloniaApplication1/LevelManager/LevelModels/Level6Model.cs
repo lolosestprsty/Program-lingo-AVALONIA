@@ -36,7 +36,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 if (AktualnaOtazka is null)
                     return;
 
-                // Validate empty input for VstupnaOtazka
+                // check if input empty
                 if (AktualnaOtazka is VstupnaOtazka && odpoved is string textInput && string.IsNullOrWhiteSpace(textInput))
                 {
                     Console.WriteLine("vypln textove pole");
@@ -45,7 +45,6 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 bool spravna = AktualnaOtazka.SkontrolujOdpoved(odpoved);
 
-                // count every answered question
                 _answeredCount++;
 
                 if (spravna)
@@ -55,17 +54,15 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 }
                 else
                 {
-                    // mark progress color red for wrong answer
                     ProgressColor = Brushes.Red;
                 }
 
-                // update progress (based on how many questions were answered so far)
                 Progres = (int)((double)_answeredCount / _initialCount * 100);
 
-                // ensure 'Dalej' button only when incorrect (but not for ParovaciaOtazka)
+                // dalej button len pre zle odpovede (nie parovacie)
                 ShowDalej = !spravna && !(AktualnaOtazka is ParovaciaOtazka);
 
-                // if correct -> auto-advance to next question
+                // spravna odpoved = dalsia otazka hned
                 if (spravna)
                 {
                     // advance immediately

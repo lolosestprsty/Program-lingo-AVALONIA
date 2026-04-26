@@ -36,7 +36,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 if (AktualnaOtazka is null)
                     return;
 
-                // Validate empty input for VstupnaOtazka
+                // check if input empty
                 if (AktualnaOtazka is VstupnaOtazka && odpoved is string textInput && string.IsNullOrWhiteSpace(textInput))
                 {
                     Console.WriteLine("vypln textove pole");
@@ -45,7 +45,6 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
                 bool spravna = AktualnaOtazka.SkontrolujOdpoved(odpoved);
 
-                // count every answered question
                 _answeredCount++;
 
                 if (spravna)
@@ -55,44 +54,38 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 }
                 else
                 {
-                    // mark progress color red for wrong answer
                     ProgressColor = Brushes.Red;
                 }
 
-                // update progress (based on how many questions were answered so far)
                 Progres = (int)((double)_answeredCount / _initialCount * 100);
 
-                // ensure 'Dalej' button only when incorrect (but not for ParovaciaOtazka)
+                // dalej button len pre zle odpovede (nie parovacie)
                 ShowDalej = !spravna && !(AktualnaOtazka is ParovaciaOtazka);
 
-                // if correct -> auto-advance to next question
+                // spravna odpoved = dalsia otazka hned
                 if (spravna)
                 {
-                    // advance immediately
                     AwaitingNext = false;
                     _index++;
 
                     if (_index >= Otazky.Count)
                     {
-                        // finished - show summary
                         CorrectCount = _correctCount;
                         IsFinished = true;
                         return;
                     }
 
-                    // move to next without showing 'Dalej'
                     var next = Otazky[_index];
                     ResetQuestionFlags(next);
                     AktualnaOtazka = next;
-                    // hide 'Dalej' because next is displayed
                     ShowDalej = false;
                 }
                 else
                 {
-                    // wait for user to press 'Dalej' before advancing (except ParovaciaOtazka)
+                    // cakat na dalej (okrem parovacie)
                     AwaitingNext = !(AktualnaOtazka is ParovaciaOtazka);
 
-                    // for ParovaciaOtazka, auto-advance even on wrong answer
+                    // parovacie pokracuju aj po zle
                     if (AktualnaOtazka is ParovaciaOtazka)
                     {
                         _index++;
@@ -149,7 +142,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         public IRelayCommand DalsiaCommand =>
             new RelayCommand(() =>
             {
-                // advance to next question after user clicked 'Dalej'
+                // ked klikne dalej
                 AwaitingNext = false;
                 ShowDalej = false;
 
@@ -169,7 +162,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void ResetQuestionFlags(OtazkaBase q)
         {
-            // clear answer visibility flags when moving to a next question
+            // vycisti flags pred dalsou otazkou
             if (q is ABCDOtazka a)
             {
                 a.ShowCorrectAnswerFlag = false;
@@ -195,7 +188,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         public IRelayCommand OkCommand =>
             new RelayCommand(() =>
             {
-                // unlock next level when 75% or more questions were answered correctly
+                // odomkni dalsi level ak >75%
                 double percentageCorrect = (double)CorrectCount / _initialCount * 100;
                 if (percentageCorrect >= 75)
                 {
