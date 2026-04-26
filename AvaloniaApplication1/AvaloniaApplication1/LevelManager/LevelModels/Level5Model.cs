@@ -166,7 +166,6 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
             if (q is ABCDOtazka a)
             {
                 a.ShowCorrectAnswerFlag = false;
-                // reset the displayed correct answer text
                 a.SpravnaMoznostText = string.Empty;
             }
             else if (q is VstupnaOtazka v)
@@ -175,7 +174,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
             }
             else if (q is ParovaciaOtazka p)
             {
-                // reset parovacia items
+                // reset parovacich poloziek
                 foreach (var it in p.LavyStlpec) { it.IsMatched = false; it.IsSelected = false; it.IsEnabled = true; }
                 foreach (var it in p.PravyStlpec) { it.IsMatched = false; it.IsSelected = false; it.IsEnabled = true; }
             }
@@ -204,7 +203,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void NacitajOtazky()
         {
-            // Načítaj dáta z JSON
+            // nahraj z JSON
             var otazkyZJson = Data.QuestionConverter.ConvertToOtazky(5);
 
             foreach (var otazka in otazkyZJson)
@@ -212,10 +211,9 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 Otazky.Add(otazka);
             }
 
-            // Ak sa nenačítali žiadne otázky z databázy, môže to znamenať problém
             if (Otazky.Count == 0)
             {
-                Console.WriteLine("WARNING: Level 5 - žiadne otázky neboli načítané z databázy!");
+                Console.WriteLine("WARNING: Level 5 - ziadne otazky!");
             }
         }
     }

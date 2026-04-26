@@ -65,31 +65,27 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
                 // spravna odpoved = dalsia otazka hned
                 if (spravna)
                 {
-                    // advance immediately
                     AwaitingNext = false;
                     _index++;
 
                     if (_index >= Otazky.Count)
                     {
-                        // finished - show summary
                         CorrectCount = _correctCount;
                         IsFinished = true;
                         return;
                     }
 
-                    // move to next without showing 'Dalej'
                     var next = Otazky[_index];
                     ResetQuestionFlags(next);
                     AktualnaOtazka = next;
-                    // hide 'Dalej' because next is displayed
                     ShowDalej = false;
                 }
                 else
                 {
-                    // wait for user to press 'Dalej' before advancing (except ParovaciaOtazka)
+                    // cakat na dalej (okrem parovacie)
                     AwaitingNext = !(AktualnaOtazka is ParovaciaOtazka);
 
-                    // for ParovaciaOtazka, auto-advance even on wrong answer
+                    // parovacie pokracuju aj po zle
                     if (AktualnaOtazka is ParovaciaOtazka)
                     {
                         _index++;
@@ -144,7 +140,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         public IRelayCommand DalsiaCommand =>
             new RelayCommand(() =>
             {
-                // advance to next question after user clicked 'Dalej'
+                // ked klikne dalej
                 AwaitingNext = false;
                 ShowDalej = false;
 
@@ -164,7 +160,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
 
         private void ResetQuestionFlags(OtazkaBase q)
         {
-            // clear answer visibility flags when moving to a next question
+            // vycisti flags pred dalsou otazkou
             if (q is ABCDOtazka a)
             {
                 a.ShowCorrectAnswerFlag = false;
@@ -190,7 +186,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
         public IRelayCommand OkCommand =>
             new RelayCommand(() =>
             {
-                // unlock next level when 75% or more questions were answered correctly
+                // odomkni dalsi level ak >75%
                 double percentageCorrect = (double)CorrectCount / _initialCount * 100;
                 if (percentageCorrect >= 75)
                 {
