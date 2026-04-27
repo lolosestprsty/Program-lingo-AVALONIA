@@ -167,6 +167,7 @@ namespace AvaloniaApplication1.LevelManager.LevelModels
             }
             else if (q is VstupnaOtazka v)
             {
+                v.ShowCorrectAnswerFlag = false;
             }
             else if (q is ParovaciaOtazka p)
             {

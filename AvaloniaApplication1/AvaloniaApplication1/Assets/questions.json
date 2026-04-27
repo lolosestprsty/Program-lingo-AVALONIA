@@ -498,26 +498,26 @@
                 {
                     "type": "Vstupna",
                     "text": "Každý riadok kódu ukončujeme znakom _______",
-                    "explanation": "V C# každý príkaz končí bodkočiarkou (;).",
-                    "correctAnswer": ";"
+                    "correctAnswer": ";",
+                    "explanation": "V C# kazdy prikaz konci bodkociarkou (;)."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Na načítanie vstupu z klávesnice používame metódu __________",
-                    "explanation": "Console.ReadLine() slúži na načítanie textového vstupu od používateľa.",
-                    "correctAnswer": "Console.ReadLine()"
+                    "correctAnswer": "Console.ReadLine()",
+                    "explanation": "Console.ReadLine() sluzi na nacitanie textoveho vstupu od pouzivatela."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Prevod vstupu na celé číslo urobíme pomocou __________",
-                    "explanation": "Convert.ToInt32 prevádza text na celé číslo typu int.",
-                    "correctAnswer": "Convert.ToInt32"
+                    "correctAnswer": "Convert.ToInt32",
+                    "explanation": "Convert.ToInt32 prevadza text na cele cislo typu int."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Dátový typ pre jedno písmeno alebo znak je __________",
-                    "explanation": "Dátový typ char slúži na ukladanie jedného znaku.",
-                    "correctAnswer": "char"
+                    "correctAnswer": "char",
+                    "explanation": "Datovy typ char sluzi na ukladanie jedneho znaku."
                 },
                 {
                     "type": "Parovacia",
@@ -692,20 +692,20 @@
                 {
                     "type": "Vstupna",
                     "text": "Manuálne pretypovanie zapisujeme pomocou __________ zátvoriek.",
-                    "explanation": "Explicitné pretypovanie sa zapisuje pomocou okrúhlych zátvoriek: (typ)hodnota.",
-                    "correctAnswer": "okrúhlych"
+                    "correctAnswer": "okruhlych",
+                    "explanation": "Explicitne pretypovanie sa zapisuje pomocou okruhlych zatvoriek: (typ)hodnota."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Pri explicitnej konverzii môže dôjsť k strate __________.",
-                    "explanation": "Pri explicitnej konverzii môže dôjsť k strate údajov, napr. pri prevode double na int.",
-                    "correctAnswer": "údajov"
+                    "correctAnswer": "udajov",
+                    "explanation": "Pri explicitnej konverzii moze dojst k strate udajov, napr. pri prevode double na int."
                 },
                 {
                     "type": "Vstupna",
                     "text": "V zdrojovom kóde sa ako oddeľovač desatinných miest vždy používa __________.",
-                    "explanation": "V C# kóde sa vždy používa bodka ako oddeľovač desatinných miest.",
-                    "correctAnswer": "bodka"
+                    "correctAnswer": "bodka",
+                    "explanation": "V C# kode sa vzdy pouziva bodka ako oddelovac desatinnych miest."
                 },
                 {
                     "type": "Parovacia",
@@ -880,20 +880,20 @@
                 {
                     "type": "Vstupna",
                     "text": "Operátor na porovnanie rovnosti je _______",
-                    "explanation": "Operátor == sa používa na porovnanie dvoch hodnôt.",
-                    "correctAnswer": "=="
+                    "correctAnswer": "==",
+                    "explanation": "Operator == sa pouziva na porovnanie dvoch hodnot."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Operátor OR zapisujeme ako _______",
-                    "explanation": "Operátor || (OR) kontroluje, či je splnená aspoň jedna podmienka.",
-                    "correctAnswer": "||"
+                    "correctAnswer": "||",
+                    "explanation": "Operator || (OR) kontroluje, ci je splnena aspon jedna podmienka."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Vetva, ktorá sa vykoná ak podmienka nie je splnená, sa nazýva _______",
-                    "explanation": "Vetva else sa vykoná, keď podmienka v if nie je splnená.",
-                    "correctAnswer": "else"
+                    "correctAnswer": "else",
+                    "explanation": "Vetva else sa vykona, ked podmienka v if nie je splnena."
                 },
                 {
                     "type": "Parovacia",
@@ -1068,14 +1068,14 @@
                 {
                     "type": "Vstupna",
                     "text": "Každá vetva case musí byť ukončená príkazom __________.",
-                    "explanation": "Príkaz break ukončuje každú vetvu case.",
-                    "correctAnswer": "break"
+                    "correctAnswer": "break",
+                    "explanation": "Prikaz break ukoncuje kazdu vetvu case."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Vetva, ktorá sa vykoná, ak nenastane žiadna možnosť: __________",
-                    "explanation": "Vetva default sa vykoná, keď žiadny case neodpovedá hodnote.",
-                    "correctAnswer": "default"
+                    "correctAnswer": "default",
+                    "explanation": "Vetva default sa vykona, ked ziadny case neodpoveda hodnote."
                 },
                 {
                     "type": "Parovacia",
@@ -1238,14 +1238,14 @@
                 {
                     "type": "Vstupna",
                     "text": "V cykle for sa premenná cyklu zvyčajne označuje písmenom ____.",
-                    "explanation": "Konvenčne sa používa písmeno i ako premenná cyklu.",
-                    "correctAnswer": "i"
+                    "correctAnswer": "i",
+                    "explanation": "Konvencne sa pouziva pismeno i ako premenna cyklu."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Aby sa cyklus for opakoval klesajúco, krok nastavíme na ____.",
-                    "explanation": "i-- dekrementuje premennú cyklu, čím sa cyklus vykonáva klesajúco.",
-                    "correctAnswer": "i--"
+                    "correctAnswer": "i--",
+                    "explanation": "i-- dekrementuje premennu cyklu, cim sa cyklus vykonava klesajuco."
                 },
                 {
                     "type": "Parovacia",
@@ -1385,14 +1385,14 @@
                 {
                     "type": "Vstupna",
                     "text": "Nekonečný cyklus pri while môže vzniknúť, ak sa ______________ v podmienke nemení.",
-                    "explanation": "Ak sa premenná v podmienke nemení, cyklus nikdy neskončí.",
-                    "correctAnswer": "premenná"
+                    "correctAnswer": "premenna",
+                    "explanation": "Ak sa premenna v podmienke nemeni, cyklus nikdy neskonci."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Príkaz continue spôsobí, že aktuálna iterácia cyklu sa ______________ a cyklus pokračuje ďalšou iteráciou.",
-                    "explanation": "Continue preskočí zvyšok aktuálnej iterácie a pokračuje ďalšou.",
-                    "correctAnswer": "preskočí"
+                    "correctAnswer": "preskoci",
+                    "explanation": "Continue preskoci zvysok aktualnej iteracie a pokracuje dalsou."
                 },
                 {
                     "type": "Parovacia",
@@ -1532,14 +1532,14 @@
                 {
                     "type": "Vstupna",
                     "text": "Doplň názov metódy, ktorá generuje desatinné číslo od 0 po menej ako 1:\n\nrand.__________();",
-                    "explanation": "NextDouble() generuje náhodné desatinné číslo od 0.0 do menej ako 1.0.",
-                    "correctAnswer": "NextDouble"
+                    "correctAnswer": "NextDouble",
+                    "explanation": "NextDouble() generuje nahodne desatinne cislo od 0.0 do menej ako 1.0."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Horná hranica v metóde Next(min, max) je vždy __________ (menšia / väčšia / rovná).",
-                    "explanation": "Horná hranica je exkluzívna, teda menšia ako zadaná hodnota.",
-                    "correctAnswer": "menšia"
+                    "correctAnswer": "mensia",
+                    "explanation": "Horna hranica je exkluzivna, teda mensia ako zadana hodnota."
                 },
                 {
                     "type": "Parovacia",
@@ -1679,14 +1679,14 @@
                 {
                     "type": "Vstupna",
                     "text": "Doplň názov vlastnosti, ktorá vracia počet prvkov poľa:\n\npole.__________",
-                    "explanation": "Vlastnosť Length vracia počet prvkov v poli.",
-                    "correctAnswer": "Length"
+                    "correctAnswer": "Length",
+                    "explanation": "Vlastnost Length vracia pocet prvkov v poli."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Ak sa pokúsime použiť index mimo rozsahu poľa, vznikne chyba typu: __________",
-                    "explanation": "IndexOutOfRangeException sa vyhodí pri použití neplatného indexu.",
-                    "correctAnswer": "IndexOutOfRangeException"
+                    "correctAnswer": "IndexOutOfRangeException",
+                    "explanation": "IndexOutOfRangeException sa vyhodi pri pouziti neplatneho indexu."
                 },
                 {
                     "type": "Parovacia",
@@ -1826,14 +1826,14 @@
                 {
                     "type": "Vstupna",
                     "text": "Doplň metódu na zistenie počtu stĺpcov:\n\npole.________(1);",
-                    "explanation": "GetLength(1) vracia počet stĺpcov (druhá dimenzia).",
-                    "correctAnswer": "GetLength"
+                    "correctAnswer": "GetLength",
+                    "explanation": "GetLength(1) vracia pocet stlpcov (druha dimenzia)."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Doplň inicializáciu náhodného čísla do poľa:\n\npole[i,j] = random.________(100);",
-                    "explanation": "Next(100) generuje náhodné číslo od 0 do 99.",
-                    "correctAnswer": "Next"
+                    "correctAnswer": "Next",
+                    "explanation": "Next(100) generuje nahodne cislo od 0 do 99."
                 },
                 {
                     "type": "Parovacia",
@@ -1996,20 +1996,20 @@
                 {
                     "type": "Vstupna",
                     "text": "Doplň správne kľúčové slovo:\n\n________ Ziak\n{\n    public string meno;\n    public int vek;\n}",
-                    "explanation": "Kľúčové slovo struct definuje štruktúru.",
-                    "correctAnswer": "struct"
+                    "correctAnswer": "struct",
+                    "explanation": "Klucove slovo struct definuje strukturu."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Doplň vytvorenie premennej typu Ziak:\n\nZiak z1 = new ________();",
-                    "explanation": "Pri vytváraní inštancie použijeme názov štruktúry.",
-                    "correctAnswer": "Ziak"
+                    "correctAnswer": "Ziak",
+                    "explanation": "Pri vytvarani instantie pouzijeme nazov struktury."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Doplň chýbajúcu časť (prístup k členu štruktúry):\n\nZiak z1 = new Ziak();\nz1._______ = \"Adam\";",
-                    "explanation": "K členu štruktúry pristupujeme pomocou bodky a názvu člena.",
-                    "correctAnswer": "meno"
+                    "correctAnswer": "meno",
+                    "explanation": "K clenu struktury pristupujeme pomocou bodky a nazvu clena."
                 },
                 {
                     "type": "Parovacia",
@@ -2172,20 +2172,20 @@
                 {
                     "type": "Vstupna",
                     "text": "Doplň správny FileMode (ak súbor existuje, doplní obsah na koniec):\n\nFileStream file = new FileStream(\"data.txt\", FileMode.________);",
-                    "explanation": "FileMode.Append pridáva obsah na koniec existujúceho súboru.",
-                    "correctAnswer": "Append"
+                    "correctAnswer": "Append",
+                    "explanation": "FileMode.Append pridava obsah na koniec existujuceho suboru."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Doplň názov triedy na čítanie textu zo súboru:\n\nFileStream file = new FileStream(\"data.txt\", FileMode.Open);\n________ sr = new ________(file);",
-                    "explanation": "StreamReader sa používa na čítanie textu zo súboru.",
-                    "correctAnswer": "StreamReader"
+                    "correctAnswer": "StreamReader",
+                    "explanation": "StreamReader sa pouziva na citanie textu zo suboru."
                 },
                 {
                     "type": "Vstupna",
                     "text": "Doplň podmienku ukončenia čítania (keď je koniec súboru):\n\nstring riadok = \"\";\nwhile (riadok != ______)\n{\n    riadok = sr.ReadLine();\n}",
-                    "explanation": "ReadLine() vracia null, keď dosiahne koniec súboru.",
-                    "correctAnswer": "null"
+                    "correctAnswer": "null",
+                    "explanation": "ReadLine() vracia null, ked dosiahne koniec suboru."
                 },
                 {
                     "type": "Parovacia",

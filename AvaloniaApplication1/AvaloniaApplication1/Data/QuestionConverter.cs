@@ -39,6 +39,7 @@ namespace AvaloniaApplication1.Data
                     var abcdOtazka = new ABCDOtazka
                     {
                         OtazkaText = questionData.Text,
+                        Explanation = questionData.Explanation ?? string.Empty,
                         Moznosti = new List<ABCDMoznost>()
                     };
 
@@ -67,7 +68,8 @@ namespace AvaloniaApplication1.Data
                     var vstupnaOtazka = new VstupnaOtazka
                     {
                         OtazkaText = questionData.Text,
-                        SpravnaOdpoved = questionData.CorrectAnswer
+                        SpravnaOdpoved = questionData.CorrectAnswer,
+                        Explanation = questionData.Explanation ?? string.Empty
                     };
 
                     otazky.Add(vstupnaOtazka);
@@ -77,7 +79,8 @@ namespace AvaloniaApplication1.Data
                 {
                     var parovaciaOtazka = new ParovaciaOtazka
                     {
-                        OtazkaText = questionData.Text
+                        OtazkaText = questionData.Text,
+                        Explanation = questionData.Explanation ?? string.Empty
                     };
 
                     // Extrahuj ?avý a pravý st?pec z párov
